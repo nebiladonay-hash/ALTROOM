@@ -1,0 +1,11 @@
+{
+  "name": "ALTROOM — your corner of the strange",
+  "short_name": "ALTROOM",
+  "description": "A tiny invite-only corner of the internet for alternative minds.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#100f13",
+  "theme_color": "#111014",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111014">
-  <meta name="description" content="A tiny invite-only corner of the internet for alternative minds and uncommon interests.">
+  <meta name="description" content="A small, gothic corner of the internet for alternative minds and uncommon interests. Create an account and join the conversation.">
   <title>ALTROOM — your corner of the strange</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -56,7 +56,7 @@
       <div class="eyebrow" style="margin-top:28px">One-time connection</div>
       <h2>Connect your room.</h2>
       <p>ALTROOM needs its own free Supabase project to keep accounts and conversations synced across devices. These settings stay in this browser. Use only your project's public anon/publishable key — never a service-role key.</p>
-      <ol class="setup-steps"><li>Create a free Supabase project.</li><li>Open its SQL Editor, paste the contents of <b>setup.sql</b>, replace the placeholder invite code first, and run it.</li><li>Copy the project URL and public anon/publishable key from Project Settings → API.</li></ol>
+      <ol class="setup-steps"><li>Create a free Supabase project.</li><li>Open its SQL Editor, paste the contents of <b>setup.sql</b>, and run it once to create the database. Registration is open until the 100-member limit is reached.</li><li>Copy the project URL and public anon/publishable key from Project Settings → API.</li></ol>
       <div class="form-row"><label for="projectUrl">Supabase project URL</label><input class="field" id="projectUrl" type="url" placeholder="https://your-project.supabase.co" autocomplete="url"></div>
       <div class="form-row"><label for="publicKey">Public anon / publishable key</label><input class="field" id="publicKey" type="password" placeholder="sb_publishable_… or eyJ…" autocomplete="off"></div>
       <label class="checkline"><input id="confirmPublicKey" type="checkbox"> <span>I am using the public anon/publishable key, not a service-role or secret key.</span></label>
@@ -80,7 +80,6 @@
           <div class="form-row hidden" id="displayNameRow"><label for="displayName">What should people call you?</label><input class="field" id="displayName" maxlength="40" placeholder="Your chosen name"></div>
           <div class="form-row"><label for="email">Email</label><input class="field" id="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
           <div class="form-row"><label for="password">Password</label><input class="field" id="password" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters"></div>
-          <div class="form-row hidden" id="inviteRow"><label for="inviteCode">Invite code</label><input class="field" id="inviteCode" maxlength="80" autocomplete="off" placeholder="Ask the person who invited you"></div>
           <button class="button primary" id="authSubmit" type="submit" style="width:100%;margin-top:6px">Enter ALTROOM →</button><p id="authMessage" class="form-message" aria-live="polite"></p>
         </form>
         <div class="auth-footer"><span class="tiny muted">A tiny community, not another feed.</span></div>
@@ -88,10 +87,9 @@
     </div>
   </main>
 
-  <main id="pendingView" class="auth-wrap hidden">
+  <main id="capacityView" class="auth-wrap hidden">
     <section class="setup-card" style="max-width:500px">
-      <div class="brand"><span class="brand-mark">✳</span><span>ALT<em>ROOM</em></span></div><div class="eyebrow" style="margin-top:28px">One last little door</div><h2>You're almost in.</h2><p>Your account exists, but this community is invite-only. Enter the invite code you received. Membership is limited to 100 people.</p>
-      <form id="redeemForm"><div class="form-row"><label for="redeemCode">Invite code</label><input class="field" id="redeemCode" required maxlength="80" placeholder="Your invite code"></div><button class="button primary" type="submit" style="width:100%">Unlock my place →</button><p id="redeemMessage" class="form-message"></p></form><button id="pendingSignOut" class="button ghost" style="margin-top:12px">Sign out</button>
+      <div class="brand"><span class="brand-mark">✳</span><span>ALT<em>ROOM</em></span></div><div class="eyebrow" style="margin-top:28px">Room capacity</div><h2>ALTROOM is full right now.</h2><p id="capacityMessage">Your account is saved, but all 100 member places are currently occupied. Try signing in again later to check whether a place has opened.</p><a class="button primary" id="capacityTryAgainLink" href="./" style="display:inline-flex;justify-content:center;text-decoration:none;margin-top:12px">Try again →</a><button id="capacitySignOut" class="button ghost" style="margin-top:12px">Sign out</button>
     </section>
   </main>
 
@@ -106,7 +104,7 @@
       <section class="messages" id="messages" aria-live="polite"><div class="welcome-box"><div class="symbol">✳</div><h2>A refuge for the beautifully unusual.</h2><p>Say hello, share what you're obsessed with lately, or quietly listen until something clicks. No pressure to perform here.</p></div></section>
       <footer class="composer"><div class="composer-tools"><button class="composer-tool" id="photoAudioBtn">＋ Photo / audio</button><button class="composer-tool" id="recordVoiceBtn">🎙 Record voice</button><button class="composer-tool" id="stickerBtn">✦ Make a sticker</button><button class="composer-tool" id="stickerImageBtn">▧ Upload sticker</button><input id="mediaInput" class="hidden" type="file" accept="image/*,audio/*"><input id="stickerImageInput" class="hidden" type="file" accept="image/*"><span class="tiny muted" id="composerStatus" style="margin-left:auto"></span></div><div class="composer-row"><textarea id="messageInput" class="field" rows="1" maxlength="4000" placeholder="Say something real… (Enter to send)"></textarea><button class="button primary send-btn" id="sendBtn">Send ↗</button></div><div class="typing-hint">Keep the room safe. Don't share anything you wouldn't want forwarded.</div></footer>
     </section>
-    <aside class="members-panel"><div class="panel-heading"><h3>People in the room</h3><span class="count-badge" id="memberCount">— / 100</span></div><input id="memberSearch" class="field member-search" placeholder="Find a person…" aria-label="Search members"><div class="member-list" id="memberList"><div class="muted tiny">Loading people…</div></div><div class="members-note">✳ Private by invitation. Small by design.<br>Be curious. Respect boundaries. Report anything that makes the room unsafe.</div></aside>
+    <aside class="members-panel"><div class="panel-heading"><h3>People in the room</h3><span class="count-badge" id="memberCount">— / 100</span></div><input id="memberSearch" class="field member-search" placeholder="Find a person…" aria-label="Search members"><div class="member-list" id="memberList"><div class="muted tiny">Loading people…</div></div><div class="members-note">✳ A small community, capped at 100 members.<br>Be curious. Respect boundaries. Report anything that makes the room unsafe.</div></aside>
   </main>
 
   <div class="overlay hidden" id="stickerModal"><section class="modal"><div class="modal-head"><div><div class="eyebrow">Tiny art, big feelings</div><h2>Make a sticker</h2></div><button class="close-btn" data-close="stickerModal">✕</button></div><p>Make a little reaction that feels like you. It will show up in the current channel.</p><form id="stickerForm"><div class="form-row"><label for="stickerEmoji">Emoji / symbol</label><input id="stickerEmoji" class="field" maxlength="12" value="✳" placeholder="✳ ☾ ♡"></div><div class="form-row"><label for="stickerText">Sticker text</label><input id="stickerText" class="field" maxlength="50" required placeholder="existentially tired"></div><div class="form-row"><label>Background</label><div class="color-row" id="stickerColors"><button type="button" class="color-choice active" data-color="#c52b4b" style="background:#c52b4b"></button><button type="button" class="color-choice" data-color="#bd94c8" style="background:#bd94c8"></button><button type="button" class="color-choice" data-color="#8b395d" style="background:#8b395d"></button><button type="button" class="color-choice" data-color="#84e5e2" style="background:#84e5e2"></button><button type="button" class="color-choice" data-color="#f4e4d5" style="background:#f4e4d5"></button></div></div><div style="display:flex;justify-content:flex-end;gap:8px;margin-top:20px"><button type="button" class="button ghost" data-close="stickerModal">Cancel</button><button class="button primary" type="submit">Send sticker ✦</button></div><p id="stickerMessage" class="form-message"></p></form></section></div>
@@ -119,7 +117,7 @@
     (() => {
       'use strict';
       const $ = (s) => document.querySelector(s);
-      const views = ['setupView','authView','pendingView','appShell'];
+      const views = ['setupView','authView','capacityView','appShell'];
       const configKey = 'altroom_connection_v1';
       let client = null, currentUser = null, myProfile = null, channels = [], activeChannelId = null, members = [], messageSubscription = null, activeTab = 'login', selectedStickerColor = '#c52b4b', demoMode = false, toastTimer = null, mediaRecorder = null, recordingStream = null, recordedChunks = [], isRecordingVoice = false, selectedAvatarFile = null, clearAvatarRequested = false, avatarPreviewObjectUrl = null;
       const channelDecor = {lobby:['✳','Enter quietly. Stay strange. Be yourself.'], introductions:['♡','A small introduction goes a long way.'], music:['♫','No gatekeeping your weirdest soundtrack.'], art:['✂','Things made by hand, heart, or accident.'], oddities:['☾','For the interests that need a little explaining.']};
@@ -135,9 +133,30 @@
       function saveConfig(url,key){localStorage.setItem(configKey,JSON.stringify({url,key}));}
       function newClient(){const conf=getConfig();if(!conf||!window.supabase)return null;try{return window.supabase.createClient(conf.url,conf.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});}catch{return null;}}
       function validConfig(url,key){try{const u=new URL(url);return (u.protocol==='https:'||u.hostname==='localhost')&&key.length>20&&!/service_role|secret/i.test(key);}catch{return false;}}
+      function clearLegacyInviteData(){
+        localStorage.removeItem('altroom_invite_link');
+        localStorage.removeItem('altroom_pending_invite');
+        const url = new URL(window.location.href);
+        if (url.searchParams.has('invite')) {
+          url.searchParams.delete('invite');
+          window.history.replaceState({}, document.title, url.pathname + url.search + url.hash);
+        }
+      }
       function showAuth(){showView('authView');setAuthTab('login');}
-      function setAuthTab(tab){activeTab=tab;byId('loginTab').classList.toggle('active',tab==='login');byId('signupTab').classList.toggle('active',tab==='signup');byId('displayNameRow').classList.toggle('hidden',tab!=='signup');byId('inviteRow').classList.toggle('hidden',tab!=='signup');byId('password').autocomplete=tab==='login'?'current-password':'new-password';byId('authTitle').textContent=tab==='login'?'Find your people.':'A small door opens.';byId('authSubtitle').textContent=tab==='login'?'Sign in to step back into the room.':'Create an account, then unlock it with an invite code.';byId('authSubmit').textContent=tab==='login'?'Enter ALTROOM →':'Create account →';message('authMessage','');}
+      function setAuthTab(tab){
+        activeTab=tab;
+        byId('loginTab').classList.toggle('active',tab==='login');
+        byId('signupTab').classList.toggle('active',tab==='signup');
+        byId('displayNameRow').classList.toggle('hidden',tab!=='signup');
+        byId('password').autocomplete=tab==='login'?'current-password':'new-password';
+        byId('authTitle').textContent=tab==='login'?'Find your people.':'A small door opens.';
+        byId('authSubtitle').textContent=tab==='login'?'Sign in to step back into the room.':'Create an account and meet your people.';
+        byId('authSubmit').textContent=tab==='login'?'Enter ALTROOM →':'Create account →';
+        byId('authSubmit').disabled=false;
+        message('authMessage','');
+      }
       async function init(){
+        clearLegacyInviteData();
         const conf=getConfig();
         if(!conf||!validConfig(conf.url,conf.key)){showAuth();message('authMessage','ALTROOM connection settings are invalid. Please contact the site owner.','error');return;}
         if(!window.supabase){showAuth();message('authMessage','ALTROOM could not load its connection library. Check your internet connection and refresh.','error');return;}
@@ -146,12 +165,35 @@
         catch(e){showAuth();message('authMessage','Could not check your saved connection. Check your settings and try again.','error');}
         client.auth.onAuthStateChange((event,session)=>{setTimeout(async()=>{if(session&&(!currentUser||currentUser.id!==session.user.id))await enterWithSession(session);else if(!session&&currentUser){currentUser=null;myProfile=null;cleanupRealtime();showAuth();}},0);});
       }
-      async function enterWithSession(session){currentUser=session.user;message('authMessage','');try{const {data,error}=await client.from('profiles').select('*').eq('id',currentUser.id).single();if(error)throw error;myProfile=data;
-          const pending=localStorage.getItem('altroom_pending_invite');
-          if(!myProfile.approved&&pending){try{await redeemInvite(pending,true);localStorage.removeItem('altroom_pending_invite');return;}catch(e){localStorage.removeItem('altroom_pending_invite');}}
-          if(!myProfile.approved){showView('pendingView');return;}await showChat();
-        }catch(e){showAuth();message('authMessage','The database connection worked, but ALTROOM tables are missing or access is blocked. Run setup.sql in your Supabase SQL Editor.','error');}}
-      async function redeemInvite(code,silent=false){const {error}=await client.rpc('redeem_invite',{p_code:code.trim()});if(error){if(!silent)message('redeemMessage',friendlyError(error),'error');throw error;}myProfile.approved=true;localStorage.removeItem('altroom_pending_invite');toast('You are in. Welcome to ALTROOM.');await showChat();}
+      async function enterWithSession(session){
+        currentUser=session.user;
+        message('authMessage','');
+        try{
+          let {data,error}=await client.from('profiles').select('*').eq('id',currentUser.id).single();
+          if(error)throw error;
+          myProfile=data;
+          if(!myProfile.approved){
+            // If the community was full at registration, allow this member to claim a place if one has since opened.
+            const {data:activated,error:activationError}=await client.rpc('activate_open_signup');
+            if(activationError)console.warn('Open-signup capacity check:',activationError.message);
+            if(activated===true){
+              const refreshed=await client.from('profiles').select('*').eq('id',currentUser.id).single();
+              if(refreshed.error)throw refreshed.error;
+              myProfile=refreshed.data;
+            }
+          }
+          if(!myProfile.approved){
+            showView('capacityView');
+            byId('capacityMessage').textContent='Your account is saved, but all 100 member places are currently occupied. Try signing in again later to check whether a place has opened.';
+            byId('capacityTryAgainLink').href=window.location.pathname;
+            return;
+          }
+          await showChat();
+        }catch(e){
+          showAuth();
+          message('authMessage','The database connection worked, but ALTROOM tables or permissions are not ready. Check the one-time Supabase setup/migration. Details: '+(e.message||'unknown error'),'error');
+        }
+      }
       async function showChat(){showView('appShell');fillMyCard();await loadChannels();await loadMembers();await loadMessages();subscribeMessages();}
       function setAvatarElement(el,name,path){if(!el)return;el.dataset.avatarName=name||'Member';el.dataset.avatarPath=path||'';el.classList.remove('has-image');el.replaceChildren(document.createTextNode(initials(name)));hydrateAvatar(el);}
       async function hydrateAvatar(el){const path=el?.dataset?.avatarPath;if(!path||demoMode||!client)return;const url=await signedUrl(path);if(!url||!el.isConnected)return;const img=document.createElement('img');img.src=url;img.alt='';img.loading='lazy';img.decoding='async';img.onerror=()=>{el.classList.remove('has-image');el.replaceChildren(document.createTextNode(initials(el.dataset.avatarName)));};el.replaceChildren(img);el.classList.add('has-image');}
@@ -186,9 +228,22 @@
       function safeColor(c){return /^#[0-9a-fA-F]{6}$/.test(c||'')?c:'#c52b4b';}
       async function signedUrl(path){if(demoMode)return null;const {data,error}=await client.storage.from('chat-media').createSignedUrl(path,3600);if(error){console.warn('Signed media URL failed',error.message);return null;}return data?.signedUrl||null;}
       function scrollToBottom(){const box=byId('messages');requestAnimationFrame(()=>box.scrollTop=box.scrollHeight);}
-      function friendlyError(e){const s=e?.message||'Something went wrong.';if(/Invalid login credentials/i.test(s))return 'That email/password combination did not match.';if(/Email not confirmed/i.test(s))return 'Check your email to confirm your account, then sign in.';if(/duplicate key|already exists/i.test(s))return 'That username is already taken. Try another one.';if(/invalid invite|invite code/i.test(s))return 'That invite code is not valid or has reached its limit.';if(/100 member|full/i.test(s))return 'ALTROOM has reached its 100-member limit.';if(/Failed to fetch|NetworkError/i.test(s))return 'Could not reach Supabase. Check your internet and project URL.';return s;}
+      function friendlyError(e){const s=e?.message||'Something went wrong.';if(/Invalid login credentials/i.test(s))return 'That email/password combination did not match.';if(/Email not confirmed/i.test(s))return 'Check your email to confirm your account, then sign in.';if(/duplicate key|already exists/i.test(s))return 'That username is already taken. Try another one.';if(/100 member|full/i.test(s))return 'ALTROOM has reached its 100-member limit.';if(/Failed to fetch|NetworkError/i.test(s))return 'Could not reach Supabase. Check your internet and project URL.';return s;}
       async function signIn(email,password){const {data,error}=await client.auth.signInWithPassword({email,password});if(error)throw error;if(data.session)await enterWithSession(data.session);}
-      async function signUp(name,email,password,code){localStorage.setItem('altroom_pending_invite',code.trim());const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:name.trim()||'New member'}}});if(error)throw error;if(data.session){await enterWithSession(data.session);}else{message('authMessage','Account created. Check your email for a confirmation link, then sign in with the invite code you entered.','ok');setAuthTab('login');}}
+      async function signUp(name,email,password){
+        const redirect = new URL(window.location.pathname, window.location.origin).toString();
+        const {data,error}=await client.auth.signUp({
+          email,password,
+          options:{data:{display_name:name.trim()||'New member'},emailRedirectTo:redirect}
+        });
+        if(error)throw error;
+        if(data.session){
+          await enterWithSession(data.session);
+        }else{
+          setAuthTab('login');
+          message('authMessage','Account created. Check your email to confirm your address, then return here and sign in.','ok');
+        }
+      }
       async function signOut(){cleanupRealtime();if(demoMode){demoMode=false;currentUser=null;myProfile=null;client=null;localStorage.removeItem('altroom_demo');showView('setupView');return;}if(client)await client.auth.signOut();currentUser=null;myProfile=null;showAuth();}
       async function sendText(){if(demoMode){toast('Preview mode only — connect Supabase to send real messages.');return;}const input=byId('messageInput'),body=input.value.trim();if(!body||!activeChannelId)return;input.disabled=true;byId('sendBtn').disabled=true;try{const {error}=await client.from('messages').insert({channel_id:activeChannelId,user_id:currentUser.id,kind:'text',body});if(error)throw error;input.value='';input.style.height='auto';}catch(e){toast(friendlyError(e));}finally{input.disabled=false;byId('sendBtn').disabled=false;input.focus();}}
       async function sendSticker(text,emoji,color){if(demoMode){toast('Preview mode only — connect Supabase to send real stickers.');return;}const {error}=await client.from('messages').insert({channel_id:activeChannelId,user_id:currentUser.id,kind:'sticker',sticker_text:text,sticker_emoji:emoji,sticker_color:color});if(error)throw error;}
@@ -212,9 +267,8 @@
 
       byId('saveConnection').addEventListener('click',async()=>{const url=byId('projectUrl').value.trim().replace(/\/$/,''),key=byId('publicKey').value.trim();if(!validConfig(url,key)){message('setupMessage','Enter a valid https project URL and public anon/publishable key. Never use a service-role key.','error');return;}if(!byId('confirmPublicKey').checked){message('setupMessage','Confirm that this is a public key, not a secret/service-role key.','error');return;}saveConfig(url,key);client=newClient();message('setupMessage','Checking connection…');try{const {error}=await client.from('channels').select('id').limit(1);if(error)throw error;message('setupMessage','Connected. Opening ALTROOM…','ok');setTimeout(()=>{byId('setupView').classList.add('hidden');showAuth();},400);}catch(e){message('setupMessage','Could not read the channels table. If you have already run setup.sql, check the project URL/key and table permissions. Details: '+(e.message||'connection failed'),'error');localStorage.removeItem(configKey);client=null;}});
       byId('loginTab').addEventListener('click',()=>setAuthTab('login'));byId('signupTab').addEventListener('click',()=>setAuthTab('signup'));
-      byId('authForm').addEventListener('submit',async e=>{e.preventDefault();message('authMessage','');const email=byId('email').value.trim(),password=byId('password').value;byId('authSubmit').disabled=true;try{if(activeTab==='login')await signIn(email,password);else{const code=byId('inviteCode').value.trim();if(!code){message('authMessage','An invite code is required to join.','error');return;}await signUp(byId('displayName').value,email,password,code);}}catch(err){message('authMessage',friendlyError(err),'error');}finally{byId('authSubmit').disabled=false;}});
-      byId('redeemForm').addEventListener('submit',async e=>{e.preventDefault();message('redeemMessage','Checking your invite…');try{await redeemInvite(byId('redeemCode').value,false);}catch(e){message('redeemMessage',friendlyError(e),'error');}});
-      byId('pendingSignOut').addEventListener('click',signOut);byId('sideSignOut').addEventListener('click',signOut);byId('appSignOut').addEventListener('click',signOut);
+      byId('authForm').addEventListener('submit',async e=>{e.preventDefault();message('authMessage','');const email=byId('email').value.trim(),password=byId('password').value;byId('authSubmit').disabled=true;try{if(activeTab==='login')await signIn(email,password);else await signUp(byId('displayName').value,email,password);}catch(err){message('authMessage',friendlyError(err),'error');}finally{byId('authSubmit').disabled=false;}});
+      byId('capacitySignOut').addEventListener('click',signOut);byId('sideSignOut').addEventListener('click',signOut);byId('appSignOut').addEventListener('click',signOut);
       document.addEventListener('click',e=>{const b=e.target.closest('[data-enter-channel]');if(!b)return;e.preventDefault();enterChannel(b.dataset.enterChannel);});
       byId('sendBtn').addEventListener('click',sendText);byId('messageInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendText();}});byId('messageInput').addEventListener('input',e=>{e.target.style.height='auto';e.target.style.height=Math.min(e.target.scrollHeight,140)+'px';});
       byId('photoAudioBtn').addEventListener('click',()=>byId('mediaInput').click());byId('recordVoiceBtn').addEventListener('click',toggleVoiceRecording);byId('mediaInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadAndSend(f);});byId('stickerImageBtn').addEventListener('click',()=>byId('stickerImageInput').click());byId('stickerImageInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadAndSend(f,'sticker');});

@@ -1,7 +1,7 @@
 {
   "name": "ALTROOM — your corner of the strange",
   "short_name": "ALTROOM",
-  "description": "A tiny invite-only corner of the internet for alternative minds.",
+  "description": "A tiny, open community for alternative minds, capped at 100 members.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

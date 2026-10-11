@@ -1,11 +1,18 @@
 {
   "name": "ALTROOM — your corner of the strange",
   "short_name": "ALTROOM",
-  "description": "A tiny, open community for alternative minds, capped at 100 members.",
+  "description": "A quiet, dark corner of the internet for alternative minds.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#09070b",
-  "theme_color": "#09070b",
-  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }

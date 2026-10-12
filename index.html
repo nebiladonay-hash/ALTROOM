@@ -282,6 +282,73 @@
     }
     @media(max-width:380px){.mode-tab{font-size:10px;padding:7px 6px}.chat-title h1{max-width:28vw}.header-actions .button{width:28px;min-width:28px;padding:4px}.private-call-actions .button{font-size:9px;padding:6px}.private-window-head .close-btn{min-width:28px}}
 
+  
+/* ALTROOM FRIENDLY SOCIAL REDESIGN — warm color, no neon/glow */
+:root{
+ --bg:#17151b;--panel:#211e27;--panel2:#2b2632;--line:#403846;--text:#f8f3ed;--muted:#bcb2c1;
+ --violet:#d5b8e8;--lime:#d9d7a4;--pink:#e4a3a1;--danger:#e88787;--shadow:0 10px 28px #08070b55;--radius:20px;
+ --accent:#e6a49e;--accent-2:#cdb5e7;--accent-3:#c8d8b4;--accent-4:#f0d39c;
+}
+html,body{background:var(--bg)!important;color:var(--text)}
+body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%),radial-gradient(ellipse at 100% 100%,#4c405722,transparent 36%)!important}
+*{text-shadow:none!important;box-shadow:none!important}
+.sidebar,.chat-panel,.members-panel,.setup-card,.auth-card,.modal-card,.private-window,.gallery-modal,.profile-modal{background:#211e27!important;border-color:#403846!important;border-radius:22px!important}
+.sidebar,.chat-panel,.members-panel{box-shadow:0 10px 28px #08070b33!important}
+.brand-mark,.channel-emblem,.channel-dot,.welcome-box .symbol,.private-empty-icon{background:#39303e!important;color:#e9c4c0!important;border-radius:14px!important}
+.brand em{color:#e6aaa4!important}
+.eyebrow,.side-label,.private-subhead{color:#d9b8d2!important;text-shadow:none!important}
+.button,.mode-tab,.channel-btn,.member-item,.room-card,.private-person-row,.composer-tool,.sticker-option,.profile-action{transition:background .16s ease,border-color .16s ease,transform .16s ease!important}
+.button{border:1px solid #514657!important;border-radius:13px!important;background:#302a36!important;color:#f8f3ed!important;font-weight:700!important}
+.button:hover,.channel-btn:hover,.member-item:hover,.private-person-row:hover,.composer-tool:hover{background:#3a3140!important;border-color:#77627c!important;transform:translateY(-1px)}
+.button.primary{background:#dca19d!important;border-color:#dca19d!important;color:#241b22!important;font-weight:800!important}
+.button.primary:hover{background:#edb9b0!important}
+.button.danger{background:#6c343c!important;color:#fff!important}
+.field,input,textarea,select,.composer-input,.private-composer textarea{background:#19171e!important;border:1px solid #4b414f!important;color:#fff5ef!important;border-radius:14px!important}
+.field:focus,input:focus,textarea:focus{outline:2px solid #d6b6ce55!important;border-color:#d6b6ce!important}
+.chat-header,.private-thread-head,.private-window-head{background:#27232d!important;border-color:#403846!important}
+.chat-title h1,.private-window-head h2,.welcome-box h2{letter-spacing:-.035em!important}
+.messages,.private-messages{background:#1b1920!important}
+.message-body{background:#302a35!important;border:1px solid #423947!important;border-radius:5px 16px 16px 16px!important;color:#fbf5ef!important}
+.message.own .message-body,.message-row.own .message-body,.private-message-row.own .message-body{background:#4a3949!important;border-color:#715268!important}
+.composer,.private-composer{background:#26222c!important;border-color:#443947!important}
+.composer-tool{border:1px solid #514657!important;background:#342d39!important;border-radius:12px!important;color:#f7eee9!important}
+.channel-btn{border:1px solid transparent!important;border-radius:13px!important;color:#e9e1eb!important;padding:10px 11px!important}
+.channel-btn.active{background:#443547!important;border-color:#76566d!important;color:#fff!important}
+.channel-dot{width:32px!important;height:32px!important;display:grid!important;place-items:center!important;background:#3c3444!important;color:#e7c5c2!important;border-radius:11px!important;flex-shrink:0}
+.room-card{background:#2a2530!important;border:1px solid #48404e!important;border-radius:18px!important}
+.room-card:hover{background:#332b38!important;border-color:#786178!important;transform:translateY(-2px)}
+.avatar{background:#d6b7ce!important;color:#2a202c!important;border:2px solid #211e27!important}
+.mode-tab{background:transparent!important;border:1px solid transparent!important;border-radius:14px!important;color:#c6bdcb!important;padding:11px 12px!important;font-weight:800!important}
+.mode-tab.active{background:#403244!important;border-color:#6a536d!important;color:#fff!important}
+.mode-count,.unread-badge,.channel-unread-badge,.private-unread-badge{display:inline-flex;align-items:center;justify-content:center;min-width:21px;height:21px;padding:0 6px;border-radius:999px;background:#e7a39b;color:#2b1e27;font-size:11px;font-weight:900;line-height:1}
+.mode-count.hidden{display:none!important}
+.channel-unread-badge{margin-left:auto;min-width:20px;height:20px;padding:0 5px}
+.private-unread-badge{margin-left:6px;min-width:20px;height:20px;padding:0 5px}
+.private-person-row{border-radius:14px!important;border:1px solid transparent!important;padding:10px!important;background:#28242e!important}
+.private-person-row.has-unread{background:#39303d!important;border-color:#72596f!important}
+.private-person-row.has-unread .private-person-meta b{color:#fff!important}
+.private-row-time{color:#dcb1ac!important}
+.toast{background:#3c3040!important;border:1px solid #67516a!important;color:#fff!important;border-radius:14px!important}
+.modal-backdrop,.overlay{background:#0c0a10b8!important;backdrop-filter:blur(5px)!important}
+.close-btn{border-radius:12px!important;background:#39313e!important;color:#fff!important}
+.empty-state,.private-empty,.private-first-message{background:#28242e!important;border:1px dashed #5a4b5c!important;border-radius:20px!important}
+/* Use labels as well as icons: easier for first-time members. */
+.header-actions .button{border-radius:12px!important}
+.header-actions .action-label{display:inline!important}
+.header-actions .action-symbol{font-size:15px!important}
+/* Less cramped touch targets and mobile navigation */
+@media(max-width:720px){
+ body{background-image:radial-gradient(ellipse at 0 0,#4b37411a,transparent 42%)!important}
+ .sidebar,.chat-panel,.members-panel{border-radius:18px!important}
+ .mode-tab{font-size:12px!important;min-height:42px!important;justify-content:center!important}
+ .channel-btn,.private-person-row,.member-item{min-height:46px!important}
+ .header-actions .action-label{display:none!important}
+ .header-actions .button{min-width:36px!important;min-height:36px!important}
+ .messages{padding:14px 12px!important}
+ .composer{padding-bottom:calc(12px + env(safe-area-inset-bottom))!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
   </style>
 </head>
 <body>
@@ -335,7 +402,7 @@
       <div class="side-bottom"><div class="user-card"><div class="avatar" id="sideAvatar">A</div><div style="min-width:0;flex:1"><div id="sideName" class="user-name">Member</div><div id="sideHandle" class="user-handle">@member</div></div><button class="button small ghost" id="sideProfileBtn" title="Edit profile">↗</button></div><button class="button ghost small" id="sideSignOut" style="width:100%">Sign out</button></div>
     </aside>
     <section class="chat-panel">
-      <nav class="altroom-modebar" aria-label="Chat sections"><button class="mode-tab active" id="communityChatsBtn" type="button">☾ <span>Community chats</span></button><button class="mode-tab" id="privateChatsBtn" type="button">✉ <span>Private chats</span><b id="privateChatCount" class="mode-count hidden">0</b></button></nav>
+      <nav class="altroom-modebar" aria-label="Chat sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">☾</span> <span>Community chats</span></button><button class="mode-tab" id="privateChatsBtn" type="button"><span aria-hidden="true">✉</span> <span>Private chats</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications">🔔 <span>Notifications</span></button></nav>
       <header class="chat-header"><div class="chat-title"><div class="channel-emblem" id="channelIcon">☾</div><div style="min-width:0"><h1 id="channelName">The Lobby</h1><p id="channelDescription">Enter quietly. Stay strange. Be yourself.</p></div></div><div class="header-actions"><button class="button ghost small" id="peopleBtn" aria-label="Explore people" title="Explore people"><span class="action-symbol">☷</span><span class="action-label">People</span></button><button class="button ghost small hidden owner-console-button" id="ownerPanelBtn" aria-label="Owner controls" title="Owner controls">✦</button><button class="button ghost small" id="galleryBtn" aria-label="Art gallery" title="Art gallery"><span class="action-symbol">▧</span><span class="action-label">Gallery</span></button><button class="button ghost small" id="roomCallBtn" aria-label="Start a live room call" title="Start a live room call"><span class="action-symbol">◉</span><span class="action-label">Room call</span></button><button class="button ghost small" id="profileBtn" aria-label="Open your profile" title="Your profile"><span class="action-symbol">♡</span><span class="action-label">Profile</span></button><button class="button ghost small hidden" id="leaveRoomBtn" aria-label="Leave this room" title="Leave room">⇤</button><button class="button ghost small" id="appSignOut" aria-label="Sign out" title="Sign out">↗</button></div></header>
       <section class="messages" id="messages" aria-live="polite"><div class="welcome-box"><div class="symbol">✳</div><h2>A refuge for the beautifully unusual.</h2><p>Say hello, share what you're obsessed with lately, or quietly listen until something clicks. No pressure to perform here.</p></div></section>
       <footer class="composer"><div class="composer-tools"><button class="composer-tool" id="photoAudioBtn">＋ Photo / audio</button><button class="composer-tool" id="uploadVideoBtn">▣ Upload video</button><button class="composer-tool" id="recordVoiceBtn">🎙 Voice note</button><button class="composer-tool" id="moreComposerToolsBtn" aria-expanded="false" type="button">More tools ▾</button><div id="extraComposerTools" class="extra-composer-tools hidden"><button class="composer-tool" id="stickerBtn">✦ Make a sticker</button><button class="composer-tool" id="stickerImageBtn">▧ Upload sticker</button></div><input id="mediaInput" class="hidden" type="file" accept="image/*,audio/*"><input id="videoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime"><input id="stickerImageInput" class="hidden" type="file" accept="image/*"><span class="tiny muted" id="composerStatus" style="margin-left:auto"></span></div><div class="composer-row"><textarea id="messageInput" class="field" rows="1" maxlength="4000" placeholder="Write a message… (Enter to send)"></textarea><button class="button primary send-btn" id="sendBtn">Send ↗</button></div><div class="typing-hint">Private chats are only visible to the two people in the conversation. Be kind and respect boundaries.</div></footer>
@@ -487,7 +554,7 @@
       async function loadRoomCounts(){roomCountsById={};if(demoMode){channels.forEach(c=>{if(c.slug!=='lobby')roomCountsById[String(c.id)]=Object.keys(demoRoomMembers[String(c.id)]||{}).length;});updateRoomCards();return;}try{const since=new Date(Date.now()-300000).toISOString();const {data,error}=await client.from('room_members').select('channel_id,last_seen_at').gte('last_seen_at',since);if(error)throw error;(data||[]).forEach(r=>{const k=String(r.channel_id);roomCountsById[k]=(roomCountsById[k]||0)+1;});}catch(e){console.warn('Room count check:',e.message);}updateRoomCards();}
       function updateRoomCards(){document.querySelectorAll('[data-room-card]').forEach(card=>{const count=roomCountsById[String(card.dataset.roomCard)]||0,full=count>=25;const label=card.querySelector('.room-seat-count'),btn=card.querySelector('.room-enter');if(label)label.textContent=`${Math.min(count,25)} / 25 seats · ${full?'full':'open'}`;if(btn){btn.disabled=full;btn.textContent=full?'ROOM FULL':'ENTER ROOM →';}});}
       const demoRoomMembers={};
-      function renderChannels(){const box=byId('channelList');if(!channels.length){box.innerHTML='<div class="muted tiny" style="padding:10px">No rooms found.</div>';return;}box.innerHTML=channels.map(c=>{const [ic]=channelDecor[c.slug]||['☾'];const count=roomCountsById[String(c.id)]||0;const seat=`<small class="room-seat-mini">${Math.min(count,25)}/25</small>`;return `<button class="channel-btn ${String(c.id)===String(activeChannelId)?'active':''}" data-channel="${esc(c.id)}"><span class="channel-dot">${ic}</span><span>${esc(c.name)}</span>${seat}</button>`;}).join('');box.querySelectorAll('[data-channel]').forEach(b=>b.addEventListener('click',()=>enterChannel(b.dataset.channel)));renderChannelHeader();}
+      function renderChannels(){const box=byId('channelList');if(!channels.length){box.innerHTML='<div class="muted tiny" style="padding:10px">No rooms found.</div>';return;}box.innerHTML=channels.map(c=>{const [ic]=channelDecor[c.slug]||['☾'];const count=roomCountsById[String(c.id)]||0;const seat=`<small class="room-seat-mini">${Math.min(count,25)}/25</small>`;const unread=(window.altroomUnreadState?.community?.[String(c.id)]||0);const badge=unread?`<b class="channel-unread-badge" aria-label="${unread} unread messages">${unread>99?'99+':unread}</b>`:'';return `<button class="channel-btn ${String(c.id)===String(activeChannelId)?'active':''}" data-channel="${esc(c.id)}"><span class="channel-dot">${ic}</span><span>${esc(c.name)}</span>${badge}${seat}</button>`;}).join('');box.querySelectorAll('[data-channel]').forEach(b=>b.addEventListener('click',()=>enterChannel(b.dataset.channel)));renderChannelHeader();}
       function renderChannelHeader(){const c=channels.find(x=>String(x.id)===String(activeChannelId));if(!c)return;const [ic,desc]=channelDecor[c.slug]||['☾',c.description||'Find your corner.'];byId('channelName').textContent=c.name;byId('channelDescription').textContent=(c.description||desc)+` · ${Math.min(roomCountsById[String(c.id)]||0,25)}/25 seats`;byId('channelIcon').textContent=ic;byId('messageInput').placeholder=c.slug==='lobby'?'Leave a note in the lobby…':`Message #${c.name}…`;byId('leaveRoomBtn').classList.toggle('hidden',!c||c.slug==='lobby');}
       async function startRoomHeartbeat(channelId){clearInterval(roomHeartbeatTimer);roomHeartbeatTimer=null;const c=channels.find(x=>String(x.id)===String(channelId));if(!c||demoMode)return;roomHeartbeatTimer=setInterval(async()=>{if(document.visibilityState==='hidden')return;try{await client.rpc('touch_altroom_room',{p_channel_id:String(c.id)});await loadRoomCounts();renderChannels();}catch(e){console.warn('Room heartbeat:',e.message);}},30000);}
       async function leaveCurrentRoom(){clearInterval(roomHeartbeatTimer);roomHeartbeatTimer=null;const c=channels.find(x=>String(x.id)===String(activeChannelId));if(!demoMode&&c&&client){try{await client.rpc('leave_altroom_room',{p_channel_id:String(c.id)});}catch(e){console.warn('Leave room:',e.message);}}}
@@ -648,7 +715,7 @@
           const {data:profiles,error:profileError}=await client.from('profiles').select('id,username,display_name,avatar_path,role').in('id',ids);
           if(profileError)throw profileError;
           const byUser=new Map((profiles||[]).map(p=>[p.id,p]));
-          byId('privateConversationList').innerHTML=rows.map(c=>{const uid=c.user_a===currentUser.id?c.user_b:c.user_a;const p=byUser.get(uid)||{};return `<button type="button" class="private-person-row" data-private-conversation="${esc(c.id)}" data-private-user="${esc(uid)}" data-search-text="${esc((p.display_name||'Member')+' '+(p.username||''))}"><span class="avatar" data-avatar-name="${esc(p.display_name||'Member')}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(p.display_name||'Member'))}</span><span class="private-person-meta"><b>${esc(p.display_name||'ALTROOM member')}${roleBadgeMarkup(p.role,true)}</b><small>@${esc(p.username||'member')}</small></span><span class="private-row-time">${esc(c.last_message_at?new Date(c.last_message_at).toLocaleDateString(undefined,{month:'short',day:'numeric'}):'')}</span></button>`;}).join('');
+          byId('privateConversationList').innerHTML=rows.map(c=>{const uid=c.user_a===currentUser.id?c.user_b:c.user_a;const p=byUser.get(uid)||{};return `<button type="button" class="private-person-row" data-private-conversation="${esc(c.id)}" data-private-user="${esc(uid)}" data-search-text="${esc((p.display_name||'Member')+' '+(p.username||''))}"><span class="avatar" data-avatar-name="${esc(p.display_name||'Member')}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(p.display_name||'Member'))}</span><span class="private-person-meta"><b>${esc(p.display_name||'ALTROOM member')}${roleBadgeMarkup(p.role,true)}</b><small>@${esc(p.username||'member')}</small></span><span class="private-row-time">${esc(c.last_message_at?new Date(c.last_message_at).toLocaleDateString(undefined,{month:'short',day:'numeric'}):'')}</span>${(window.altroomUnreadState?.private?.[String(c.id)]||0)?`<b class="private-unread-badge" aria-label="${window.altroomUnreadState.private[String(c.id)]} unread messages">${window.altroomUnreadState.private[String(c.id)]>99?'99+':window.altroomUnreadState.private[String(c.id)]}</b>`:''}</button>`;}).join('');
           hydrateAvatars(byId('privateConversationList'));filterPrivateHub();
         }catch(e){byId('privateConversationList').innerHTML=`<p class="tiny muted">Private chats need the new SQL migration. Run <b>ALTROOM-private-chat-video-migration.sql</b> in Supabase, then reopen this section.<br><br>${esc(friendlyError(e))}</p>`;}
       }
@@ -828,7 +895,63 @@
       const baseOpenPublicProfile=openPublicProfile;
       openPublicProfile=async function(userId){byId('publicProfileMessageBtn').dataset.userId=userId||'';byId('publicProfileMessageBtn').classList.toggle('hidden',!userId||userId===currentUser?.id);return baseOpenPublicProfile(userId);};
 
+      // Unread indicators: persisted locally per signed-in browser, updated by Supabase realtime.
+      const ALTROOM_UNREAD_KEY='altroom_unread_v2';
+      function readUnreadState(){try{return JSON.parse(localStorage.getItem(ALTROOM_UNREAD_KEY)||'{"community":{},"private":{}}')}catch{return {community:{},private:{}}}}
+      window.altroomUnreadState=readUnreadState();
+      let altroomUnreadChannel=null, altroomUnreadPrivateChannel=null, altroomNotificationSeen=new Set();
+      function saveUnreadState(){try{localStorage.setItem(ALTROOM_UNREAD_KEY,JSON.stringify(window.altroomUnreadState))}catch{};updateUnreadBadges()}
+      function unreadTotal(){return Object.values(window.altroomUnreadState.private||{}).reduce((a,n)=>a+(Number(n)||0),0)}
+      function updateUnreadBadges(){
+        const total=unreadTotal(), badge=byId('privateChatCount');
+        if(badge){badge.textContent=total>99?'99+':String(total);badge.classList.toggle('hidden',total<1);}
+        document.querySelectorAll('[data-channel]').forEach(btn=>{const id=String(btn.dataset.channel),n=Number(window.altroomUnreadState.community?.[id]||0);let b=btn.querySelector('.channel-unread-badge');if(n>0&&!b){b=document.createElement('b');b.className='channel-unread-badge';btn.appendChild(b)}if(b){b.textContent=n>99?'99+':String(n);b.setAttribute('aria-label',`${n} unread messages`);b.classList.toggle('hidden',n<1)}});
+        if(byId('notificationPermissionBtn'))byId('notificationPermissionBtn').title=('Notification' in window&&Notification.permission==='granted')?'Browser notifications are on':'Turn on browser notifications';
+      }
+      function markCommunityRead(channelId){if(!channelId)return;window.altroomUnreadState.community[String(channelId)]=0;saveUnreadState();}
+      function markPrivateRead(conversationId){if(!conversationId)return;window.altroomUnreadState.private[String(conversationId)]=0;saveUnreadState();}
+      function notifyIncoming(title,body,tag){
+        if(document.visibilityState==='visible'&&document.hasFocus())return;
+        if(!('Notification' in window)||Notification.permission!=='granted')return;
+        try{const n=new Notification(title,{body,tag,icon:'./icon.svg',silent:false});n.onclick=()=>{window.focus();n.close();if(tag&&tag.startsWith('private:'))showPrivateChats();};}catch{}
+      }
+      function setupUnreadRealtime(){
+        if(!client||!currentUser||demoMode)return;
+        if(altroomUnreadChannel)client.removeChannel(altroomUnreadChannel);
+        if(altroomUnreadPrivateChannel)client.removeChannel(altroomUnreadPrivateChannel);
+        altroomUnreadChannel=client.channel('altroom-unread-community-'+currentUser.id).on('postgres_changes',{event:'INSERT',schema:'public',table:'messages'},payload=>{
+          const m=payload.new||{};if(!m.id||m.user_id===currentUser.id)return;
+          const channelId=String(m.channel_id||'');if(!channelId)return;
+          if(channelId===String(activeChannelId)&&document.visibilityState==='visible'&&document.hasFocus())return;
+          const map=window.altroomUnreadState.community;map[channelId]=Math.min(999,(Number(map[channelId])||0)+1);saveUnreadState();
+          const room=channels.find(c=>String(c.id)===channelId);notifyIncoming(room?room.name+' has a new message':'New community message','There is something new in your ALTROOM room.',`community:${channelId}`);
+        }).subscribe();
+        altroomUnreadPrivateChannel=client.channel('altroom-unread-private-'+currentUser.id).on('postgres_changes',{event:'INSERT',schema:'public',table:'private_messages'},async payload=>{
+          const m=payload.new||{};if(!m.id||m.sender_id===currentUser.id||!m.conversation_id)return;
+          const cid=String(m.conversation_id);if(cid===String(activePrivateConversationId)&&!byId('privateChatsModal').classList.contains('hidden')&&document.visibilityState==='visible'&&document.hasFocus())return;
+          const map=window.altroomUnreadState.private;map[cid]=Math.min(999,(Number(map[cid])||0)+1);saveUnreadState();
+          notifyIncoming('New private message','Someone sent you a private message.',`private:${cid}`);
+          if(!byId('privateChatsModal').classList.contains('hidden'))loadPrivateHub();
+        }).subscribe();
+        updateUnreadBadges();
+      }
+      byId('notificationPermissionBtn')?.addEventListener('click',async()=>{
+        if(!('Notification' in window)){toast('Browser notifications are not supported here. Unread badges will still work.');return;}
+        try{const result=await Notification.requestPermission();if(result==='granted')toast('Notifications are on. You will see alerts when ALTROOM is in the background.');else toast('No problem — unread badges will still show new messages.');updateUnreadBadges();}catch{toast('Unread badges are available even if browser notifications are not.');}
+      });
+      // Keep unread UI synchronized when returning to the app or opening the relevant thread.
+      document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')updateUnreadBadges()});
+      const originalEnterChannelForUnread=enterChannel;
+      enterChannel=async function(id){markCommunityRead(id);return originalEnterChannelForUnread(id)};
+      const originalOpenPrivateConversationForUnread=openPrivateConversation;
+      openPrivateConversation=async function(conversationId,otherUserId){markPrivateRead(conversationId);await originalOpenPrivateConversationForUnread(conversationId,otherUserId);updateUnreadBadges();};
+      const originalPrivateHubForUnread=loadPrivateHub;
+      loadPrivateHub=async function(){await originalPrivateHubForUnread();updateUnreadBadges()};
       if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+      const originalEnterWithSessionForUnread=enterWithSession;
+      enterWithSession=async function(session){await originalEnterWithSessionForUnread(session);if(client&&currentUser&&!demoMode)setupUnreadRealtime();updateUnreadBadges()};
+      const originalInitForUnread=init;
+      init=async function(){await originalInitForUnread();if(client&&currentUser&&!demoMode)setupUnreadRealtime();updateUnreadBadges()};
       init();
     })();
   </script>

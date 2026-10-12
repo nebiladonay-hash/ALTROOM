@@ -1170,6 +1170,124 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
     }
     @media(prefers-reduced-motion:reduce){#shortsPullIndicator{transition:none!important;}}
 
+  
+
+    /* ALTROOM SHORTS — minimal controls, no floating labels or decorative stray text. */
+    body.shorts-active,
+    body.shorts-active #appShell.shorts-mode,
+    body.shorts-active #appShell.shorts-mode > .chat-panel,
+    body.shorts-active #appShell.shorts-mode #shortsView:not(.hidden) {
+      background:#050506!important;
+    }
+    body.shorts-active #appShell.shorts-mode #shortsView:not(.hidden) {
+      position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;
+      max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-heading {
+      position:absolute!important;inset:0!important;z-index:10000!important;display:block!important;
+      width:100%!important;height:100%!important;margin:0!important;padding:0!important;
+      border:0!important;background:transparent!important;pointer-events:none!important;overflow:visible!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-back {
+      position:fixed!important;top:calc(12px + env(safe-area-inset-top))!important;left:12px!important;right:auto!important;bottom:auto!important;
+      z-index:10020!important;display:grid!important;place-items:center!important;pointer-events:auto!important;
+      width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;padding:0!important;margin:0!important;
+      border:1px solid #ffffff8c!important;border-radius:50%!important;background:#101012d9!important;color:#fff!important;
+      box-shadow:0 2px 12px #0009!important;line-height:1!important;font-size:0!important;letter-spacing:0!important;
+      -webkit-backdrop-filter:blur(8px)!important;backdrop-filter:blur(8px)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-back svg {
+      display:block!important;width:25px!important;height:25px!important;fill:none!important;stroke:currentColor!important;
+      stroke-width:2.5!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+    }
+    body.shorts-active #appShell.shorts-mode #shortsRefreshBtn {display:none!important;visibility:hidden!important;pointer-events:none!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-upload-fab {
+      position:fixed!important;top:auto!important;left:50%!important;right:auto!important;
+      bottom:calc(20px + env(safe-area-inset-bottom))!important;z-index:10020!important;
+      transform:translateX(-50%)!important;display:grid!important;place-items:center!important;pointer-events:auto!important;
+      width:58px!important;height:58px!important;min-width:58px!important;min-height:58px!important;flex:0 0 58px!important;
+      padding:0!important;margin:0!important;border:2px solid #111!important;border-radius:50%!important;
+      background:#f4f2ed!important;color:#09090a!important;box-shadow:0 4px 22px #000d!important;
+      font-size:0!important;line-height:1!important;transition:transform .15s ease,background .15s ease!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-upload-fab:active {transform:translateX(-50%) scale(.94)!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-upload-fab svg {
+      display:block!important;width:31px!important;height:31px!important;fill:none!important;stroke:currentColor!important;
+      stroke-width:2.4!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-stamp,
+    body.shorts-active #appShell.shorts-mode .shorts-head-copy,
+    body.shorts-active #appShell.shorts-mode .shorts-topline,
+    body.shorts-active #appShell.shorts-mode .shorts-heading h2,
+    body.shorts-active #appShell.shorts-mode .shorts-heading p,
+    body.shorts-active #appShell.shorts-mode .shorts-feed-tabs,
+    body.shorts-active #appShell.shorts-mode .shorts-heading-actions,
+    body.shorts-active #appShell.shorts-mode .short-card-top,
+    body.shorts-active #appShell.shorts-mode .shorts-footnote,
+    body.shorts-active #appShell.shorts-mode .shorts-empty-state .empty-tape {display:none!important;}
+    body.shorts-active #appShell.shorts-mode #shortsFeed {
+      position:absolute!important;z-index:1!important;inset:0!important;display:flex!important;flex-direction:column!important;
+      align-items:stretch!important;justify-content:flex-start!important;gap:0!important;width:100%!important;height:100%!important;
+      min-height:0!important;margin:0!important;padding:0!important;overflow-x:hidden!important;overflow-y:auto!important;
+      overscroll-behavior-y:contain!important;touch-action:pan-y pinch-zoom!important;scrollbar-width:none!important;
+      scroll-snap-type:y mandatory!important;background:#050506!important;
+    }
+    body.shorts-active #appShell.shorts-mode #shortsFeed::-webkit-scrollbar {display:none!important;}
+    body.shorts-active #appShell.shorts-mode .short-card {
+      position:relative!important;isolation:isolate!important;flex:0 0 auto!important;align-self:stretch!important;
+      width:100vw!important;max-width:100vw!important;height:100vh!important;height:100dvh!important;
+      min-height:100vh!important;min-height:100dvh!important;max-height:none!important;aspect-ratio:auto!important;
+      margin:0!important;padding:0!important;overflow:hidden!important;border:0!important;border-radius:0!important;
+      box-shadow:none!important;background:#050506!important;scroll-snap-align:start!important;scroll-snap-stop:always!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-video {
+      position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;
+      max-width:none!important;max-height:none!important;object-fit:contain!important;background:#050506!important;border:0!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-video-shade {
+      position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;
+      background:linear-gradient(180deg,#0004 0%,transparent 24%,transparent 57%,#000b 100%)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-card-bottom {
+      position:absolute!important;z-index:3!important;left:0!important;right:0!important;bottom:0!important;display:block!important;
+      width:100%!important;box-sizing:border-box!important;margin:0!important;padding:58px 76px calc(100px + env(safe-area-inset-bottom)) 16px!important;
+      overflow:hidden!important;background:linear-gradient(0deg,#000d 0%,#0007 52%,transparent 100%)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-copy {width:100%!important;max-width:100%!important;min-width:0!important;color:#fff!important;}
+    body.shorts-active #appShell.shorts-mode .short-author {display:flex!important;align-items:center!important;gap:8px!important;margin:0 0 8px!important;color:#fff!important;font-size:12px!important;line-height:1.25!important;}
+    body.shorts-active #appShell.shorts-mode .short-caption {
+      display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:4!important;overflow:hidden!important;
+      margin:0!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;color:#fff!important;font-size:13px!important;
+      line-height:1.45!important;text-shadow:0 1px 5px #000!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-card-actions {
+      position:absolute!important;z-index:6!important;right:12px!important;bottom:calc(124px + env(safe-area-inset-bottom))!important;
+      display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action {
+      display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+      gap:4px!important;width:43px!important;min-height:43px!important;padding:4px 2px!important;
+      border:1px solid #ffffffa6!important;border-radius:50%!important;background:#151517d9!important;color:#fff!important;
+      font-size:18px!important;line-height:1!important;backdrop-filter:blur(6px)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action small {font-size:8px!important;line-height:1!important;color:#fff!important;font-weight:850!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-empty-state {
+      position:relative!important;z-index:3!important;flex:0 0 auto!important;align-self:center!important;
+      width:min(390px,calc(100% - 40px))!important;min-height:0!important;margin:auto!important;padding:22px!important;
+      border:1px solid #ffffff2b!important;border-radius:12px!important;background:#131315!important;box-shadow:none!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-empty-state h3 {margin:0 0 8px!important;color:#f4f2ed!important;font-size:23px!important;line-height:1.1!important;letter-spacing:-.04em!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-empty-state p {margin:0 0 16px!important;color:#bbb9bf!important;font-size:13px!important;line-height:1.55!important;}
+    body.shorts-active #appShell.shorts-mode #shortsPullIndicator {z-index:10030!important;}
+    #shortsUploadOverlay:not(.hidden) {z-index:20000!important;}
+    @media(max-width:600px) {
+      body.shorts-active #appShell.shorts-mode .shorts-back {top:calc(10px + env(safe-area-inset-top))!important;left:10px!important;width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-upload-fab {width:56px!important;height:56px!important;min-width:56px!important;min-height:56px!important;flex-basis:56px!important;bottom:calc(16px + env(safe-area-inset-bottom))!important;}
+      body.shorts-active #appShell.shorts-mode .short-card-bottom {padding:56px 68px calc(96px + env(safe-area-inset-bottom)) 14px!important;}
+      body.shorts-active #appShell.shorts-mode .short-card-actions {right:9px!important;bottom:calc(118px + env(safe-area-inset-bottom))!important;gap:12px!important;}
+      body.shorts-active #appShell.shorts-mode .short-action {width:39px!important;min-height:39px!important;font-size:17px!important;}
+    }
+
   </style>
 </head>
 <body>
@@ -1225,21 +1343,16 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
     <section class="chat-panel">
       <nav class="altroom-modebar" aria-label="ALTROOM sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">▤</span> <span>Rooms</span></button><button class="mode-tab" id="shortsBtn" type="button"><span aria-hidden="true">▶</span> <span>30-sec video club</span><b class="shorts-nav-mark">NEW</b></button><button class="mode-tab" id="privateChatsBtn" type="button"><span aria-hidden="true">✉</span> <span>Private</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications"><span aria-hidden="true">♧</span> <span>Notify</span></button></nav>
 
-      <section id="shortsView" class="shorts-view hidden" aria-label="ALTROOM For You video feed">
-        <header class="shorts-heading">
-          <div class="shorts-head-copy">
-            <div class="shorts-topline">
-              <button id="shortsBackBtn" class="shorts-back" type="button" aria-label="Go back to ALTROOM home">⌂ <span>HOME</span></button>
-              <span class="shorts-stamp"><span class="stamp-dot"></span> ALTROOM / FYP</span>
-            </div>
-            <h2>Afterhours <span>feed</span></h2>
-            <p>Little moments from people who never quite fit the usual feed. Art, riffs, rituals, strange hobbies. <b>30 seconds max.</b></p>
-          </div>
-          <div class="shorts-heading-actions">
-            <button id="shortsRefreshBtn" class="shorts-refresh" type="button" aria-label="Refresh videos" title="Refresh">↻</button>
-            <button id="shortUploadBtn" class="shorts-upload-fab" type="button" aria-label="Upload a short video" title="Post a clip"><span aria-hidden="true">＋</span></button>
-            <input id="shortVideoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime" aria-label="Choose a clip to upload">
-          </div>
+      <section id="shortsView" class="shorts-view hidden" aria-label="ALTROOM short video feed">
+        <header class="shorts-heading" aria-label="Video controls">
+          <button id="shortsBackBtn" class="shorts-back" type="button" aria-label="Back to ALTROOM" title="Back to ALTROOM">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button id="shortsRefreshBtn" class="shorts-refresh" type="button" aria-label="Refresh videos" title="Refresh" tabindex="-1" aria-hidden="true">↻</button>
+          <button id="shortUploadBtn" class="shorts-upload-fab" type="button" aria-label="Upload a short video" title="Post a clip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <input id="shortVideoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime" aria-label="Choose a clip to upload">
         </header>
         <div id="shortsPullIndicator" class="shorts-pull-indicator" aria-live="polite" aria-hidden="true"><span class="shorts-pull-arrow">↓</span><span id="shortsPullText">Pull down to refresh</span></div>
         <div id="shortsUploadOverlay" class="short-upload-overlay hidden" role="presentation">
@@ -1253,7 +1366,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           </form>
         </div>
         <div class="shorts-feed" id="shortsFeed" aria-live="polite">
-          <div class="shorts-empty-state"><div class="empty-tape">ALTROOM / FOR YOU</div><h3>Your side of the internet.</h3><p>First clips set the tone. Post a 30-second fragment of your world and let the weird little community find it.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>
+          <div class="shorts-empty-state"><h3>Your side of the internet.</h3><p>First clips set the tone. Post a 30-second fragment of your world and let the weird little community find it.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>
         </div>
         <p class="shorts-footnote">Be yourself. Credit other people's work. No harassment, stolen clips, or dangerous stunts.</p>
       </section>
@@ -1772,7 +1885,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         byId('privateChatsModal').classList.add('hidden');
         setChatMode('shorts');
         if(demoMode || !client || !currentUser){
-          byId('shortsFeed').innerHTML = '<div class="shorts-empty-state"><div class="empty-tape">ALTROOM VIDEO CLUB</div><h3>Connect to post.</h3><p>Sign in to discover and share short videos with approved ALTROOM members.</p></div>';
+          byId('shortsFeed').innerHTML = '<div class="shorts-empty-state"><h3>Connect to post.</h3><p>Sign in to discover and share short videos with approved ALTROOM members.</p></div>';
           return;
         }
         loadShortsFeed();
@@ -1797,11 +1910,14 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
 
       function openShortUpload(){
         if(demoMode || !client || !currentUser){toast('Sign in to post a clip to ALTROOM.');return;}
-        byId('shortsUploadOverlay').classList.remove('hidden');
+        const overlay=byId('shortsUploadOverlay');
+        overlay.classList.remove('hidden');
         byId('shortUploadForm').classList.remove('hidden');
         byId('shortUploadMessage').textContent='';
-        if(!selectedShortVideoFile)byId('shortVideoInput').click();
-        else byId('shortCaption').focus();
+        // Do not fire the phone's file picker immediately after tapping +.
+        // Show the upload sheet first; the member chooses the file explicitly.
+        if(!selectedShortVideoFile)byId('shortChooseFileBtn').focus({preventScroll:true});
+        else byId('shortCaption').focus({preventScroll:true});
       }
 
       async function loadShortsFeed({quiet=false} = {}){
@@ -1810,13 +1926,13 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         const feed=byId('shortsFeed');
         const alreadyHasVideos=!!feed.querySelector('.short-card');
         // On pull-to-refresh, do not wipe out the video being watched while the request runs.
-        if(!quiet || !alreadyHasVideos)feed.innerHTML='<div class="shorts-empty-state"><div class="empty-tape">LOADING THE NOISE</div><h3>Finding the latest clips…</h3><p>One moment while the community feed loads.</p></div>';
+        if(!quiet || !alreadyHasVideos)feed.innerHTML='<div class="shorts-empty-state"><h3>Finding the latest clips…</h3><p>One moment while the community feed loads.</p></div>';
         try{
           const {data,error}=await client.from('short_videos').select('id,user_id,caption,media_path,created_at').order('created_at',{ascending:false}).limit(50);
           if(error)throw error;
           const videos=data||[];
           if(!videos.length){
-            feed.innerHTML='<div class="shorts-empty-state"><div class="empty-tape">ALTROOM VIDEO CLUB</div><h3>Not another perfect feed.</h3><p>Post a 30-second clip, share a small obsession, or show us what you are making.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>';
+            feed.innerHTML='<div class="shorts-empty-state"><h3>Not another perfect feed.</h3><p>Post a 30-second clip, share a small obsession, or show us what you are making.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>';
             return;
           }
           const ids=videos.map(v=>v.id);
@@ -1858,7 +1974,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           if(quiet && feed.querySelector('.short-card')){
             console.warn('ALTROOM Shorts refresh failed:',err);
             toast('Could not refresh clips. Your current video is still here.');
-          }else feed.innerHTML=`<div class="shorts-empty-state"><div class="empty-tape">ONE SETUP STEP</div><h3>The video club needs its table.</h3><p>Run <b>ALTROOM-Shorts-Migration.sql</b> in your existing Supabase project, then refresh this section. Your existing chats are not changed.</p><p style="font-size:10px;color:#888;overflow-wrap:anywhere">${esc(friendlyError(err))}</p><button type="button" class="button primary" id="shortsRetryBtn">↻ Try again</button></div>`;
+          }else feed.innerHTML=`<div class="shorts-empty-state"><h3>The video club needs its table.</h3><p>Run <b>ALTROOM-Shorts-Migration.sql</b> in your existing Supabase project, then refresh this section. Your existing chats are not changed.</p><p style="font-size:10px;color:#888;overflow-wrap:anywhere">${esc(friendlyError(err))}</p><button type="button" class="button primary" id="shortsRetryBtn">↻ Try again</button></div>`;
         }finally{shortsLoading=false;}
       }
 

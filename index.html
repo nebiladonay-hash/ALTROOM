@@ -876,6 +876,140 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       .chat-title h1{font-size:13px}
     }
 
+
+
+    /* ALTROOM AFTERHOURS FYP — full-viewport vertical video experience. */
+    #appShell.shorts-mode {
+      position:fixed!important; inset:0!important; z-index:9000!important;
+      width:100vw!important; max-width:none!important; height:var(--altroom-vh,100dvh)!important;
+      min-height:var(--altroom-vh,100dvh)!important; margin:0!important; padding:0!important;
+      display:flex!important; flex-direction:column!important; gap:0!important; overflow:hidden!important;
+      grid-template-columns:minmax(0,1fr)!important; background:#050506!important;
+    }
+    #appShell.shorts-mode > .sidebar,
+    #appShell.shorts-mode > .members-panel {display:none!important}
+    #appShell.shorts-mode > .chat-panel {
+      position:absolute!important; inset:0!important; display:flex!important; flex:1 1 auto!important;
+      width:100%!important; height:100%!important; min-height:0!important; margin:0!important; padding:0!important;
+      grid-column:auto!important; overflow:hidden!important; border:0!important; border-radius:0!important;
+      box-shadow:none!important; background:#050506!important;
+    }
+    #appShell.shorts-mode .altroom-modebar,
+    #appShell.shorts-mode .chat-header,
+    #appShell.shorts-mode .messages,
+    #appShell.shorts-mode .composer {display:none!important}
+    #appShell.shorts-mode #shortsView:not(.hidden) {
+      position:absolute!important; inset:0!important; display:block!important; width:100%!important; height:100%!important;
+      min-height:0!important; overflow:hidden!important; background:#050506!important; color:#f5f4ef!important;
+    }
+    #appShell.shorts-mode .shorts-heading {
+      position:absolute!important; z-index:10!important; inset:0 0 auto 0!important; display:flex!important;
+      flex-direction:row!important; align-items:flex-start!important; justify-content:space-between!important;
+      gap:16px!important; padding:calc(14px + env(safe-area-inset-top)) 20px 45px!important; margin:0!important;
+      border:0!important; background:linear-gradient(180deg,rgba(4,4,5,.97) 0%,rgba(4,4,5,.78) 65%,transparent 100%)!important;
+      pointer-events:none!important;
+    }
+    #appShell.shorts-mode .shorts-heading > * {pointer-events:auto!important}
+    #appShell.shorts-mode .shorts-head-copy {width:auto!important; max-width:min(700px,calc(100% - 90px))!important; min-width:0!important}
+    #appShell.shorts-mode .shorts-topline {display:flex!important; align-items:center!important; flex-wrap:wrap!important; gap:10px!important; margin-bottom:8px!important}
+    #appShell.shorts-mode .shorts-back {display:inline-flex!important; align-items:center!important; gap:5px!important; border:1px solid #545457!important; background:#151517e8!important; color:#f4f2ed!important; padding:6px 9px!important; border-radius:99px!important; font-size:10px!important; font-weight:900!important; letter-spacing:.08em!important}
+    #appShell.shorts-mode .shorts-stamp {display:inline-flex!important; align-items:center!important; gap:6px!important; border:0!important; background:transparent!important; padding:0!important; color:#f4f2ed!important; font-size:10px!important; letter-spacing:.14em!important; font-weight:950!important}
+    #appShell.shorts-mode .shorts-stamp .stamp-dot {width:7px!important;height:7px!important;border-radius:50%!important;background:#f4f2ed!important;border:0!important}
+    #appShell.shorts-mode .shorts-heading h2 {margin:0 0 4px!important;font-size:clamp(23px,3vw,34px)!important;line-height:1!important;letter-spacing:-.055em!important;font-weight:950!important;text-transform:none!important;color:#fff!important;overflow-wrap:normal!important}
+    #appShell.shorts-mode .shorts-heading h2 span {color:#bdbdc1!important}
+    #appShell.shorts-mode .shorts-heading p {margin:0!important;max-width:58ch!important;font-size:11px!important;line-height:1.45!important;color:#dedde0!important;text-shadow:0 1px 5px #000!important}
+    #appShell.shorts-mode .shorts-heading p b {color:#fff!important;font-weight:900!important}
+    #appShell.shorts-mode .shorts-feed-tabs {display:flex!important;align-items:center!important;gap:17px!important;margin-top:10px!important;font-size:9px!important;letter-spacing:.1em!important;font-weight:900!important;color:#96969b!important}
+    #appShell.shorts-mode .shorts-feed-tabs span {padding:0 0 5px!important;white-space:nowrap!important}
+    #appShell.shorts-mode .shorts-feed-tabs span.active {color:#fff!important;border-bottom:2px solid #f4f2ed!important}
+    #appShell.shorts-mode .shorts-heading-actions {display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:10px!important;flex:0 0 auto!important;padding-top:2px!important}
+    #appShell.shorts-mode .shorts-refresh {width:38px!important;height:38px!important;display:grid!important;place-items:center!important;padding:0!important;border-radius:50%!important;border:1px solid #ffffff55!important;background:#151517de!important;color:#fff!important;font-size:21px!important;line-height:1!important}
+    #appShell.shorts-mode .shorts-upload-fab {width:49px!important;height:49px!important;display:grid!important;place-items:center!important;padding:0!important;border:0!important;border-radius:50%!important;background:#f4f2ed!important;color:#09090a!important;box-shadow:0 5px 22px #0008!important;font-size:35px!important;font-weight:400!important;line-height:1!important;transition:transform .16s ease,background .16s ease!important}
+    #appShell.shorts-mode .shorts-upload-fab span {display:block!important;transform:translateY(-1px)!important}
+    #appShell.shorts-mode .shorts-upload-fab:hover {transform:scale(1.06)!important;background:#fff!important}
+    #appShell.shorts-mode .shorts-feed {position:absolute!important;inset:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;scroll-snap-type:y mandatory!important;scrollbar-width:none!important;background:#050506!important}
+    #appShell.shorts-mode .shorts-feed::-webkit-scrollbar {display:none!important}
+    #appShell.shorts-mode .short-card {position:relative!important;isolation:isolate!important;flex:0 0 auto!important;align-self:center!important;width:min(100vw,56.25dvh)!important;height:var(--altroom-vh,100dvh)!important;min-height:var(--altroom-vh,100dvh)!important;max-height:none!important;aspect-ratio:9/16!important;margin:0 auto!important;padding:0!important;overflow:hidden!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#050506!important;scroll-snap-align:start!important;scroll-snap-stop:always!important}
+    #appShell.shorts-mode .short-video {position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;background:#050506!important;border:0!important}
+    #appShell.shorts-mode .short-video-shade {position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;background:linear-gradient(180deg,#0008 0%,transparent 20%,transparent 54%,#000a 100%)!important}
+    #appShell.shorts-mode .short-card-top {position:absolute!important;top:calc(140px + env(safe-area-inset-top))!important;left:18px!important;right:18px!important;z-index:2!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;padding:0!important;pointer-events:none!important}
+    #appShell.shorts-mode .short-card-label {background:#09090ab8!important;color:#fff!important;border:1px solid #ffffff44!important;border-radius:99px!important;padding:5px 8px!important;font-size:8px!important;letter-spacing:.12em!important}
+    #appShell.shorts-mode .short-duration {font-size:9px!important;color:#ffffffb8!important}
+    #appShell.shorts-mode .short-card-bottom {position:absolute!important;z-index:3!important;left:0!important;right:0!important;bottom:0!important;display:block!important;overflow:hidden!important;padding:70px 84px calc(30px + env(safe-area-inset-bottom)) 20px!important;background:linear-gradient(0deg,#000e 0%,#0009 52%,transparent 100%)!important}
+    #appShell.shorts-mode .short-copy {min-width:0!important;width:100%!important;max-width:100%!important;color:#fff!important}
+    #appShell.shorts-mode .short-author {display:flex!important;align-items:center!important;gap:8px!important;margin:0 0 9px!important;font-size:12px!important;line-height:1.25!important;overflow-wrap:anywhere!important}
+    #appShell.shorts-mode .short-author-mark {display:grid!important;place-items:center!important;flex:0 0 30px!important;width:30px!important;height:30px!important;background:#f4f2ed!important;color:#101011!important;border:1px solid #fff!important;border-radius:50%!important;font-size:10px!important}
+    #appShell.shorts-mode .short-author small {color:#e0dfe0!important;font-size:9px!important}
+    #appShell.shorts-mode .short-caption {margin:0!important;font-size:13px!important;line-height:1.45!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;display:-webkit-box!important;-webkit-line-clamp:4!important;-webkit-box-orient:vertical!important;overflow:hidden!important;text-shadow:0 1px 5px #000!important}
+    #appShell.shorts-mode .short-card-actions {position:absolute!important;z-index:5!important;right:12px!important;bottom:calc(120px + env(safe-area-inset-bottom))!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:15px!important;flex:0 0 auto!important}
+    #appShell.shorts-mode .short-action {width:45px!important;min-height:45px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;padding:4px 2px!important;border:1px solid #ffffffa6!important;border-radius:50%!important;background:#151517c9!important;color:#fff!important;font-size:19px!important;line-height:1!important;backdrop-filter:blur(6px)!important}
+    #appShell.shorts-mode .short-action small {font-size:8px!important;line-height:1!important;font-weight:850!important;color:#fff!important}
+    #appShell.shorts-mode .short-action.is-liked {background:#f4f2ed!important;color:#101011!important}
+    #appShell.shorts-mode .short-action.is-liked small {color:#101011!important}
+    #appShell.shorts-mode .short-action.short-sound {font-size:17px!important}
+    #appShell.shorts-mode .short-action.short-delete {font-size:16px!important}
+    #appShell.shorts-mode .shorts-empty-state {position:relative!important;z-index:2!important;display:flex!important;flex:0 0 auto!important;align-self:center!important;justify-content:center!important;gap:12px!important;width:min(520px,calc(100% - 34px))!important;min-height:300px!important;margin:auto!important;padding:24px!important;border:1px solid #ffffff2b!important;border-radius:18px!important;background:#131315!important;box-shadow:none!important;text-align:left!important}
+    #appShell.shorts-mode .shorts-empty-state h3 {font-size:clamp(26px,5vw,40px)!important;line-height:1.03!important;letter-spacing:-.055em!important;text-transform:none!important;font-weight:950!important}
+    #appShell.shorts-mode .shorts-empty-state p {max-width:38ch!important;color:#c0bfc5!important;font-size:13px!important;line-height:1.6!important}
+    #appShell.shorts-mode .shorts-empty-state .empty-tape {border-radius:99px!important;transform:none!important;font-family:inherit!important;letter-spacing:.1em!important}
+    #appShell.shorts-mode .shorts-footnote {display:none!important}
+    #shortsUploadOverlay:not(.hidden) {position:fixed!important;z-index:20000!important;inset:0!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:18px!important;background:#000c!important;backdrop-filter:blur(10px)!important}
+    #shortsUploadOverlay .short-upload-form {display:grid!important;gap:15px!important;width:min(520px,100%)!important;max-height:min(90dvh,850px)!important;overflow-y:auto!important;margin:0!important;padding:22px!important;border:1px solid #46464b!important;border-radius:18px!important;background:#151517!important;box-shadow:0 24px 90px #000c!important}
+    #shortsUploadOverlay .short-upload-form-title {display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:14px!important}
+    #shortsUploadOverlay .upload-kicker {display:block!important;color:#aeadb4!important;font-size:9px!important;font-weight:900!important;letter-spacing:.16em!important;text-transform:uppercase!important;margin-bottom:8px!important}
+    #shortsUploadOverlay .short-upload-form-title b {display:block!important;margin:0!important;font-size:clamp(22px,4vw,29px)!important;line-height:1.05!important;font-family:ui-sans-serif,system-ui,sans-serif!important;font-weight:950!important;letter-spacing:-.045em!important;text-transform:none!important;color:#f5f3ee!important}
+    #shortsUploadOverlay .short-upload-form-title span:not(.upload-kicker) {display:block!important;margin-top:7px!important;color:#b7b6bc!important;font-size:12px!important;line-height:1.5!important}
+    #shortsUploadOverlay .short-cancel {flex:0 0 36px!important;width:36px!important;height:36px!important;border-radius:50%!important;font-size:23px!important;background:#242427!important;border:1px solid #4c4c50!important}
+    #shortsUploadOverlay .short-upload-pick {display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:10px!important;padding:12px!important;border:1px dashed #55555a!important;border-radius:12px!important;background:#0c0c0d!important}
+    #shortsUploadOverlay .short-selected-file {min-width:0!important;padding:0!important;border:0!important;background:transparent!important;color:#d1d0d5!important;font-size:11px!important;line-height:1.45!important;overflow-wrap:anywhere!important}
+    #shortsUploadOverlay #shortChooseFileBtn {padding:9px 11px!important;font-size:11px!important;white-space:nowrap!important}
+    #shortsUploadOverlay .short-upload-preview:not(.hidden) {display:block!important;grid-column:1/-1!important;width:100%!important;max-height:32dvh!important;object-fit:contain!important;background:#050506!important;border-radius:8px!important}
+    #shortsUploadOverlay label {display:block!important;margin:0!important;color:#dedce2!important;font-size:11px!important;font-weight:850!important;letter-spacing:.09em!important;text-transform:uppercase!important}
+    #shortsUploadOverlay label span {color:#98979f!important;font-size:10px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important}
+    #shortsUploadOverlay #shortCaption {width:100%!important;min-height:76px!important;resize:vertical!important;padding:12px!important;border-radius:10px!important;font-size:13px!important;line-height:1.5!important}
+    #shortsUploadOverlay .short-upload-footer {display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-wrap:wrap!important}
+    #shortsUploadOverlay .short-upload-footer small {color:#aaa9b0!important;font-size:10px!important;line-height:1.5!important}
+    #shortsUploadOverlay #shortSubmitBtn {min-height:43px!important;border-radius:99px!important;padding:11px 17px!important}
+    #shortsUploadOverlay #shortUploadMessage {margin:0!important;font-size:12px!important;line-height:1.5!important;overflow-wrap:anywhere!important}
+    @media(max-width:600px) {
+      #appShell.shorts-mode .shorts-heading {padding:calc(10px + env(safe-area-inset-top)) 12px 48px!important;gap:8px!important}
+      #appShell.shorts-mode .shorts-head-copy {max-width:calc(100% - 60px)!important}
+      #appShell.shorts-mode .shorts-topline {gap:7px!important;margin-bottom:8px!important}
+      #appShell.shorts-mode .shorts-back {padding:6px 8px!important;font-size:9px!important}
+      #appShell.shorts-mode .shorts-stamp {font-size:9px!important;letter-spacing:.1em!important}
+      #appShell.shorts-mode .shorts-heading h2 {font-size:clamp(24px,7vw,31px)!important;margin-bottom:5px!important}
+      #appShell.shorts-mode .shorts-heading p {max-width:100%!important;font-size:10px!important;line-height:1.38!important}
+      #appShell.shorts-mode .shorts-feed-tabs {gap:12px!important;margin-top:9px!important;font-size:8px!important}
+      #appShell.shorts-mode .shorts-heading-actions {gap:7px!important}
+      #appShell.shorts-mode .shorts-refresh {width:34px!important;height:34px!important;font-size:18px!important}
+      #appShell.shorts-mode .shorts-upload-fab {width:43px!important;height:43px!important;font-size:31px!important}
+      #appShell.shorts-mode .short-card {width:100vw!important;height:var(--altroom-vh,100dvh)!important;min-height:var(--altroom-vh,100dvh)!important;max-width:100vw!important}
+      #appShell.shorts-mode .short-card-top {top:calc(148px + env(safe-area-inset-top))!important;left:12px!important;right:12px!important}
+      #appShell.shorts-mode .short-card-bottom {padding:60px 67px calc(26px + env(safe-area-inset-bottom)) 15px!important}
+      #appShell.shorts-mode .short-author {font-size:11px!important;margin-bottom:8px!important}
+      #appShell.shorts-mode .short-author-mark {width:27px!important;height:27px!important;flex-basis:27px!important}
+      #appShell.shorts-mode .short-caption {font-size:12px!important;-webkit-line-clamp:4!important}
+      #appShell.shorts-mode .short-card-actions {right:9px!important;bottom:calc(112px + env(safe-area-inset-bottom))!important;gap:14px!important}
+      #appShell.shorts-mode .short-action {width:41px!important;min-height:41px!important;font-size:18px!important}
+      #appShell.shorts-mode .short-action small {font-size:7px!important}
+      #shortsUploadOverlay:not(.hidden) {align-items:flex-end!important;padding:10px 10px calc(10px + env(safe-area-inset-bottom))!important}
+      #shortsUploadOverlay .short-upload-form {width:100%!important;max-height:88dvh!important;padding:18px 15px calc(16px + env(safe-area-inset-bottom))!important;border-radius:18px 18px 10px 10px!important;gap:12px!important}
+      #shortsUploadOverlay .short-upload-preview:not(.hidden) {max-height:25dvh!important}
+    }
+    @media(prefers-reduced-motion:reduce){#appShell.shorts-mode .short-card{scroll-behavior:auto!important}}
+
+
+    #appShell.shorts-mode .short-card-top {display:none!important}
+    #appShell.shorts-mode .short-action .sound-icon {display:grid!important;place-items:center!important;width:20px!important;height:20px!important}
+    #appShell.shorts-mode .short-action .sound-icon svg {display:block!important;width:19px!important;height:19px!important;fill:none!important;stroke:currentColor!important;stroke-width:2!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+    @media(min-width:601px) {
+      #appShell.shorts-mode .shorts-head-copy {position:absolute!important;left:50%!important;top:calc(13px + env(safe-area-inset-top))!important;transform:translateX(-50%)!important;width:min(520px,calc(100% - 180px))!important;max-width:none!important}
+      #appShell.shorts-mode .shorts-heading {padding-top:calc(13px + env(safe-area-inset-top))!important}
+    }
+    @media(max-width:600px) {
+      #appShell.shorts-mode .shorts-head-copy {position:static!important;left:auto!important;top:auto!important;transform:none!important;width:auto!important;max-width:calc(100% - 60px)!important}
+    }
+
   </style>
 </head>
 <body>
@@ -931,31 +1065,37 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
     <section class="chat-panel">
       <nav class="altroom-modebar" aria-label="ALTROOM sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">▤</span> <span>Rooms</span></button><button class="mode-tab" id="shortsBtn" type="button"><span aria-hidden="true">▶</span> <span>30-sec video club</span><b class="shorts-nav-mark">NEW</b></button><button class="mode-tab" id="privateChatsBtn" type="button"><span aria-hidden="true">✉</span> <span>Private</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications"><span aria-hidden="true">♧</span> <span>Notify</span></button></nav>
 
-      <section id="shortsView" class="shorts-view hidden" aria-label="ALTROOM short video feed">
+      <section id="shortsView" class="shorts-view hidden" aria-label="ALTROOM For You video feed">
         <header class="shorts-heading">
           <div class="shorts-head-copy">
-            <div class="shorts-stamp"><span class="stamp-dot"></span> MEMBER-MADE · 30 SECONDS MAX</div>
-            <h2>30 seconds.<br><span>No permission needed.</span></h2>
-            <p>Micro-scenes, strange hobbies, band-room noise, art in progress, tiny obsessions. This is your side of the internet.</p>
+            <div class="shorts-topline">
+              <button id="shortsBackBtn" class="shorts-back" type="button" aria-label="Back to rooms">← <span>ROOMS</span></button>
+              <span class="shorts-stamp"><span class="stamp-dot"></span> ALTROOM / FYP</span>
+            </div>
+            <h2>Afterhours <span>feed</span></h2>
+            <p>Little moments from people who never quite fit the usual feed. Art, riffs, rituals, strange hobbies. <b>30 seconds max.</b></p>
+            <div class="shorts-feed-tabs" aria-label="Video feed type"><span class="active">FOR YOU</span><span>FRESH CUTS</span><span>MADE BY US</span></div>
           </div>
           <div class="shorts-heading-actions">
-            <button id="shortsRefreshBtn" class="button ghost shorts-refresh" type="button" aria-label="Refresh videos" title="Refresh">↻ <span>Refresh</span></button>
-            <button id="shortUploadBtn" class="button primary shorts-upload-trigger" type="button">＋ Post a clip</button>
+            <button id="shortsRefreshBtn" class="shorts-refresh" type="button" aria-label="Refresh videos" title="Refresh">↻</button>
+            <button id="shortUploadBtn" class="shorts-upload-fab" type="button" aria-label="Upload a short video" title="Post a clip"><span aria-hidden="true">＋</span></button>
             <input id="shortVideoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime" aria-label="Choose a clip to upload">
           </div>
         </header>
-        <form id="shortUploadForm" class="short-upload-form hidden">
-          <div class="short-upload-form-title"><div><b>Put something into the noise.</b><span>Vertical or horizontal is fine. Keep it under 30 seconds.</span></div><button id="shortUploadCancel" type="button" class="short-cancel" aria-label="Cancel clip upload">×</button></div>
-          <div id="shortSelectedFile" class="short-selected-file">Choose a video to begin.</div>
-          <label for="shortCaption">Caption <span>(optional)</span></label>
-          <textarea id="shortCaption" class="field" rows="2" maxlength="220" placeholder="A tiny piece of your world…"></textarea>
-          <div class="short-upload-footer"><small>MP4 / WebM / MOV · up to 18 MB · 30 seconds max</small><button id="shortSubmitBtn" class="button primary" type="submit">Post clip ↗</button></div>
-          <p id="shortUploadMessage" class="form-message" role="status"></p>
-        </form>
-        <div class="shorts-feed" id="shortsFeed" aria-live="polite">
-          <div class="shorts-empty-state"><div class="empty-tape">ALTROOM VIDEO CLUB</div><h3>Not another perfect feed.</h3><p>Post a 30-second clip, share a small obsession, or show us what you are making.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>
+        <div id="shortsUploadOverlay" class="short-upload-overlay hidden" role="presentation">
+          <form id="shortUploadForm" class="short-upload-form" role="dialog" aria-modal="true" aria-labelledby="shortUploadTitle">
+            <div class="short-upload-form-title"><div><span class="upload-kicker">YOUR 30-SECOND WINDOW</span><b id="shortUploadTitle">Drop a little world here.</b><span>Show us what you're making, hearing, collecting, or thinking about.</span></div><button id="shortUploadCancel" type="button" class="short-cancel" aria-label="Cancel clip upload">×</button></div>
+            <div class="short-upload-pick"><video id="shortPreview" class="short-upload-preview hidden" playsinline controls></video><div id="shortSelectedFile" class="short-selected-file">Choose a video to begin. MP4, WebM or MOV.</div><button id="shortChooseFileBtn" class="button ghost" type="button">Choose video</button></div>
+            <label for="shortCaption">Caption <span>(optional)</span></label>
+            <textarea id="shortCaption" class="field" rows="3" maxlength="220" placeholder="Give your clip a little context…"></textarea>
+            <div class="short-upload-footer"><small>30 seconds max · up to 18 MB<br>Only post clips you have permission to share.</small><button id="shortSubmitBtn" class="button primary" type="submit">Post to ALTROOM ↗</button></div>
+            <p id="shortUploadMessage" class="form-message" role="status"></p>
+          </form>
         </div>
-        <p class="shorts-footnote">Be yourself. Credit other people’s work. No harassment, stolen clips, or dangerous stunts. You can remove your own posts.</p>
+        <div class="shorts-feed" id="shortsFeed" aria-live="polite">
+          <div class="shorts-empty-state"><div class="empty-tape">ALTROOM / FOR YOU</div><h3>Your side of the internet.</h3><p>First clips set the tone. Post a 30-second fragment of your world and let the weird little community find it.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>
+        </div>
+        <p class="shorts-footnote">Be yourself. Credit other people's work. No harassment, stolen clips, or dangerous stunts.</p>
       </section>
       <header class="chat-header"><div class="chat-title"><div class="channel-emblem" id="channelIcon">☾</div><div style="min-width:0"><h1 id="channelName">The Lobby</h1><p id="channelDescription">Enter quietly. Stay strange. Be yourself.</p></div></div><div class="header-actions"><button class="button ghost small" id="peopleBtn" aria-label="Explore people" title="Explore people"><span class="action-symbol">☷</span><span class="action-label">People</span></button><button class="button ghost small hidden owner-console-button" id="ownerPanelBtn" aria-label="Owner controls" title="Owner controls">✦</button><button class="button ghost small" id="galleryBtn" aria-label="Art gallery" title="Art gallery"><span class="action-symbol">▧</span><span class="action-label">Gallery</span></button><button class="button ghost small" id="roomCallBtn" aria-label="Start a live room call" title="Start a live room call"><span class="action-symbol">◉</span><span class="action-label">Room call</span></button><button class="button ghost small" id="profileBtn" aria-label="Open your profile" title="Your profile"><span class="action-symbol">♡</span><span class="action-label">Profile</span></button><button class="button ghost small hidden" id="leaveRoomBtn" aria-label="Leave this room" title="Leave room">⇤</button><button class="button ghost small" id="appSignOut" aria-label="Sign out" title="Sign out">↗</button></div></header>
       <section class="messages" id="messages" aria-live="polite"><div class="welcome-box"><div class="symbol">✳</div><h2>A refuge for the beautifully unusual.</h2><p>Say hello, share what you're obsessed with lately, or quietly listen until something clicks. No pressure to perform here.</p></div></section>
@@ -1453,6 +1593,8 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       let selectedShortVideoFile = null;
       let shortsIntersectionObserver = null;
       let shortsLoading = false;
+      let shortsSoundOn = false;
+      let shortPreviewObjectUrl = null;
 
       const originalSetChatModeForShorts = setChatMode;
       setChatMode = function(mode){
@@ -1494,6 +1636,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
 
       function openShortUpload(){
         if(demoMode || !client || !currentUser){toast('Sign in to post a clip to ALTROOM.');return;}
+        byId('shortsUploadOverlay').classList.remove('hidden');
         byId('shortUploadForm').classList.remove('hidden');
         byId('shortUploadMessage').textContent='';
         if(!selectedShortVideoFile)byId('shortVideoInput').click();
@@ -1532,16 +1675,16 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           feed.innerHTML=rows.map(v=>{
             const p=v.profiles||{},name=p.display_name||'ALTROOM member',username=p.username||'member',likesState=v._likes;
             return `<article class="short-card" data-short-id="${esc(v.id)}">
-              ${v._url?`<video class="short-video" src="${esc(v._url)}" playsinline webkit-playsinline muted loop controls preload="metadata" aria-label="Short video by ${esc(name)}"></video>`:'<div class="short-video" style="display:grid;place-items:center;color:#fff;padding:24px;text-align:center">Video unavailable. Refresh and try again.</div>'}
+              ${v._url?`<video class="short-video" src="${esc(v._url)}" playsinline webkit-playsinline muted loop preload="metadata" aria-label="Short video by ${esc(name)}"></video>`:'<div class="short-video" style="display:grid;place-items:center;color:#fff;padding:24px;text-align:center">Video unavailable. Refresh and try again.</div>'}
               <div class="short-video-shade" aria-hidden="true"></div>
               <div class="short-card-top"><span class="short-card-label">ALTROOM / SHORTS</span><span class="short-duration">30 SEC OR LESS</span></div>
               <div class="short-card-bottom"><div class="short-copy"><div class="short-author"><span class="short-author-mark">${esc(initials(name))}</span><span>${esc(name)}<br><small>@${esc(username)} · ${esc(formatShortDate(v.created_at))}</small></span></div><p class="short-caption">${esc(v.caption||'')}</p></div>
-                <div class="short-card-actions"><button class="short-action ${likesState.mine?'is-liked':''}" data-short-like="${esc(v.id)}" data-liked="${likesState.mine?'1':'0'}" type="button" aria-label="${likesState.mine?'Unlike':'Like'} this video"><span aria-hidden="true">♥</span><small data-like-count>${likesState.count>999?'999+':likesState.count}</small></button><button class="short-action" data-short-share="${esc(v.id)}" type="button" aria-label="Share video"><span aria-hidden="true">↗</span><small>Share</small></button>${v.user_id===currentUser.id?`<button class="short-action short-delete" data-short-delete="${esc(v.id)}" data-short-path="${esc(v.media_path)}" type="button" aria-label="Delete your video"><span aria-hidden="true">×</span><small>Remove</small></button>`:''}</div>
+                <div class="short-card-actions"><button class="short-action short-sound" data-short-sound="${esc(v.id)}" type="button" aria-label="Turn sound on for this video" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span><small>Sound off</small></button><button class="short-action ${likesState.mine?'is-liked':''}" data-short-like="${esc(v.id)}" data-liked="${likesState.mine?'1':'0'}" type="button" aria-label="${likesState.mine?'Unlike':'Like'} this video"><span aria-hidden="true">♥</span><small data-like-count>${likesState.count>999?'999+':likesState.count}</small></button><button class="short-action" data-short-share="${esc(v.id)}" type="button" aria-label="Share video"><span aria-hidden="true">↗</span><small>Share</small></button>${v.user_id===currentUser.id?`<button class="short-action short-delete" data-short-delete="${esc(v.id)}" data-short-path="${esc(v.media_path)}" type="button" aria-label="Delete your video"><span aria-hidden="true">×</span><small>Remove</small></button>`:''}</div>
               </div></article>`;
           }).join('');
           if(shortsIntersectionObserver)shortsIntersectionObserver.disconnect();
           if('IntersectionObserver' in window){
-            shortsIntersectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const video=entry.target.querySelector('video.short-video');if(!video)return;if(entry.isIntersecting&&entry.intersectionRatio>=.65){video.muted=true;const play=video.play();if(play&&play.catch)play.catch(()=>{});}else{video.pause();}}),{root:feed,threshold:[0,.25,.65,1]});
+            shortsIntersectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const video=entry.target.querySelector('video.short-video');if(!video)return;if(entry.isIntersecting&&entry.intersectionRatio>=.65){video.muted=!shortsSoundOn;const play=video.play();if(play&&play.catch)play.catch(()=>{if(!video.muted){video.muted=true;shortsSoundOn=false;refreshShortSoundButtons();toast('Your browser blocked autoplay audio. Tap the sound button to enable it.');}});}else{video.pause();}}),{root:feed,threshold:[0,.25,.65,1]});
             feed.querySelectorAll('.short-card').forEach(card=>shortsIntersectionObserver.observe(card));
           }
           const match=location.hash.match(/^#shorts-([a-f0-9-]+)$/i);
@@ -1555,7 +1698,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         if(demoMode || !client || !currentUser){toast('Sign in to post a clip.');return;}
         const file=selectedShortVideoFile;
         if(!file){message('shortUploadMessage','Choose a video file first.','error');return;}
-        if(!file.type.startsWith('video/')){message('shortUploadMessage','Choose a video file.','error');return;}
+        if(!(file.type.startsWith('video/')||/\.(mp4|webm|mov)$/i.test(file.name))){message('shortUploadMessage','Choose an MP4, WebM, or MOV video.','error');return;}
         if(file.size>18*1024*1024){message('shortUploadMessage','This clip is over 18 MB. Compress it or export a smaller MP4.','error');return;}
         byId('shortSubmitBtn').disabled=true;byId('shortUploadBtn').disabled=true;
         message('shortUploadMessage','Checking clip duration…');
@@ -1573,11 +1716,44 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           const caption=byId('shortCaption').value.trim().slice(0,220);
           const {error:insertErr}=await client.from('short_videos').insert({user_id:currentUser.id,caption,media_path:path});
           if(insertErr){await client.storage.from('chat-media').remove([path]).catch(()=>{});throw insertErr;}
-          selectedShortVideoFile=null;byId('shortCaption').value='';byId('shortVideoInput').value='';byId('shortSelectedFile').textContent='Choose a video to begin.';byId('shortUploadForm').classList.add('hidden');
+          selectedShortVideoFile=null;byId('shortCaption').value='';byId('shortVideoInput').value='';byId('shortSelectedFile').textContent='Choose a video to begin. MP4, WebM or MOV.';byId('shortsUploadOverlay').classList.add('hidden');byId('shortUploadForm').classList.add('hidden');
+          const preview=byId('shortPreview');if(preview){preview.pause();preview.removeAttribute('src');preview.load();preview.classList.add('hidden');}if(shortPreviewObjectUrl){URL.revokeObjectURL(shortPreviewObjectUrl);shortPreviewObjectUrl=null;}
           message('shortUploadMessage','');toast('Your clip is in the video club.');await loadShortsFeed();
         }catch(err){
           message('shortUploadMessage',err.message||friendlyError(err),'error');
         }finally{byId('shortSubmitBtn').disabled=false;byId('shortUploadBtn').disabled=false;}
+      }
+
+      function refreshShortSoundButtons(){
+        document.querySelectorAll('[data-short-sound]').forEach(button=>{
+          const video=button.closest('.short-card')?.querySelector('video.short-video');
+          const audible=!!(video&&!video.muted&&shortsSoundOn);
+          const icon=button.querySelector('span[aria-hidden="true"]');
+          const label=button.querySelector('small');
+          if(icon)icon.innerHTML=audible?'<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15 9a5 5 0 0 1 0 6"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>':'<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg>';
+          if(label)label.textContent=audible?'Sound on':'Sound off';
+          button.setAttribute('aria-pressed',audible?'true':'false');
+          button.setAttribute('aria-label',audible?'Mute this video':'Turn sound on for this video');
+        });
+      }
+
+      async function toggleShortSound(button){
+        const card=button.closest('.short-card');
+        const video=card?.querySelector('video.short-video');
+        if(!video)return;
+        const turningOn=video.muted||!shortsSoundOn;
+        if(turningOn){
+          // This click is a user gesture, so the browser can unlock audible playback.
+          shortsSoundOn=true;
+          document.querySelectorAll('video.short-video').forEach(other=>{if(other!==video){other.muted=true;}});
+          video.muted=false;
+          try{await video.play();}
+          catch(err){video.muted=true;shortsSoundOn=false;toast('Audio could not start. Tap the video once, then tap the sound button again.');}
+        }else{
+          shortsSoundOn=false;
+          document.querySelectorAll('video.short-video').forEach(other=>{other.muted=true;});
+        }
+        refreshShortSoundButtons();
       }
 
       async function toggleShortLike(button){
@@ -1607,12 +1783,18 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       }
 
       byId('shortsBtn').addEventListener('click',showShorts);
+      byId('shortsBackBtn').addEventListener('click',()=>{setChatMode('community');byId('shortsUploadOverlay').classList.add('hidden');if(shortsIntersectionObserver)shortsIntersectionObserver.disconnect();document.querySelectorAll('video.short-video').forEach(video=>video.pause());});
       byId('shortUploadBtn').addEventListener('click',openShortUpload);
+      byId('shortChooseFileBtn').addEventListener('click',()=>byId('shortVideoInput').click());
+      byId('shortsUploadOverlay').addEventListener('click',e=>{if(e.target===byId('shortsUploadOverlay')){byId('shortsUploadOverlay').classList.add('hidden');}});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!byId('shortsUploadOverlay').classList.contains('hidden'))byId('shortsUploadOverlay').classList.add('hidden');});
       byId('shortsEmptyPostBtn')?.addEventListener('click',openShortUpload);
       byId('shortsRefreshBtn').addEventListener('click',loadShortsFeed);
       byId('shortsRetryBtn')?.addEventListener('click',loadShortsFeed);
       byId('shortsEmptyPostBtn')?.addEventListener('click',openShortUpload);
       byId('shortsFeed').addEventListener('click',async e=>{
+        const sound=e.target.closest('[data-short-sound]');if(sound){await toggleShortSound(sound);return;}
+        if(e.target.matches('video.short-video')){const video=e.target;if(video.paused){const play=video.play();if(play&&play.catch)play.catch(()=>{});}else video.pause();return;}
         const like=e.target.closest('[data-short-like]');if(like){await toggleShortLike(like);return;}
         const share=e.target.closest('[data-short-share]');if(share){
           const id=share.dataset.shortShare,url=location.origin+location.pathname+'#shorts-'+id;
@@ -1626,11 +1808,13 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       byId('shortVideoInput').addEventListener('change',e=>{
         const f=e.target.files?.[0];
         if(!f){selectedShortVideoFile=null;return;}
-        selectedShortVideoFile=f;byId('shortUploadForm').classList.remove('hidden');
+        if(shortPreviewObjectUrl){URL.revokeObjectURL(shortPreviewObjectUrl);shortPreviewObjectUrl=null;}
+        selectedShortVideoFile=f;byId('shortsUploadOverlay').classList.remove('hidden');byId('shortUploadForm').classList.remove('hidden');
         byId('shortSelectedFile').textContent=`${f.name} · ${(f.size/1024/1024).toFixed(1)} MB`;
+        const preview=byId('shortPreview');shortPreviewObjectUrl=URL.createObjectURL(f);preview.src=shortPreviewObjectUrl;preview.classList.remove('hidden');preview.load();
         byId('shortUploadMessage').textContent='';byId('shortCaption').focus();
       });
-      byId('shortUploadCancel').addEventListener('click',()=>{selectedShortVideoFile=null;byId('shortVideoInput').value='';byId('shortCaption').value='';byId('shortUploadForm').classList.add('hidden');message('shortUploadMessage','');});
+      byId('shortUploadCancel').addEventListener('click',()=>{selectedShortVideoFile=null;byId('shortVideoInput').value='';byId('shortCaption').value='';byId('shortSelectedFile').textContent='Choose a video to begin. MP4, WebM or MOV.';byId('shortsUploadOverlay').classList.add('hidden');byId('shortUploadForm').classList.add('hidden');const preview=byId('shortPreview');preview.pause();preview.removeAttribute('src');preview.load();preview.classList.add('hidden');if(shortPreviewObjectUrl){URL.revokeObjectURL(shortPreviewObjectUrl);shortPreviewObjectUrl=null;}message('shortUploadMessage','');});
       byId('shortUploadForm').addEventListener('submit',e=>{e.preventDefault();uploadShortVideo();});
 
       // Unread indicators: persisted locally per signed-in browser, updated by Supabase realtime.

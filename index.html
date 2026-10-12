@@ -156,6 +156,132 @@
     .owner-panel-modal .form-message{margin:4px 0 10px}
     @media(max-width:720px){.owner-panel-modal{max-height:calc(96dvh - env(safe-area-inset-top))}.owner-panel-list{max-height:48dvh}.owner-admin-card{padding:10px}.message-meta .owner-badge{font-size:7px;padding:3px 4px}.owner-badge.compact{font-size:6px;padding:2px 3px}}
 
+  
+    /* ALTROOM major usability pass */
+    #appShell{grid-template-columns:220px minmax(0,1fr)!important;max-width:1320px!important;gap:12px!important}
+    .members-panel{display:none!important}
+    .chat-panel{min-width:0}
+    .altroom-modebar{display:flex;gap:7px;padding:10px 14px 8px;background:#0f0b11;border-bottom:1px solid #392735;flex-shrink:0}
+    .mode-tab{border:1px solid transparent;background:transparent;color:#c8bdcc;border-radius:10px;padding:9px 13px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;min-height:38px}
+    .mode-tab:hover{background:#ffffff06;border-color:#4c3446}
+    .mode-tab.active{background:#64233b45;border-color:#96516c;color:#fff}
+    .mode-count{background:#d44968;color:#fff;border-radius:999px;padding:2px 6px;font-size:10px}
+    .header-actions{gap:5px;flex-wrap:wrap;justify-content:flex-end}
+    .header-actions .button{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;white-space:nowrap}
+    .header-actions .action-symbol{display:none}
+    .header-actions .action-label{font-size:11px}
+    .side-label{padding-top:17px}
+    .composer-tools{align-items:center}
+    .extra-composer-tools{display:flex;gap:7px;flex-wrap:wrap}
+    .extra-composer-tools.hidden{display:none!important}
+    .video-preview{width:min(100%,520px);max-height:460px;background:#050407;padding:0;object-fit:contain}
+    .message-call-link{display:inline-flex;align-items:center;gap:6px;margin:4px 0;padding:9px 12px;border-radius:10px;border:1px solid #99506a;background:linear-gradient(135deg,#562136,#2b1424);color:#fff;font-weight:800;font-size:12px}
+    .message-call-link:hover{filter:brightness(1.16)}
+    .profile-message-button{width:100%;margin:12px 0 8px}
+    .private-overlay{align-items:center;padding:14px;z-index:80}
+    .private-window{width:min(1100px,100%);height:min(860px,calc(100dvh - 28px));min-height:420px;background:#100b12;border:1px solid #573347;border-radius:17px;box-shadow:0 24px 90px #000e;overflow:hidden;display:flex;flex-direction:column}
+    .private-window-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:15px 18px;border-bottom:1px solid #382331;background:linear-gradient(100deg,#29101f,#130e15)}
+    .private-window-head h2{font-family:Georgia,"Times New Roman",serif;font-size:23px;letter-spacing:-.04em;margin:4px 0}
+    .private-window-head p{margin:0}
+    .private-layout{display:grid;grid-template-columns:295px minmax(0,1fr);min-height:0;flex:1}
+    .private-list-pane{border-right:1px solid #392735;display:flex;flex-direction:column;min-height:0;background:#0e0a10}
+    .private-search{width:calc(100% - 24px);margin:12px;font-size:12px}
+    .private-subhead{font-size:9px;font-weight:900;letter-spacing:.15em;color:#a18498;padding:4px 13px 7px}
+    .private-members-heading{border-top:1px solid #30202c;padding-top:13px;margin-top:7px}
+    .private-people-list{overflow:auto;overscroll-behavior:contain;padding:0 7px 9px}
+    .private-person-row{width:100%;display:flex;align-items:center;gap:9px;border:1px solid transparent;background:transparent;color:var(--text);text-align:left;padding:9px 7px;border-radius:10px;min-width:0}
+    .private-person-row:hover{background:#ffffff07;border-color:#503348}
+    .private-person-row .avatar{width:35px;height:35px;flex:0 0 35px;border-radius:50%}
+    .private-person-meta{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+    .private-person-meta b{font-size:11px;display:flex;align-items:center;gap:4px;overflow-wrap:anywhere}
+    .private-person-meta small{font-size:10px;color:#9e90a3}
+    .private-row-time,.private-row-arrow{font-size:10px;color:#ad8e9f;white-space:nowrap}
+    .private-thread-pane{min-width:0;min-height:0;display:flex;flex-direction:column;position:relative;background:radial-gradient(ellipse at top,#1c111d,#0e0a10 65%)}
+    .private-empty{margin:auto;text-align:center;max-width:360px;padding:28px}
+    .private-empty-icon{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 16px;border:1px solid #764458;border-radius:18px;background:#65213b50;font-size:24px}
+    .private-empty h3{font:700 26px Georgia,"Times New Roman",serif;margin:0 0 8px}
+    .private-empty p{font-size:13px;line-height:1.7;color:#ae9eaf;margin:0}
+    .private-thread{display:flex;flex-direction:column;min-height:0;height:100%}
+    .private-thread-head{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid #392735;background:#100b12;flex-shrink:0}
+    .private-thread-head .avatar{width:36px;height:36px;border-radius:50%;flex:0 0 36px}
+    .private-other-label{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+    .private-other-label strong{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .private-call-actions{display:flex;gap:5px;flex-shrink:0}
+    .private-call-actions .button{padding:7px 9px}
+    .private-back-btn{display:none}
+    .private-incoming-call{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 13px;background:#462037;border-bottom:1px solid #95506a;font-size:12px}
+    .private-messages{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:16px;display:flex;flex-direction:column;gap:14px}
+    .private-message{display:flex;align-items:flex-start;gap:9px;max-width:780px}
+    .private-message.own{align-self:flex-end;flex-direction:row-reverse}
+    .private-message>.avatar{width:30px;height:30px;flex:0 0 30px;border-radius:50%}
+    .private-message-content{min-width:0;max-width:calc(100% - 40px)}
+    .private-message.own .message-body{background:#51233a;border-color:#82455e;border-radius:13px 4px 13px 13px}
+    .private-message-meta{display:flex;align-items:center;gap:9px;margin:0 2px 5px;font-size:10px}
+    .private-message-meta span{color:#887a8e}
+    .private-first-message{margin:auto;text-align:center;max-width:280px;color:#b7a6ba;padding:24px}
+    .private-first-message span{display:block;font-size:27px;margin-bottom:12px}
+    .private-first-message b{display:block;color:#f2e7f1;font-family:Georgia,"Times New Roman",serif;font-size:18px;margin-bottom:7px}
+    .private-first-message p{font-size:12px;line-height:1.6}
+    .private-composer{border-top:1px solid #392735;padding:10px 12px calc(11px + env(safe-area-inset-bottom));background:#120c14;flex-shrink:0}
+    .private-composer-tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:7px}
+    .private-composer .composer-tool{padding:7px 9px}
+    .private-security-note{margin:7px 2px 0;line-height:1.45}
+    .call-stage-overlay{z-index:100;align-items:center;padding:14px}
+    .call-stage{width:min(1200px,100%);height:min(880px,calc(100dvh - 28px));display:flex;flex-direction:column;background:#0c080f;border:1px solid #563449;border-radius:14px;overflow:hidden;box-shadow:0 20px 90px #000d}
+    .call-stage-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 15px;border-bottom:1px solid #392735;background:#120c14;flex-shrink:0}
+    .call-stage-head h2{font:700 20px Georgia,"Times New Roman",serif;margin:3px 0}
+    .call-stage-head p{margin:0}
+    #inAppCallFrame{border:0;background:#050407;display:block;width:100%;flex:1;min-height:0}
+    .call-stage-note{margin:0;padding:7px 12px;background:#100b12;color:#a896ad;font-size:10px;line-height:1.45;border-top:1px solid #392735}
+    @media(max-width:1000px){.header-actions .action-label{font-size:10px}.header-actions .button{padding:7px 8px}.private-layout{grid-template-columns:270px minmax(0,1fr)}}
+    @media(max-width:720px){
+      #appShell{display:flex!important;flex-direction:column;min-height:100dvh;height:100dvh;padding:0!important;gap:0!important;overflow:hidden}
+      .sidebar{flex:0 0 auto;padding:9px 10px 7px!important;border-radius:0!important;border-left:0!important;border-right:0!important;border-top:0!important}
+      .chat-panel{flex:1;min-height:0!important;height:0;border-radius:0!important;border-left:0!important;border-right:0!important;border-bottom:0!important}
+      .altroom-modebar{padding:7px 9px 6px;gap:6px;overflow:auto}
+      .mode-tab{flex:1;justify-content:center;padding:8px 9px;font-size:11px;min-height:35px;border-radius:8px;white-space:nowrap}
+      .header-actions{gap:3px;flex-wrap:nowrap}
+      .header-actions .button{display:inline-flex;justify-content:center;width:31px;min-width:31px;height:31px;min-height:31px;padding:5px;border-radius:8px}
+      .header-actions .action-label{display:none}
+      .header-actions .action-symbol{display:inline;font-size:13px}
+      .header-actions #peopleBtn:after{content:'People';position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%)}
+      .header-actions #ownerPanelBtn{width:28px;min-width:28px}
+      .chat-header{padding:8px 9px;min-height:57px;gap:5px}
+      .chat-title h1{font-size:14px;max-width:31vw}.chat-title p{font-size:9px;max-width:34vw}
+      .messages{min-height:0;flex:1;padding:12px 10px;gap:12px}
+      .composer{padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+      .composer-tool{padding:6px 7px;font-size:10px}
+      .typing-hint{font-size:9px}
+      .private-overlay{padding:0;align-items:stretch}
+      .private-window{width:100%;height:100dvh;min-height:0;border-radius:0;border-left:0;border-right:0;border-top:0}
+      .private-window-head{padding:12px 13px}
+      .private-window-head h2{font-size:21px}
+      .private-layout{display:block;position:relative;flex:1;min-height:0}
+      .private-list-pane,.private-thread-pane{position:absolute;inset:0;width:100%;height:100%;min-height:0}
+      .private-list-pane{display:flex;border-right:0}
+      .private-thread-pane{display:none}
+      .private-thread-pane.mobile-current{display:flex}
+      .private-list-pane.mobile-current{display:flex}
+      .private-thread-pane.has-thread:not(.mobile-current){display:none}
+      .private-back-btn{display:inline-flex}
+      .private-thread-head{gap:7px;padding:8px}
+      .private-thread-head .avatar{width:31px;height:31px;flex-basis:31px}
+      .private-other-label strong{font-size:11px}
+      .private-call-actions .button{padding:7px;font-size:10px}
+      .private-messages{padding:12px 9px}
+      .private-message>.avatar{width:27px;height:27px;flex-basis:27px}
+      .private-message-content{max-width:calc(100% - 33px)}
+      .private-composer{padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+      .private-composer .composer-tool{font-size:10px;padding:6px 7px}
+      .private-security-note{font-size:9px}
+      .call-stage-overlay{padding:0;align-items:stretch}
+      .call-stage{width:100%;height:100dvh;border-radius:0;border-left:0;border-right:0;border-top:0}
+      .call-stage-head{padding:8px 10px}
+      .call-stage-head h2{font-size:17px}
+      .call-stage-note{font-size:9px}
+    }
+    @media(max-width:380px){.mode-tab{font-size:10px;padding:7px 6px}.chat-title h1{max-width:28vw}.header-actions .button{width:28px;min-width:28px;padding:4px}.private-call-actions .button{font-size:9px;padding:6px}.private-window-head .close-btn{min-width:28px}}
+
   </style>
 </head>
 <body>
@@ -205,13 +331,14 @@
   <main id="appShell" class="hidden">
     <aside class="sidebar">
       <div class="brand"><span class="brand-mark">✳</span><span>ALT<em>ROOM</em></span></div>
-      <div class="side-label">The common room</div><div class="channel-list" id="channelList"><div class="muted tiny" style="padding:10px">Loading channels…</div></div><button class="button ghost small create-room-side" id="createRoomBtn" type="button">＋ Create a room</button>
+      <div class="side-label">COMMUNITY CHATS · ROOMS</div><div class="channel-list" id="channelList"><div class="muted tiny" style="padding:10px">Loading channels…</div></div><button class="button ghost small create-room-side" id="createRoomBtn" type="button">＋ Create a room</button>
       <div class="side-bottom"><div class="user-card"><div class="avatar" id="sideAvatar">A</div><div style="min-width:0;flex:1"><div id="sideName" class="user-name">Member</div><div id="sideHandle" class="user-handle">@member</div></div><button class="button small ghost" id="sideProfileBtn" title="Edit profile">↗</button></div><button class="button ghost small" id="sideSignOut" style="width:100%">Sign out</button></div>
     </aside>
     <section class="chat-panel">
-      <header class="chat-header"><div class="chat-title"><div class="channel-emblem" id="channelIcon">☾</div><div style="min-width:0"><h1 id="channelName">The Lobby</h1><p id="channelDescription">Enter quietly. Stay strange. Be yourself.</p></div></div><div class="header-actions"><button class="button ghost small" id="peopleBtn" aria-label="Explore people" title="Explore people">☷</button><button class="button ghost small hidden owner-console-button" id="ownerPanelBtn" aria-label="Owner controls" title="Owner controls">✦</button><button class="button ghost small" id="galleryBtn" aria-label="Art gallery" title="Art gallery">▧</button><button class="button ghost small" id="roomCallBtn" aria-label="Start a live room call" title="Start a live room call">◉</button><button class="button ghost small" id="profileBtn" aria-label="Open your profile" title="Your profile">♡</button><button class="button ghost small hidden" id="leaveRoomBtn" aria-label="Leave this room" title="Leave room">⇤</button><button class="button ghost small" id="appSignOut" aria-label="Sign out" title="Sign out">↗</button></div></header>
+      <nav class="altroom-modebar" aria-label="Chat sections"><button class="mode-tab active" id="communityChatsBtn" type="button">☾ <span>Community chats</span></button><button class="mode-tab" id="privateChatsBtn" type="button">✉ <span>Private chats</span><b id="privateChatCount" class="mode-count hidden">0</b></button></nav>
+      <header class="chat-header"><div class="chat-title"><div class="channel-emblem" id="channelIcon">☾</div><div style="min-width:0"><h1 id="channelName">The Lobby</h1><p id="channelDescription">Enter quietly. Stay strange. Be yourself.</p></div></div><div class="header-actions"><button class="button ghost small" id="peopleBtn" aria-label="Explore people" title="Explore people"><span class="action-symbol">☷</span><span class="action-label">People</span></button><button class="button ghost small hidden owner-console-button" id="ownerPanelBtn" aria-label="Owner controls" title="Owner controls">✦</button><button class="button ghost small" id="galleryBtn" aria-label="Art gallery" title="Art gallery"><span class="action-symbol">▧</span><span class="action-label">Gallery</span></button><button class="button ghost small" id="roomCallBtn" aria-label="Start a live room call" title="Start a live room call"><span class="action-symbol">◉</span><span class="action-label">Room call</span></button><button class="button ghost small" id="profileBtn" aria-label="Open your profile" title="Your profile"><span class="action-symbol">♡</span><span class="action-label">Profile</span></button><button class="button ghost small hidden" id="leaveRoomBtn" aria-label="Leave this room" title="Leave room">⇤</button><button class="button ghost small" id="appSignOut" aria-label="Sign out" title="Sign out">↗</button></div></header>
       <section class="messages" id="messages" aria-live="polite"><div class="welcome-box"><div class="symbol">✳</div><h2>A refuge for the beautifully unusual.</h2><p>Say hello, share what you're obsessed with lately, or quietly listen until something clicks. No pressure to perform here.</p></div></section>
-      <footer class="composer"><div class="composer-tools"><button class="composer-tool" id="photoAudioBtn">＋ Photo / audio</button><button class="composer-tool" id="recordVoiceBtn">🎙 Record voice</button><button class="composer-tool" id="stickerBtn">✦ Make a sticker</button><button class="composer-tool" id="stickerImageBtn">▧ Upload sticker</button><input id="mediaInput" class="hidden" type="file" accept="image/*,audio/*"><input id="stickerImageInput" class="hidden" type="file" accept="image/*"><span class="tiny muted" id="composerStatus" style="margin-left:auto"></span></div><div class="composer-row"><textarea id="messageInput" class="field" rows="1" maxlength="4000" placeholder="Say something real… (Enter to send)"></textarea><button class="button primary send-btn" id="sendBtn">Send ↗</button></div><div class="typing-hint">Keep the room safe. Don't share anything you wouldn't want forwarded.</div></footer>
+      <footer class="composer"><div class="composer-tools"><button class="composer-tool" id="photoAudioBtn">＋ Photo / audio</button><button class="composer-tool" id="uploadVideoBtn">▣ Upload video</button><button class="composer-tool" id="recordVoiceBtn">🎙 Voice note</button><button class="composer-tool" id="moreComposerToolsBtn" aria-expanded="false" type="button">More tools ▾</button><div id="extraComposerTools" class="extra-composer-tools hidden"><button class="composer-tool" id="stickerBtn">✦ Make a sticker</button><button class="composer-tool" id="stickerImageBtn">▧ Upload sticker</button></div><input id="mediaInput" class="hidden" type="file" accept="image/*,audio/*"><input id="videoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime"><input id="stickerImageInput" class="hidden" type="file" accept="image/*"><span class="tiny muted" id="composerStatus" style="margin-left:auto"></span></div><div class="composer-row"><textarea id="messageInput" class="field" rows="1" maxlength="4000" placeholder="Write a message… (Enter to send)"></textarea><button class="button primary send-btn" id="sendBtn">Send ↗</button></div><div class="typing-hint">Private chats are only visible to the two people in the conversation. Be kind and respect boundaries.</div></footer>
     </section>
     <aside class="members-panel"><div class="panel-heading"><h3>People in the room</h3><span class="count-badge" id="memberCount">— / 100</span></div><input id="memberSearch" class="field member-search" placeholder="Find a person…" aria-label="Search members"><div class="member-list" id="memberList"><div class="muted tiny">Loading people…</div></div><div class="members-note">✳ A small community, capped at 100 members.<br>Be curious. Respect boundaries. Report anything that makes the room unsafe.</div></aside>
   </main>
@@ -226,9 +353,36 @@
 
   <div class="overlay hidden" id="galleryModal"><section class="modal gallery-modal"><div class="modal-head"><div><div class="eyebrow">Made by the people here</div><h2>ALTROOM Art Gallery</h2></div><button class="close-btn" data-close="galleryModal" aria-label="Close art gallery">✕</button></div><p>Share drawings, paintings, photography, digital art, crafts, edits, and unfinished things. Please only upload work you have permission to share.</p><form id="artworkForm" class="artwork-form"><div class="form-row"><label for="artworkTitle">Title</label><input id="artworkTitle" class="field" maxlength="60" required placeholder="Give the work a name"></div><div class="form-row"><label for="artworkCaption">Caption (optional)</label><textarea id="artworkCaption" class="field" maxlength="300" rows="2" placeholder="A little about this piece…"></textarea></div><label class="highlight-image-pick" for="artworkImageInput">＋ Choose artwork image</label><input id="artworkImageInput" class="hidden" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif"><div id="artworkFileName" class="tiny muted"></div><button class="button primary" id="artworkSubmit" type="submit" style="width:100%">Share artwork</button><p id="artworkMessage" class="form-message"></p></form><div class="gallery-heading"><h3>Community gallery</h3><button class="button ghost small" id="refreshGalleryBtn" type="button">↻ Refresh</button></div><div id="galleryGrid" class="gallery-grid"><p class="tiny muted">Loading the gallery…</p></div></section></div>
 
-  <div class="overlay hidden" id="callOptionsModal"><section class="modal"><div class="modal-head"><div><div class="eyebrow">Take the conversation live</div><h2>Start a room call</h2></div><button class="close-btn" data-close="callOptionsModal" aria-label="Close call options">✕</button></div><p>ALTROOM will create a new call link and post it in this room, then open the call in a new tab. Calls run through Jitsi, not inside the ALTROOM screen. The first person may be asked to sign in or wait for a moderator. Anyone with the link can join, so keep it in the intended room.</p><div class="action-buttons"><button class="button primary" id="startVideoCallBtn" type="button">▣ Start video call</button><button class="button ghost" id="startAudioCallBtn" type="button">◖ Start audio call</button></div><p class="tiny muted">A call needs a working internet connection and microphone/camera permission. This free hosted option depends on the external call service.</p></section></div>
+  <div class="overlay hidden" id="callOptionsModal"><section class="modal"><div class="modal-head"><div><div class="eyebrow">Take the conversation live</div><h2>Start a room call</h2></div><button class="close-btn" data-close="callOptionsModal" aria-label="Close call options">✕</button></div><p>Your call will open inside ALTROOM, so you can keep the conversation here. Calls use the free hosted Jitsi service in an embedded panel. Room calls are open to people who can see the room's call invitation, so please only share it with the intended people.</p><div class="action-buttons"><button class="button primary" id="startVideoCallBtn" type="button">▣ Start video call</button><button class="button ghost" id="startAudioCallBtn" type="button">◖ Start audio call</button></div><p class="tiny muted">Allow microphone/camera access when prompted. Call quality and availability depend on the hosted call service and your internet connection.</p></section></div>
 
-  <div class="overlay hidden" id="publicProfileModal"><section class="modal public-profile-modal"><div class="modal-head"><div><div class="eyebrow">A small glimpse of someone</div><h2>Profile</h2></div><button class="close-btn" data-close="publicProfileModal" aria-label="Close profile">✕</button></div><div class="public-profile-hero"><div class="avatar avatar-large" id="publicProfileAvatar">?</div><div class="public-profile-heading"><h2 id="publicProfileName">Someone strange</h2><p id="publicProfileHandle" class="muted">@member</p><span id="publicProfileRole" class="tiny muted"></span></div></div><p id="publicProfileBio" class="public-profile-bio">No bio yet.</p><div id="publicProfileInterests" class="interest-tags"></div><div class="public-highlights"><div class="section-title-row"><div><div class="eyebrow">Pinned to their corner</div><h3>Highlights</h3></div></div><div id="publicProfileHighlights" class="highlight-list"><p class="tiny muted">Loading highlights…</p></div></div></section></div>
+  <div class="overlay hidden" id="publicProfileModal"><section class="modal public-profile-modal"><div class="modal-head"><div><div class="eyebrow">A small glimpse of someone</div><h2>Profile</h2></div><button class="close-btn" data-close="publicProfileModal" aria-label="Close profile">✕</button></div><div class="public-profile-hero"><div class="avatar avatar-large" id="publicProfileAvatar">?</div><div class="public-profile-heading"><h2 id="publicProfileName">Someone strange</h2><p id="publicProfileHandle" class="muted">@member</p><span id="publicProfileRole" class="tiny muted"></span></div></div><p id="publicProfileBio" class="public-profile-bio">No bio yet.</p><div id="publicProfileInterests" class="interest-tags"></div><button type="button" id="publicProfileMessageBtn" class="button primary profile-message-button">✉ Message privately</button><div class="public-highlights"><div class="section-title-row"><div><div class="eyebrow">Pinned to their corner</div><h3>Highlights</h3></div></div><div id="publicProfileHighlights" class="highlight-list"><p class="tiny muted">Loading highlights…</p></div></div></section></div>
+
+
+  <div class="overlay private-overlay hidden" id="privateChatsModal" role="dialog" aria-modal="true" aria-label="Private chats">
+    <section class="private-window">
+      <header class="private-window-head"><div><div class="eyebrow">One conversation. Just you two.</div><h2>Private chats</h2><p class="tiny muted">Only you and the selected member can read this conversation.</p></div><button class="close-btn" id="privateCloseBtn" aria-label="Close private chats">✕</button></header>
+      <div class="private-layout">
+        <aside class="private-list-pane" id="privateListPane">
+          <input id="privatePeopleSearch" class="field private-search" placeholder="Search people or chats…" aria-label="Search private chats and people">
+          <div class="private-subhead">RECENT PRIVATE CHATS</div><div id="privateConversationList" class="private-people-list"><p class="tiny muted">Your private chats will appear here.</p></div>
+          <div class="private-subhead private-members-heading">START A NEW CHAT</div><div id="privatePeopleList" class="private-people-list"><p class="tiny muted">Loading members…</p></div>
+        </aside>
+        <section class="private-thread-pane" id="privateThreadPane">
+          <div id="privateEmptyState" class="private-empty"><div class="private-empty-icon">✉</div><h3>Start with a hello.</h3><p>Choose someone from the list, or open their profile and tap <b>Message privately</b>.</p></div>
+          <div id="privateThread" class="private-thread hidden">
+            <header class="private-thread-head"><button class="button ghost small private-back-btn" type="button" id="privateBackBtn">← People</button><div class="avatar" id="privateOtherAvatar">?</div><div class="private-other-label"><strong id="privateOtherName">Member</strong><span id="privateOtherHandle" class="tiny muted">@member</span></div><div class="private-call-actions"><button class="button ghost small" type="button" id="privateAudioCallBtn">◖ Audio</button><button class="button primary small" type="button" id="privateVideoCallBtn">▣ Video</button></div></header>
+            <div id="privateIncomingCall" class="private-incoming-call hidden"><span id="privateIncomingCallText">Someone is calling you.</span><button class="button primary small" type="button" id="privateAcceptCallBtn">Answer</button></div>
+            <div id="privateMessages" class="private-messages" aria-live="polite"><p class="tiny muted">Your conversation will appear here.</p></div>
+            <footer class="private-composer"><div class="private-composer-tools"><button class="composer-tool" type="button" id="privateAttachBtn">＋ Photo / audio</button><button class="composer-tool" type="button" id="privateVideoBtn">▣ Upload video</button><input id="privateMediaInput" class="hidden" type="file" accept="image/*,audio/*"><input id="privateVideoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime"><span id="privateComposerStatus" class="tiny muted"></span></div><div class="composer-row"><textarea id="privateMessageInput" class="field" rows="1" maxlength="4000" placeholder="Write a private message…"></textarea><button class="button primary send-btn" type="button" id="privateSendBtn">Send ↗</button></div><p class="tiny muted private-security-note">Private messages are protected by participant-only database rules. Avoid sending anything you would not share with this person.</p></footer>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <div class="overlay call-stage-overlay hidden" id="callStageModal" role="dialog" aria-modal="true" aria-label="ALTROOM call">
+    <section class="call-stage"><header class="call-stage-head"><div><div class="eyebrow">ALTROOM LIVE</div><h2 id="callStageTitle">Call</h2><p id="callStageSubhead" class="tiny muted">Your call stays in this app.</p></div><button class="button danger small" type="button" id="endCallBtn">End call ✕</button></header><iframe id="inAppCallFrame" title="ALTROOM call" allow="camera; microphone; fullscreen; display-capture; autoplay; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="call-stage-note">Calls are embedded using the free hosted Jitsi service. The meeting room name is random, but anyone who obtains the full meeting link may be able to join.</p></section>
+  </div>
 
   <div class="overlay hidden" id="messageActionModal"><section class="modal action-sheet"><div class="modal-head"><div><div class="eyebrow">Conversation options</div><h2>Message</h2></div><button class="close-btn" data-close="messageActionModal" aria-label="Close message options">✕</button></div><p class="tiny muted">On a phone, press and hold a message to open these options.</p><div class="action-buttons"><button class="button ghost" id="contextViewProfile">View their profile</button><button class="button ghost hidden" id="contextEditMessage">Edit my text</button><button class="button danger hidden" id="contextDeleteMessage">Delete my message</button><button class="button danger hidden owner-kick-button" id="contextAdminDeleteMessage">✦ Remove unsafe message</button><button class="button ghost hidden" id="contextReportMessage">Report message</button></div></section></div>
 
@@ -361,7 +515,7 @@
       function wireAudioCard(row){const card=row.querySelector('[data-audio-card]');if(!card)return;const audio=card.querySelector('audio'),play=card.querySelector('[data-audio-play]'),wave=card.querySelector('[data-audio-wave]'),current=card.querySelector('[data-audio-current]'),duration=card.querySelector('[data-audio-duration]'),rateBtn=card.querySelector('[data-audio-rate]');if(!audio||!play||!wave)return;const rates=[1,1.25,1.5,1.75,2,0.75];let rateIndex=0;const paint=()=>{const pct=audio.duration?audio.currentTime/audio.duration:0;wave.querySelectorAll('i').forEach((bar,i,all)=>bar.classList.toggle('is-played',i<Math.round(pct*all.length)));wave.setAttribute('aria-valuenow',String(Math.round(pct*100)));current.textContent=formatAudioTime(audio.currentTime);};play.addEventListener('click',async()=>{try{if(audio.paused){await audio.play();}else{audio.pause();}}catch{toast('This audio could not be played. Try downloading it.');}});audio.addEventListener('play',()=>{play.textContent='Ⅱ';play.setAttribute('aria-label','Pause voice message');});audio.addEventListener('pause',()=>{play.textContent='▶';play.setAttribute('aria-label','Play voice message');});audio.addEventListener('loadedmetadata',()=>{duration.textContent=formatAudioTime(audio.duration);paint();});audio.addEventListener('timeupdate',paint);audio.addEventListener('ended',()=>{play.textContent='▶';audio.currentTime=0;paint();});audio.addEventListener('error',()=>{play.textContent='!';play.title='Audio could not be loaded';});const seek=e=>{if(!audio.duration)return;const rect=wave.getBoundingClientRect();const x=Math.max(0,Math.min(rect.width,e.clientX-rect.left));audio.currentTime=(x/rect.width)*audio.duration;paint();};wave.addEventListener('click',seek);wave.addEventListener('keydown',e=>{if(!audio.duration)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();audio.currentTime=Math.max(0,Math.min(audio.duration,audio.currentTime+(e.key==='ArrowRight'?5:-5)));paint();}});rateBtn.addEventListener('click',()=>{rateIndex=(rateIndex+1)%rates.length;audio.playbackRate=rates[rateIndex];rateBtn.textContent=String(rates[rateIndex]).replace(/\.0$/,'')+'×';});}
       async function renderOneMessage(m,append=true){if(m.channel_id!=null&&String(m.channel_id)!==String(activeChannelId))return;const targetChannelId=activeChannelId;const box=byId('messages');const p=m.profiles|| (m.user_id===currentUser?.id?myProfile:null)||{};const name=p.display_name||'ALTROOM member';const row=document.createElement('article');row.className='message';row.id='msg-'+m.id;let body='';
         if(m.kind==='sticker'){if(m.media_path){const url=await signedUrl(m.media_path);body=url?`<img class="media-preview" style="max-width:220px;max-height:220px" src="${esc(url)}" alt="Custom sticker">`:'<div class="message-body">Sticker image unavailable</div>';}else{body=`<div class="sticker-card" style="background:${safeColor(m.sticker_color)}"><span>${esc(m.sticker_emoji||'✳')}</span><b>${esc(m.sticker_text||'')}</b></div>`;}}
-        else if(m.kind==='image'||m.kind==='audio'){const url=m.media_path?await signedUrl(m.media_path):null;if(m.kind==='image')body=url?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer"><img class="media-preview" src="${esc(url)}" alt="Shared image" loading="lazy"></a>`:'<div class="message-body">Image unavailable</div>';else body=url?audioCardMarkup(url,m):'<div class="message-body">Audio unavailable</div>';}
+        else if(m.kind==='image'||m.kind==='audio'||m.kind==='video'){const url=m.media_path?await signedUrl(m.media_path):null;if(m.kind==='image')body=url?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer"><img class="media-preview" src="${esc(url)}" alt="Shared image" loading="lazy"></a>`:'<div class="message-body">Image unavailable</div>';else if(m.kind==='audio')body=url?audioCardMarkup(url,m):'<div class="message-body">Audio unavailable</div>';else body=url?`<video class="media-preview video-preview" src="${esc(url)}" controls playsinline preload="metadata" aria-label="Shared video"></video>`:'<div class="message-body">Video unavailable</div>';}
         else body=`<div class="message-body">${renderTextBody(m.body||'')}</div>`;
         const own=m.user_id===currentUser?.id;row.dataset.userId=m.user_id||'';row.innerHTML=`<div class="avatar profile-clickable" role="button" tabindex="0" data-profile-id="${esc(m.user_id)}" data-avatar-name="${esc(name)}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(name))}</div><div class="message-content"><div class="message-meta"><span class="message-name profile-clickable" role="button" tabindex="0" data-profile-id="${esc(m.user_id)}">${esc(name)}</span>${roleBadgeMarkup(p.role,true)}<span class="message-time">${esc(timeLabel(m.created_at||new Date()))}</span>${m.edited_at?'<span class="edited-label">edited</span>':''}</div>${body}<span class="message-tools"><button class="tool-btn message-menu-trigger" data-message-menu aria-label="Message options" title="Message options">···</button></span></div>`;
         if(String(activeChannelId)!==String(targetChannelId)||(m.channel_id!=null&&String(m.channel_id)!==String(activeChannelId)))return;box.appendChild(row);hydrateAvatars(row);wireAudioCard(row);const menuBtn=row.querySelector('[data-message-menu]');if(menuBtn)menuBtn.addEventListener('click',()=>openMessageActions(m));row.querySelectorAll('[data-profile-id]').forEach(el=>{el.addEventListener('click',e=>{e.stopPropagation();openPublicProfile(el.dataset.profileId);});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPublicProfile(el.dataset.profileId);}});});attachLongPress(row,m);scrollToBottom();}
@@ -396,7 +550,7 @@
       function safeColor(c){return /^#[0-9a-fA-F]{6}$/.test(c||'')?c:'#c52b4b';}
       async function createRoom(e){e.preventDefault();if(demoMode){toast('Preview mode only — rooms are not created.');return;}const name=byId('newRoomName').value.trim(),description=byId('newRoomDescription').value.trim();if(name.length<2||name.length>32){message('createRoomMessage','Room names must be 2–32 characters.','error');return;}const btn=byId('createRoomSubmit');btn.disabled=true;message('createRoomMessage','Creating your room…');try{const {data,error}=await client.rpc('create_altroom_channel',{p_name:name,p_description:description||null});if(error)throw error;const created=(Array.isArray(data)?data[0]:data)||{};const id=created.id;if(id==null)throw new Error('The room was created, but ALTROOM did not return its ID. Refresh the room list.');byId('createRoomForm').reset();byId('createRoomModal').classList.add('hidden');await loadChannels();toast('Room created. Opening it now…');await enterChannel(String(id));}catch(err){message('createRoomMessage',friendlyError(err),'error');}finally{btn.disabled=false;}}
       function openGallery(){if(demoMode){byId('galleryModal').classList.remove('hidden');byId('galleryGrid').innerHTML='<p class="tiny muted">Connect your account to view and share real artwork.</p>';return;}byId('galleryModal').classList.remove('hidden');loadGallery();}
-      async function loadGallery(){const grid=byId('galleryGrid');grid.innerHTML='<p class="tiny muted">Loading artwork…</p>';try{const {data,error}=await client.from('artworks').select('id,user_id,title,caption,media_path,created_at,profiles(display_name,username)').order('created_at',{ascending:false}).limit(60);if(error)throw error;if(!data?.length){grid.innerHTML='<div class="empty-state"><div class="emoji">▧</div><h3>The gallery is waiting</h3><p>Be the first to share a piece of your work.</p></div>';return;}const rows=await Promise.all(data.map(async a=>({...a,_url:await signedUrl(a.media_path)})));grid.innerHTML=rows.map(a=>`<article class="artwork-card" data-artwork-id="${esc(a.id)}">${a._url?`<a class="artwork-image-link" href="${esc(a._url)}" target="_blank" rel="noopener noreferrer"><img class="artwork-image" src="${esc(a._url)}" alt="${esc(a.title)}" loading="lazy"></a>`:'<div class="artwork-image" style="display:grid;place-items:center;color:#888">Image unavailable</div>'}<div class="artwork-info"><h4 class="artwork-title">${esc(a.title)}</h4><p class="artwork-byline">by ${esc(a.profiles?.display_name||'ALTROOM member')} · @${esc(a.profiles?.username||'member')}</p>${a.caption?`<p class="artwork-caption">${esc(a.caption)}</p>`:''}${a.user_id===currentUser?.id?`<button class="button ghost artwork-delete" type="button" data-delete-artwork="${esc(a.id)}">Remove my artwork</button>`:''}</div></article>`).join('');grid.querySelectorAll('[data-delete-artwork]').forEach(b=>b.addEventListener('click',()=>deleteArtwork(b.dataset.deleteArtwork)));}catch(err){grid.innerHTML=`<p class="tiny muted">Could not load the gallery. Run ALTROOM-community-upgrade.sql in Supabase first. ${esc(err.message||'')}</p>`;}}
+      async function loadGallery(){const grid=byId('galleryGrid');grid.innerHTML='<p class="tiny muted">Loading artwork…</p>';try{const {data,error}=await client.from('artworks').select('id,user_id,title,caption,media_path,created_at,profiles(display_name,username)').order('created_at',{ascending:false}).limit(60);if(error)throw error;if(!data?.length){grid.innerHTML='<div class="empty-state"><div class="emoji">▧</div><h3>The gallery is waiting</h3><p>Be the first to share a piece of your work.</p></div>';return;}const rows=await Promise.all(data.map(async a=>({...a,_url:await signedUrl(a.media_path)})));grid.innerHTML=rows.map(a=>`<article class="artwork-card" data-artwork-id="${esc(a.id)}">${a._url?`<a class="artwork-image-link" href="${esc(a._url)}" target="_blank" rel="noopener noreferrer"><img class="artwork-image" src="${esc(a._url)}" alt="${esc(a.title)}" loading="lazy"></a>`:'<div class="artwork-image" style="display:grid;place-items:center;color:#888">Image unavailable</div>'}<div class="artwork-info"><h4 class="artwork-title">${esc(a.title)}</h4><p class="artwork-byline">by ${esc(a.profiles?.display_name||'ALTROOM member')} · @${esc(a.profiles?.username||'member')}</p>${a.caption?`<p class="artwork-caption">${esc(a.caption)}</p>`:''}${a.user_id===currentUser?.id?`<button class="button ghost artwork-delete" type="button" data-delete-artwork="${esc(a.id)}">Remove my artwork</button>`:''}</div></article>`).join('');grid.querySelectorAll('[data-delete-artwork]').forEach(b=>b.addEventListener('click',()=>deleteArtwork(b.dataset.deleteArtwork)));}catch(err){grid.innerHTML=`<p class="tiny muted">Could not load the gallery. Run ALTROOM-artwork-schema-fix.sql in the same Supabase project if the artwork table is missing. ${esc(err.message||'')}</p>`;}}
       async function shareArtwork(e){e.preventDefault();if(demoMode){toast('Preview mode only — artwork is not uploaded.');return;}const title=byId('artworkTitle').value.trim(),caption=byId('artworkCaption').value.trim(),file=artworkUploadFile;if(!title){message('artworkMessage','Give the work a title.','error');return;}if(!file){message('artworkMessage','Choose an image of your artwork first.','error');return;}if(file.size>6*1024*1024){message('artworkMessage','Please keep images under 6 MB.','error');return;}if(!/^image\/(jpeg|png|webp|gif|avif)$/.test(file.type)){message('artworkMessage','Choose a JPG, PNG, WebP, GIF, or AVIF image.','error');return;}const btn=byId('artworkSubmit');btn.disabled=true;message('artworkMessage','Uploading your work…');let path=null;try{const ext=({'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif','image/avif':'avif'})[file.type]||'jpg';path=`${currentUser.id}/artwork-${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;const {error:upErr}=await client.storage.from('chat-media').upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});if(upErr)throw upErr;const {error}=await client.from('artworks').insert({user_id:currentUser.id,title,caption,media_path:path});if(error)throw error;byId('artworkForm').reset();artworkUploadFile=null;byId('artworkFileName').textContent='';message('artworkMessage','Your artwork is in the gallery.','ok');await loadGallery();}catch(err){if(path){try{await client.storage.from('chat-media').remove([path]);}catch{}}message('artworkMessage',friendlyError(err),'error');}finally{btn.disabled=false;}}
       async function deleteArtwork(id){if(!confirm('Remove this artwork from the gallery?'))return;try{const {data,error:readError}=await client.from('artworks').select('media_path').eq('id',id).eq('user_id',currentUser.id).maybeSingle();if(readError)throw readError;const {error}=await client.from('artworks').delete().eq('id',id).eq('user_id',currentUser.id);if(error)throw error;if(data?.media_path){const {error:mediaError}=await client.storage.from('chat-media').remove([data.media_path]);if(mediaError)console.warn('Artwork image cleanup:',mediaError.message);}toast('Artwork removed.');await loadGallery();}catch(err){toast(friendlyError(err));}}
       async function startRoomCall(kind){if(demoMode){toast('Connect your account to start a live room call.');return;}const c=channels.find(x=>String(x.id)===String(activeChannelId));if(!c){toast('Enter a room before starting a call.');return;}const token=(window.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`).replace(/[^a-zA-Z0-9]/g,'');const roomName=`ALTROOM-${token}`;const url=`https://meet.jit.si/${roomName}${kind==='audio'?'#config.startWithVideoMuted=true':''}`;const popup=window.open('about:blank','_blank');const text=`${kind==='video'?'🎥 Video':'🎙 Audio'} room call for “${c.name}” — join here: https://meet.jit.si/${roomName}${kind==='audio'?'#config.startWithVideoMuted=true':''}`;try{const {error}=await client.from('messages').insert({channel_id:activeChannelId,user_id:currentUser.id,kind:'text',body:text});if(error)throw error;byId('callOptionsModal').classList.add('hidden');toast('Call link posted in this room. Keep it in the room if you want privacy.');}catch(err){toast('Could not post the call link: '+friendlyError(err));}finally{if(popup&&!popup.closed){try{popup.location.href=url;}catch{}}else{toast('Call link was created. Open it from the message in this room.');}}}
@@ -449,7 +603,7 @@
       byId('roomCallBtn').addEventListener('click',()=>{const c=channels.find(x=>String(x.id)===String(activeChannelId));if(!c){toast('Enter a room first.');return;}byId('callOptionsModal').classList.remove('hidden');});byId('startVideoCallBtn').addEventListener('click',()=>startRoomCall('video'));byId('startAudioCallBtn').addEventListener('click',()=>startRoomCall('audio'));
             byId('sendBtn').addEventListener('click',sendText);byId('messageInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendText();}});byId('messageInput').addEventListener('input',e=>{e.target.style.height='auto';e.target.style.height=Math.min(e.target.scrollHeight,140)+'px';});
       byId('photoAudioBtn').addEventListener('click',()=>byId('mediaInput').click());byId('recordVoiceBtn').addEventListener('click',toggleVoiceRecording);byId('mediaInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadAndSend(f);});byId('stickerImageBtn').addEventListener('click',()=>byId('stickerImageInput').click());byId('stickerImageInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadAndSend(f,'sticker');});
-      byId('stickerBtn').addEventListener('click',()=>{byId('stickerModal').classList.remove('hidden');byId('stickerText').focus();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>byId(b.dataset.close).classList.add('hidden')));document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.add('hidden');}));
+      byId('stickerBtn').addEventListener('click',()=>{byId('stickerModal').classList.remove('hidden');byId('stickerText').focus();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>byId(b.dataset.close).classList.add('hidden')));document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o&&o.id!=='callStageModal')o.classList.add('hidden');}));
       byId('stickerColors').querySelectorAll('[data-color]').forEach(b=>b.addEventListener('click',()=>{selectedStickerColor=b.dataset.color;byId('stickerColors').querySelectorAll('[data-color]').forEach(x=>x.classList.toggle('active',x===b));}));byId('stickerForm').addEventListener('submit',async e=>{e.preventDefault();try{await sendSticker(byId('stickerText').value.trim(),byId('stickerEmoji').value.trim()||'✳',selectedStickerColor);byId('stickerModal').classList.add('hidden');byId('stickerText').value='';}catch(err){message('stickerMessage',friendlyError(err),'error');}});
       const openProfile=()=>openOwnProfile();byId('profileBtn').addEventListener('click',openProfile);byId('sideProfileBtn').addEventListener('click',openProfile);byId('peopleBtn').addEventListener('click',()=>{byId('peopleModal').classList.remove('hidden');byId('mobileMemberSearch').value='';byId('memberSearch').value='';renderMembers();});byId('leaveRoomBtn').addEventListener('click',async()=>{const c=channels.find(x=>String(x.id)===String(activeChannelId));if(!c||c.slug==='lobby')return;const lobby=channels.find(x=>x.slug==='lobby');if(lobby)await enterChannel(lobby.id);});byId('highlightForm').addEventListener('submit',addHighlight);byId('highlightImageInput').addEventListener('change',e=>{highlightUploadFile=e.target.files?.[0]||null;byId('highlightFileName').textContent=highlightUploadFile?highlightUploadFile.name:'';});byId('contextViewProfile').addEventListener('click',()=>{const id=contextMessage?.user_id;byId('messageActionModal').classList.add('hidden');if(id)openPublicProfile(id);});byId('contextEditMessage').addEventListener('click',editContextMessage);byId('contextDeleteMessage').addEventListener('click',runContextDelete);byId('contextAdminDeleteMessage').addEventListener('click',runContextAdminDelete);byId('contextReportMessage').addEventListener('click',runContextReport);byId('ownerPanelBtn').addEventListener('click',openOwnerPanel);byId('ownerReportsTab').addEventListener('click',()=>setOwnerPanelTab('reports'));byId('ownerMembersTab').addEventListener('click',()=>setOwnerPanelTab('members'));byId('ownerRefreshBtn').addEventListener('click',()=>{if(!isOwner())return;const showingMembers=!byId('ownerMembersSection').classList.contains('hidden');if(showingMembers)loadOwnerMembers();else loadOwnerReports();});byId('ownerMemberSearch').addEventListener('input',renderOwnerMembers);byId('editMessageForm').addEventListener('submit',saveMessageEdit);document.addEventListener('click',e=>{const open=e.target.closest('[data-profile-id]');if(open&&!open.closest('.message')){e.preventDefault();openPublicProfile(open.dataset.profileId);}});
       byId('profileAvatarInput').addEventListener('change',e=>{const file=e.target.files?.[0];if(!file)return;if(!/^image\/(jpeg|png|webp|gif|avif)$/.test(file.type)){toast('Choose a JPG, PNG, WebP, GIF or AVIF image.');e.target.value='';return;}if(file.size>6*1024*1024){toast('Choose a profile picture smaller than 6 MB.');e.target.value='';return;}selectedAvatarFile=file;clearAvatarRequested=false;if(avatarPreviewObjectUrl)URL.revokeObjectURL(avatarPreviewObjectUrl);avatarPreviewObjectUrl=URL.createObjectURL(file);const el=byId('profileAvatarPreview');el.dataset.avatarPath='';el.classList.add('has-image');const img=document.createElement('img');img.src=avatarPreviewObjectUrl;img.alt='Selected profile picture preview';el.replaceChildren(img);toast('Picture selected. Tap Save profile to apply it.');});
@@ -458,6 +612,222 @@
       byId('memberSearch').addEventListener('input',()=>renderMembers());byId('mobileMemberSearch').addEventListener('input',()=>renderMembers());
       byId('demoBtn').addEventListener('click',()=>{demoMode=true;currentUser={id:'demo-user'};myProfile={display_name:'You, probably',username:'alt_guest',approved:true,bio:'',interests:[]};localStorage.setItem('altroom_demo','1');client=null;showView('appShell');byId('sideName').textContent=myProfile.display_name;byId('sideHandle').textContent='@'+myProfile.username;setAvatarElement(byId('sideAvatar'),myProfile.display_name,'');loadChannels().then(()=>{loadMembers();loadMessages();});byId('composerStatus').textContent='PREVIEW MODE';toast('Preview mode: nothing is sent or saved.');});
       if(window.visualViewport){const syncAltroomViewport=()=>document.documentElement.style.setProperty('--altroom-vh',`${Math.max(240,Math.round(window.visualViewport.height))}px`);syncAltroomViewport();window.visualViewport.addEventListener('resize',syncAltroomViewport);window.visualViewport.addEventListener('scroll',syncAltroomViewport);window.addEventListener('orientationchange',()=>setTimeout(syncAltroomViewport,120));}
+
+      // ALTROOM usability + private chat + video/call update (kept inside the existing app scope).
+      let activePrivateConversationId = null, activePrivateOtherId = null, activePrivateCallId = null;
+      let privateMessageSubscription = null, privateCallSubscription = null, activePrivateCall = null;
+      let lastIncomingPrivateCallId = null;
+
+      function setChatMode(mode){
+        byId('communityChatsBtn').classList.toggle('active', mode==='community');
+        byId('privateChatsBtn').classList.toggle('active', mode==='private');
+      }
+      function showPrivateChats(){
+        setChatMode('private');
+        byId('privateChatsModal').classList.remove('hidden');
+        if(demoMode){byId('privateConversationList').innerHTML='<p class="tiny muted">Sign in to create real private conversations. Preview mode does not save chats.</p>';renderPrivatePeople();return;}
+        loadPrivateHub();
+      }
+      function closePrivateChats(){
+        byId('privateChatsModal').classList.add('hidden');
+        setChatMode('community');
+        if(privateMessageSubscription&&client){client.removeChannel(privateMessageSubscription);privateMessageSubscription=null;}
+        if(privateCallSubscription&&client){client.removeChannel(privateCallSubscription);privateCallSubscription=null;}
+      }
+      async function loadPrivateHub(){
+        if(!client||!currentUser){byId('privateConversationList').innerHTML='<p class="tiny muted">Sign in to use private chats.</p>';return;}
+        if(!members.length)await loadMembers();
+        renderPrivatePeople();
+        byId('privateConversationList').innerHTML='<p class="tiny muted">Loading your chats…</p>';
+        try{
+          const {data,error}=await client.from('private_conversations').select('id,user_a,user_b,last_message_at').order('last_message_at',{ascending:false}).limit(60);
+          if(error)throw error;
+          const rows=data||[];
+          if(!rows.length){byId('privateConversationList').innerHTML='<p class="tiny muted private-list-empty">No private chats yet. Find a member below to start one.</p>';return;}
+          const ids=[...new Set(rows.map(c=>c.user_a===currentUser.id?c.user_b:c.user_a))];
+          const {data:profiles,error:profileError}=await client.from('profiles').select('id,username,display_name,avatar_path,role').in('id',ids);
+          if(profileError)throw profileError;
+          const byUser=new Map((profiles||[]).map(p=>[p.id,p]));
+          byId('privateConversationList').innerHTML=rows.map(c=>{const uid=c.user_a===currentUser.id?c.user_b:c.user_a;const p=byUser.get(uid)||{};return `<button type="button" class="private-person-row" data-private-conversation="${esc(c.id)}" data-private-user="${esc(uid)}" data-search-text="${esc((p.display_name||'Member')+' '+(p.username||''))}"><span class="avatar" data-avatar-name="${esc(p.display_name||'Member')}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(p.display_name||'Member'))}</span><span class="private-person-meta"><b>${esc(p.display_name||'ALTROOM member')}${roleBadgeMarkup(p.role,true)}</b><small>@${esc(p.username||'member')}</small></span><span class="private-row-time">${esc(c.last_message_at?new Date(c.last_message_at).toLocaleDateString(undefined,{month:'short',day:'numeric'}):'')}</span></button>`;}).join('');
+          hydrateAvatars(byId('privateConversationList'));filterPrivateHub();
+        }catch(e){byId('privateConversationList').innerHTML=`<p class="tiny muted">Private chats need the new SQL migration. Run <b>ALTROOM-private-chat-video-migration.sql</b> in Supabase, then reopen this section.<br><br>${esc(friendlyError(e))}</p>`;}
+      }
+      function renderPrivatePeople(){
+        const box=byId('privatePeopleList');if(!box)return;
+        const term=(byId('privatePeopleSearch')?.value||'').trim().toLowerCase();
+        const list=(members||[]).filter(p=>p.id!==currentUser?.id&&`${p.display_name||''} ${p.username||''} ${(p.interests||[]).join(' ')}`.toLowerCase().includes(term));
+        if(!list.length){box.innerHTML='<p class="tiny muted">No matching members. Try a different search.</p>';return;}
+        box.innerHTML=list.map(p=>`<button type="button" class="private-person-row" data-private-start="${esc(p.id)}" data-search-text="${esc((p.display_name||'Member')+' '+(p.username||'')+' '+(p.interests||[]).join(' '))}"><span class="avatar" data-avatar-name="${esc(p.display_name||'Member')}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(p.display_name||'Member'))}</span><span class="private-person-meta"><b>${esc(p.display_name||'ALTROOM member')}${roleBadgeMarkup(p.role,true)}</b><small>@${esc(p.username||'member')}</small></span><span class="private-row-arrow">＋</span></button>`).join('');
+        hydrateAvatars(box);filterPrivateHub();
+      }
+      function filterPrivateHub(){
+        const term=(byId('privatePeopleSearch')?.value||'').trim().toLowerCase();
+        [byId('privateConversationList'),byId('privatePeopleList')].forEach(box=>{box?.querySelectorAll('[data-search-text]').forEach(b=>{b.classList.toggle('hidden',!String(b.dataset.searchText||'').toLowerCase().includes(term));});});
+      }
+      async function openPrivateWith(userId){
+        if(!userId)return;
+        if(demoMode){toast('Sign in to start a private chat. Preview mode does not save messages.');return;}
+        if(!client||!currentUser){toast('Sign in to start a private chat.');return;}
+        if(userId===currentUser.id){toast('That is your own profile. Choose another member.');return;}
+        byId('publicProfileModal').classList.add('hidden');byId('peopleModal').classList.add('hidden');
+        byId('privateChatsModal').classList.remove('hidden');setChatMode('private');
+        try{
+          const {data,error}=await client.rpc('open_private_conversation',{p_other_user:userId});if(error)throw error;
+          const conversationId=typeof data==='string'?data:(data?.id||data?.conversation_id);
+          if(!conversationId)throw new Error('The private conversation could not be opened.');
+          await loadPrivateHub();await openPrivateConversation(conversationId,userId);
+        }catch(e){toast(friendlyError(e)+' If this is your first private chat, confirm the private-chat SQL migration was run.');}
+      }
+      async function openPrivateConversation(conversationId,otherUserId){
+        if(!conversationId||!otherUserId)return;
+        if(privateMessageSubscription&&client){client.removeChannel(privateMessageSubscription);privateMessageSubscription=null;}
+        if(privateCallSubscription&&client){client.removeChannel(privateCallSubscription);privateCallSubscription=null;}
+        activePrivateConversationId=conversationId;activePrivateOtherId=otherUserId;
+        let other=(members||[]).find(p=>p.id===otherUserId);
+        if(!other){const {data}=await client.from('profiles').select('id,username,display_name,avatar_path,role').eq('id',otherUserId).maybeSingle();other=data||{display_name:'ALTROOM member',username:'member'};}
+        byId('privateOtherName').textContent=other.display_name||'ALTROOM member';byId('privateOtherHandle').textContent='@'+(other.username||'member');setAvatarElement(byId('privateOtherAvatar'),other.display_name||'Member',other.avatar_path||'');
+        byId('privateEmptyState').classList.add('hidden');byId('privateThread').classList.remove('hidden');
+        byId('privateThreadPane').classList.add('has-thread');byId('privateListPane').classList.remove('mobile-current');byId('privateThreadPane').classList.add('mobile-current');
+        await loadPrivateMessages();subscribePrivateMessages(conversationId);subscribePrivateCalls(conversationId);await refreshPrivateCallInvite();
+      }
+      async function loadPrivateMessages(){
+        const box=byId('privateMessages');const cid=activePrivateConversationId;if(!cid||!client)return;
+        box.innerHTML='<p class="tiny muted" style="text-align:center">Loading this private conversation…</p>';
+        try{
+          const {data,error}=await client.from('private_messages').select('*, profiles:profiles!private_messages_sender_id_fkey(display_name,username,avatar_path,role)').eq('conversation_id',cid).order('created_at',{ascending:true}).limit(100);
+          if(error)throw error;box.innerHTML='';
+          if(!data?.length){box.innerHTML='<div class="private-first-message"><span>✉</span><b>This is just between you two.</b><p>Say hello. A good conversation has to start somewhere.</p></div>';return;}
+          for(const m of data){if(String(activePrivateConversationId)!==String(cid))return;await renderPrivateMessage(m,false);}
+          box.scrollTop=box.scrollHeight;
+        }catch(e){box.innerHTML=`<p class="tiny muted">Could not load private messages. Check that the private-chat migration is installed.<br><br>${esc(friendlyError(e))}</p>`;}
+      }
+      async function renderPrivateMessage(m,scroll=true){
+        const box=byId('privateMessages');if(!box||!m||byId('privateMessages').querySelector('[data-private-first]'))return;
+        const p=m.profiles||(m.sender_id===currentUser?.id?myProfile:null)||{};const name=p.display_name||'ALTROOM member';const own=m.sender_id===currentUser?.id;let body='';
+        if(m.kind==='text')body=`<div class="message-body">${renderTextBody(m.body||'')}</div>`;
+        else {let url=null;try{const {data,error}=await client.storage.from('private-chat-media').createSignedUrl(m.media_path,3600);if(!error)url=data?.signedUrl||null;}catch{}
+          if(m.kind==='image')body=url?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer"><img class="media-preview" src="${esc(url)}" alt="Private image" loading="lazy"></a>`:'<div class="message-body">Image unavailable</div>';
+          else if(m.kind==='audio')body=url?audioCardMarkup(url,m):'<div class="message-body">Audio unavailable</div>';
+          else if(m.kind==='video')body=url?`<video class="media-preview video-preview" src="${esc(url)}" controls playsinline preload="metadata" aria-label="Private video"></video>`:'<div class="message-body">Video unavailable</div>';
+        }
+        if(box.querySelector('#private-msg-'+m.id))return;
+        const row=document.createElement('article');row.className='private-message'+(own?' own':'');row.id='private-msg-'+m.id;
+        row.innerHTML=`<div class="avatar" data-avatar-name="${esc(name)}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(name))}</div><div class="private-message-content"><div class="private-message-meta"><b>${esc(own?'You':name)}</b><span>${esc(timeLabel(m.created_at||new Date()))}</span></div>${body}</div>`;
+        box.appendChild(row);hydrateAvatars(row);wireAudioCard(row);if(scroll)box.scrollTop=box.scrollHeight;
+      }
+      function subscribePrivateMessages(conversationId){
+        if(!client||demoMode)return;
+        privateMessageSubscription=client.channel('altroom-private-messages-'+conversationId).on('postgres_changes',{event:'INSERT',schema:'public',table:'private_messages',filter:`conversation_id=eq.${conversationId}`},async payload=>{
+          if(String(activePrivateConversationId)!==String(conversationId)||!payload.new?.id)return;
+          if(byId('private-msg-'+payload.new.id))return;
+          const {data,error}=await client.from('private_messages').select('*, profiles:profiles!private_messages_sender_id_fkey(display_name,username,avatar_path,role)').eq('id',payload.new.id).single();if(!error&&data)await renderPrivateMessage(data,true);
+          loadPrivateHub();
+        }).subscribe();
+      }
+      async function sendPrivateText(){
+        if(demoMode){toast('Sign in to send private messages.');return;}const body=byId('privateMessageInput').value.trim();if(!body||!activePrivateConversationId)return;
+        byId('privateSendBtn').disabled=true;try{const {error}=await client.from('private_messages').insert({conversation_id:activePrivateConversationId,sender_id:currentUser.id,kind:'text',body});if(error)throw error;byId('privateMessageInput').value='';byId('privateMessageInput').style.height='auto';}catch(e){toast(friendlyError(e)+' Check the private-chat migration if this is your first message.');}finally{byId('privateSendBtn').disabled=false;byId('privateMessageInput').focus();}
+      }
+      async function uploadPrivateMedia(file,forceVideo=false){
+        if(demoMode||!activePrivateConversationId){toast('Choose a private conversation first.');return;}if(!file)return;
+        const isVideo=forceVideo||file.type.startsWith('video/');const isAudio=file.type.startsWith('audio/');const isImage=file.type.startsWith('image/');if(!isVideo&&!isAudio&&!isImage){toast('Choose an image, audio file, or video.');return;}
+        if(file.size>20*1024*1024){toast('Keep videos and private media under 20 MB.');return;}if(!isVideo&&file.size>6*1024*1024){toast('Keep images and audio under 6 MB.');return;}
+        const kind=isVideo?'video':(isAudio?'audio':'image');const ext=(file.name.split('.').pop()||'bin').replace(/[^a-zA-Z0-9]/g,'').slice(0,8)||'bin';const path=`${activePrivateConversationId}/${currentUser.id}/${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+        byId('privateComposerStatus').textContent='Uploading…';byId('privateAttachBtn').disabled=true;byId('privateVideoBtn').disabled=true;
+        try{const {error:upErr}=await client.storage.from('private-chat-media').upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type||undefined});if(upErr)throw upErr;const {error}=await client.from('private_messages').insert({conversation_id:activePrivateConversationId,sender_id:currentUser.id,kind,media_path:path});if(error)throw error;toast(isVideo?'Private video sent.':isAudio?'Private audio sent.':'Private image sent.');}
+        catch(e){toast(friendlyError(e)+' Confirm that the private-chat migration completed successfully.');}
+        finally{byId('privateComposerStatus').textContent='';byId('privateAttachBtn').disabled=false;byId('privateVideoBtn').disabled=false;}
+      }
+      function subscribePrivateCalls(conversationId){
+        if(!client||demoMode)return;
+        privateCallSubscription=client.channel('altroom-private-calls-'+conversationId).on('postgres_changes',{event:'*',schema:'public',table:'private_call_sessions',filter:`conversation_id=eq.${conversationId}`},async payload=>{
+          await refreshPrivateCallInvite();const call=payload.new;if(call&&call.status==='ringing'&&call.created_by!==currentUser?.id&&call.id!==lastIncomingPrivateCallId){lastIncomingPrivateCallId=call.id;toast(`Incoming ${call.call_kind} call from ${byId('privateOtherName').textContent}.`);}
+        }).subscribe();
+      }
+      async function refreshPrivateCallInvite(){
+        const banner=byId('privateIncomingCall');if(!activePrivateConversationId||!client){banner.classList.add('hidden');return;}
+        try{const {data,error}=await client.from('private_call_sessions').select('id,conversation_id,room_name,call_kind,status,created_by,created_at').eq('conversation_id',activePrivateConversationId).in('status',['ringing','active']).order('created_at',{ascending:false}).limit(1).maybeSingle();if(error)throw error;
+          if(!data||data.created_by===currentUser?.id&&data.status==='ringing'){banner.classList.add('hidden');return;}
+          if(data.created_by!==currentUser?.id&&data.status==='ringing'){
+            activePrivateCall=data;byId('privateIncomingCallText').textContent=`Incoming ${data.call_kind} call from ${byId('privateOtherName').textContent}.`;byId('privateAcceptCallBtn').textContent='Answer';byId('privateAcceptCallBtn').dataset.callId=data.id;banner.classList.remove('hidden');
+          }else if(data.status==='active'&&data.created_by!==currentUser?.id){activePrivateCall=data;byId('privateIncomingCallText').textContent=`${data.call_kind==='video'?'Video':'Audio'} call in progress.`;byId('privateAcceptCallBtn').textContent='Join call';byId('privateAcceptCallBtn').dataset.callId=data.id;banner.classList.remove('hidden');}
+          else banner.classList.add('hidden');
+        }catch(e){banner.classList.add('hidden');}
+      }
+      async function startPrivateCall(kind){
+        if(demoMode||!activePrivateConversationId){toast('Open a private chat first.');return;}
+        try{const {data,error}=await client.rpc('start_private_call',{p_conversation_id:activePrivateConversationId,p_kind:kind});if(error)throw error;const call=typeof data==='string'?JSON.parse(data):data;activePrivateCallId=call.id;activePrivateCall=call;openInAppCall(call.room_name,kind,`${kind==='video'?'Video':'Audio'} call with ${byId('privateOtherName').textContent}`,call.id,true);}
+        catch(e){toast(friendlyError(e)+' Check that the private-call migration is installed.');}
+      }
+      async function acceptPrivateCall(){
+        const id=byId('privateAcceptCallBtn').dataset.callId;if(!id||!client)return;
+        try{const {data,error}=await client.rpc('accept_private_call',{p_call_id:id});if(error)throw error;const call=typeof data==='string'?JSON.parse(data):data;activePrivateCallId=call.id;activePrivateCall=call;openInAppCall(call.room_name,call.call_kind,`${call.call_kind==='video'?'Video':'Audio'} call with ${byId('privateOtherName').textContent}`,call.id,true);byId('privateIncomingCall').classList.add('hidden');}
+        catch(e){toast(friendlyError(e));await refreshPrivateCallInvite();}
+      }
+      function openInAppCall(roomName,kind,title,callId,isPrivate=false){
+        if(!roomName)return;activePrivateCallId=isPrivate?callId:null;
+        const audioConfig=kind==='audio'?'&config.startWithVideoMuted=true&config.startWithAudioMuted=false':'&config.startWithVideoMuted=false&config.startWithAudioMuted=false';
+        byId('callStageTitle').textContent=title||`${kind==='video'?'Video':'Audio'} call`;
+        byId('callStageSubhead').textContent=isPrivate?'Private conversation call · embedded in ALTROOM':'Community room call · embedded in ALTROOM';
+        byId('inAppCallFrame').src=`https://meet.jit.si/${encodeURIComponent(roomName)}#config.prejoinConfig.enabled=false${audioConfig}`;
+        byId('callStageModal').classList.remove('hidden');
+      }
+      async function endInAppCall(){
+        const callId=activePrivateCallId;byId('inAppCallFrame').src='about:blank';byId('callStageModal').classList.add('hidden');activePrivateCallId=null;
+        if(callId&&client){try{const {error}=await client.rpc('end_private_call',{p_call_id:callId});if(error)console.warn(error.message);}catch(e){console.warn(e.message);}await refreshPrivateCallInvite();}
+      }
+      // Open shared room calls from a message inside ALTROOM, instead of taking people to a new tab.
+      const baseRenderTextBody=renderTextBody;
+      renderTextBody=function(text){
+        const calls=[];const replaced=String(text||'').replace(/https:\/\/meet\.jit\.si\/(ALTROOM-(?:AUDIO|VIDEO)-[A-Za-z0-9]+)(?:#[^\s]*)?/g,(full,room)=>{const kind=room.includes('-AUDIO-')?'audio':'video';const token=`__ALTROOM_CALL_${calls.length}__`;calls.push({token,room,kind});return token;});
+        let out=baseRenderTextBody(replaced);for(const c of calls){out=out.replace(c.token,`<button type="button" class="message-call-link" data-join-call="${esc(c.room)}" data-call-kind="${c.kind}">Join ${c.kind} call inside ALTROOM ↗</button>`);}return out;
+      };
+      // Video attachments use the existing community bucket, and still render within the room timeline.
+      uploadAndSend=async function(file,kindOverride=null){
+        if(demoMode){toast('Preview mode only — media is not sent.');return;}if(!file||!activeChannelId)return;
+        const isVideo=file.type.startsWith('video/'),isAudio=file.type.startsWith('audio/'),isImage=file.type.startsWith('image/');if(!isVideo&&!isAudio&&!isImage){toast('Choose an image, audio file, or video.');return;}
+        if(file.size>20*1024*1024){toast('Keep videos under 20 MB.');return;}if(!isVideo&&file.size>6*1024*1024){toast('Keep images and audio under 6 MB.');return;}
+        const kind=kindOverride||(isVideo?'video':isAudio?'audio':'image');const ext=(file.name.split('.').pop()||'bin').replace(/[^a-zA-Z0-9]/g,'').slice(0,8)||'bin';const path=`${currentUser.id}/${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+        byId('composerStatus').textContent='Uploading…';byId('photoAudioBtn').disabled=true;byId('uploadVideoBtn').disabled=true;byId('stickerImageBtn').disabled=true;byId('recordVoiceBtn').disabled=true;
+        try{const {error:upErr}=await client.storage.from('chat-media').upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type||undefined});if(upErr)throw upErr;const {error:msgErr}=await client.from('messages').insert({channel_id:activeChannelId,user_id:currentUser.id,kind,media_path:path,sticker_text:kind==='sticker'?'custom image sticker':null,sticker_emoji:kind==='sticker'?'✳':null,sticker_color:kind==='sticker'?'#c52b4b':null});if(msgErr)throw msgErr;toast(kind==='video'?'Video sent.':kind==='sticker'?'Sticker sent.':'Media sent.');}
+        catch(e){toast(friendlyError(e)+' Confirm that the video-upload migration completed.');}
+        finally{byId('composerStatus').textContent='';byId('photoAudioBtn').disabled=false;byId('uploadVideoBtn').disabled=false;byId('stickerImageBtn').disabled=false;byId('recordVoiceBtn').disabled=false;}
+      };
+      // Community audio/video calls now open inside the app while keeping the room invitation in its room.
+      startRoomCall=async function(kind){
+        if(demoMode){toast('Connect your account to start a live room call.');return;}const c=channels.find(x=>String(x.id)===String(activeChannelId));if(!c){toast('Enter a room before starting a call.');return;}
+        const token=(window.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`).replace(/[^a-zA-Z0-9]/g,'');const roomName=`ALTROOM-${kind==='audio'?'AUDIO':'VIDEO'}-${token}`;
+        const invite=`${kind==='video'?'🎥 Video':'🎙 Audio'} room call for “${c.name}”. Tap the join button to open it inside ALTROOM: https://meet.jit.si/${roomName}${kind==='audio'?'#config.startWithVideoMuted=true':''}`;
+        try{const {error}=await client.from('messages').insert({channel_id:activeChannelId,user_id:currentUser.id,kind:'text',body:invite});if(error)throw error;byId('callOptionsModal').classList.add('hidden');openInAppCall(roomName,kind,`${kind==='video'?'Video':'Audio'} call · ${c.name}`,null,false);}
+        catch(err){toast('Could not start the room call: '+friendlyError(err));}
+      };
+
+      // Event handlers for private chats and clearer navigation.
+      byId('communityChatsBtn').addEventListener('click',()=>{setChatMode('community');closePrivateChats();});
+      byId('privateChatsBtn').addEventListener('click',showPrivateChats);
+      byId('privateCloseBtn').addEventListener('click',closePrivateChats);
+      byId('privateBackBtn').addEventListener('click',()=>{byId('privateThreadPane').classList.remove('mobile-current');byId('privateListPane').classList.add('mobile-current');});
+      byId('publicProfileMessageBtn').addEventListener('click',()=>openPrivateWith(byId('publicProfileMessageBtn').dataset.userId));
+      byId('privatePeopleSearch').addEventListener('input',()=>{renderPrivatePeople();filterPrivateHub();});
+      byId('privateSendBtn').addEventListener('click',sendPrivateText);
+      byId('privateMessageInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendPrivateText();}});
+      byId('privateMessageInput').addEventListener('input',e=>{e.target.style.height='auto';e.target.style.height=Math.min(e.target.scrollHeight,120)+'px';});
+      byId('privateAttachBtn').addEventListener('click',()=>byId('privateMediaInput').click());
+      byId('privateVideoBtn').addEventListener('click',()=>byId('privateVideoInput').click());
+      byId('privateMediaInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadPrivateMedia(f,false);});
+      byId('privateVideoInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadPrivateMedia(f,true);});
+      byId('privateAudioCallBtn').addEventListener('click',()=>startPrivateCall('audio'));
+      byId('privateVideoCallBtn').addEventListener('click',()=>startPrivateCall('video'));
+      byId('privateAcceptCallBtn').addEventListener('click',acceptPrivateCall);
+      byId('endCallBtn').addEventListener('click',endInAppCall);
+      byId('uploadVideoBtn').addEventListener('click',()=>byId('videoInput').click());
+      byId('videoInput').addEventListener('change',async e=>{const f=e.target.files?.[0];e.target.value='';if(f)await uploadAndSend(f,'video');});
+      byId('moreComposerToolsBtn').addEventListener('click',()=>{const box=byId('extraComposerTools');const open=box.classList.contains('hidden');box.classList.toggle('hidden',!open);byId('moreComposerToolsBtn').setAttribute('aria-expanded',String(open));byId('moreComposerToolsBtn').textContent=open?'More tools ▴':'More tools ▾';});
+      document.addEventListener('click',e=>{const conv=e.target.closest('[data-private-conversation]');if(conv){openPrivateConversation(conv.dataset.privateConversation,conv.dataset.privateUser);return;}const person=e.target.closest('[data-private-start]');if(person){openPrivateWith(person.dataset.privateStart);return;}const join=e.target.closest('[data-join-call]');if(join){openInAppCall(join.dataset.joinCall,join.dataset.callKind,`${join.dataset.callKind==='video'?'Video':'Audio'} community call`,null,false);}});
+      // Current profile button should only appear for another member; openPublicProfile sets its target id.
+      const baseOpenPublicProfile=openPublicProfile;
+      openPublicProfile=async function(userId){byId('publicProfileMessageBtn').dataset.userId=userId||'';byId('publicProfileMessageBtn').classList.toggle('hidden',!userId||userId===currentUser?.id);return baseOpenPublicProfile(userId);};
+
       if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
       init();
     })();

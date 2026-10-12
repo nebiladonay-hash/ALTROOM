@@ -1,5 +1,51 @@
-const CACHE='altroom-shell-v16-shorts-clean-controls';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg'];
-self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
-self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
-self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const u=new URL(event.request.url);if(u.origin!==self.location.origin)return;event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}return response;}).catch(()=>caches.match('./index.html'))));});
+const CACHE = 'altroom-shell-v19-shorts-live-likes-20261012';
+const CORE = ['./index.html'];
+const OPTIONAL = ['./manifest.webmanifest', './icon.svg'];
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await Promise.all(CORE.map(url => cache.add(url).catch(() => {})));
+    await Promise.all(OPTIONAL.map(url => cache.add(url).catch(() => {})));
+    await self.skipWaiting();
+  })());
+});
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)));
+    await self.clients.claim();
+  })());
+});
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  const path = url.pathname;
+  const isNavigation = request.mode === 'navigate' || path.endsWith('/index.html') || path === new URL(self.registration.scope).pathname;
+  if (isNavigation) {
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      try {
+        const response = await fetch(request, {cache: 'no-store'});
+        if (response && response.ok) await cache.put('./index.html', response.clone());
+        return response;
+      } catch (_) {
+        return (await cache.match(request)) || (await cache.match('./index.html')) || Response.error();
+      }
+    })());
+    return;
+  }
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    try {
+      const response = await fetch(request);
+      if (response && response.ok) await cache.put(request, response.clone());
+      return response;
+    } catch (_) {
+      return cached || Response.error();
+    }
+  })());
+});

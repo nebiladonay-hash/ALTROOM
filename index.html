@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090909">
+  <meta name="altroom-build" content="shorts-v6-live-like-counts-20261012">
   <meta name="description" content="A small, gothic corner of the internet for alternative minds and uncommon interests. Create an account and join the conversation.">
   <title>ALTROOM — your corner of the strange</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -1288,6 +1289,80 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       body.shorts-active #appShell.shorts-mode .short-action {width:39px!important;min-height:39px!important;font-size:17px!important;}
     }
 
+
+
+    /* ALTROOM Shorts v4 — clean TikTok-style action rail, icons only. */
+    body.shorts-active #appShell.shorts-mode .short-card-bottom {
+      left:0!important;right:0!important;bottom:0!important;z-index:3!important;
+      display:flex!important;align-items:flex-end!important;justify-content:flex-start!important;
+      padding:62px 86px calc(88px + env(safe-area-inset-bottom)) 15px!important;
+      background:linear-gradient(0deg,#000e 0%,#0009 46%,transparent 100%)!important;
+      overflow:hidden!important;pointer-events:none!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-card-bottom .short-copy {width:100%!important;max-width:100%!important;flex:1 1 auto!important;pointer-events:auto!important;}
+    body.shorts-active #appShell.shorts-mode .short-card-actions {
+      position:absolute!important;z-index:8!important;right:12px!important;bottom:calc(112px + env(safe-area-inset-bottom))!important;
+      display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-end!important;
+      width:52px!important;min-width:52px!important;flex-basis:52px!important;gap:15px!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action {
+      appearance:none!important;box-sizing:border-box!important;position:relative!important;
+      display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+      flex:0 0 auto!important;width:49px!important;min-width:49px!important;height:49px!important;min-height:49px!important;
+      gap:3px!important;margin:0!important;padding:5px!important;border:1px solid #ffffffad!important;border-radius:50%!important;
+      background:#080809c9!important;color:#fff!important;backdrop-filter:blur(8px)!important;
+      box-shadow:0 3px 14px #0007!important;font-size:20px!important;line-height:1!important;white-space:normal!important;overflow:visible!important;
+      transition:transform .14s ease,background .14s ease,color .14s ease!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action:active {transform:scale(.91)!important;}
+    body.shorts-active #appShell.shorts-mode .short-action > svg,
+    body.shorts-active #appShell.shorts-mode .short-action .sound-icon svg {
+      display:block!important;width:26px!important;height:26px!important;flex:0 0 26px!important;
+      fill:none!important;stroke:currentColor!important;stroke-width:1.9!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action[data-short-like] > svg {fill:transparent!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.is-liked {background:#15070bdf!important;color:#ff3156!important;border-color:#ff3156!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.is-liked[data-short-like] > svg {fill:#ff3156!important;stroke:#ff3156!important;}
+    body.shorts-active #appShell.shorts-mode .short-action-count {display:block!important;font-size:10px!important;line-height:1!important;font-weight:900!important;color:#fff!important;text-align:center!important;text-shadow:0 1px 4px #000!important;max-width:100%!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.is-liked .short-action-count {color:#fff!important;}
+    body.shorts-active #appShell.shorts-mode .short-action .sound-icon {display:grid!important;place-items:center!important;width:26px!important;height:26px!important;flex:0 0 26px!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.is-sound-on {border-color:#fff!important;background:#f5f4efeb!important;color:#090909!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.is-sound-on[aria-pressed="true"] svg {stroke:#090909!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.short-delete {width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;opacity:.92!important;}
+    body.shorts-active #appShell.shorts-mode .short-action.short-delete > svg {width:21px!important;height:21px!important;flex-basis:21px!important;}
+    .short-comments-overlay {position:fixed!important;inset:0!important;z-index:22000!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;padding:18px!important;background:#000b!important;backdrop-filter:blur(8px)!important;}
+    .short-comments-overlay.hidden {display:none!important;}
+    .short-comments-sheet {display:flex!important;flex-direction:column!important;width:min(520px,100%)!important;max-height:min(76dvh,720px)!important;min-height:300px!important;margin:0 auto!important;padding:17px 16px calc(12px + env(safe-area-inset-bottom))!important;border:1px solid #444!important;border-bottom:0!important;border-radius:18px 18px 0 0!important;background:#111113!important;color:#f6f5f0!important;box-shadow:0 -12px 65px #0009!important;}
+    .short-comments-header {display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:12px!important;padding:0 0 14px!important;border-bottom:1px solid #333!important;}
+    .short-comments-header h3 {margin:0!important;font-size:20px!important;font-weight:900!important;letter-spacing:-.04em!important;line-height:1.1!important;}
+    .short-comments-header p {margin:5px 0 0!important;font-size:11px!important;line-height:1.4!important;color:#aaa!important;}
+    .short-comments-close {display:grid!important;place-items:center!important;flex:0 0 36px!important;width:36px!important;height:36px!important;border:1px solid #444!important;border-radius:50%!important;background:#222!important;color:#fff!important;font-size:25px!important;line-height:1!important;}
+    .short-comments-list {display:flex!important;flex-direction:column!important;gap:15px!important;flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;padding:14px 2px!important;overscroll-behavior:contain!important;}
+    .short-comment-row {display:flex!important;align-items:flex-start!important;gap:10px!important;min-width:0!important;}
+    .short-comment-avatar {display:grid!important;place-items:center!important;flex:0 0 34px!important;width:34px!important;height:34px!important;border:1px solid #555!important;border-radius:50%!important;background:#29292c!important;color:#fff!important;font-size:10px!important;font-weight:900!important;}
+    .short-comment-body {flex:1 1 auto!important;min-width:0!important;}
+    .short-comment-body b {display:block!important;margin:1px 0 4px!important;font-size:12px!important;font-weight:850!important;color:#d6d5d1!important;overflow-wrap:anywhere!important;}
+    .short-comment-body p {margin:0!important;font-size:13px!important;line-height:1.45!important;color:#f5f4ef!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;}
+    .short-comment-body time {display:block!important;margin-top:5px!important;color:#89898d!important;font-size:9px!important;}
+    .short-comments-empty {display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-height:130px!important;text-align:center!important;color:#eee!important;font-size:14px!important;}
+    .short-comments-empty > span {font-size:28px!important;color:#aaa!important;}
+    .short-comments-empty small {font-size:11px!important;line-height:1.5!important;color:#999!important;max-width:280px!important;}
+    .short-comment-form {display:flex!important;align-items:flex-end!important;gap:8px!important;padding-top:11px!important;border-top:1px solid #333!important;}
+    .short-comment-form textarea {display:block!important;flex:1 1 auto!important;min-width:0!important;max-height:100px!important;min-height:43px!important;resize:none!important;padding:12px 13px!important;border:1px solid #444!important;border-radius:22px!important;outline:none!important;background:#222225!important;color:#fff!important;font-size:13px!important;line-height:1.35!important;}
+    .short-comment-form textarea:focus {border-color:#aaa!important;}
+    .short-comment-form button {display:grid!important;place-items:center!important;flex:0 0 43px!important;width:43px!important;height:43px!important;border:1px solid #eee!important;border-radius:50%!important;background:#f3f2ed!important;color:#09090a!important;}
+    .short-comment-form button svg {width:22px!important;height:22px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important;}
+    .short-comment-status {margin:6px 0 0!important;color:#aaa!important;font-size:10px!important;line-height:1.4!important;}
+    .sr-only {position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
+    @media(max-width:600px) {
+      body.shorts-active #appShell.shorts-mode .short-card-actions {right:10px!important;bottom:calc(112px + env(safe-area-inset-bottom))!important;width:50px!important;min-width:50px!important;flex-basis:50px!important;gap:13px!important;}
+      body.shorts-active #appShell.shorts-mode .short-action {width:47px!important;min-width:47px!important;height:47px!important;min-height:47px!important;}
+      body.shorts-active #appShell.shorts-mode .short-action > svg,body.shorts-active #appShell.shorts-mode .short-action .sound-icon svg {width:25px!important;height:25px!important;flex-basis:25px!important;}
+      body.shorts-active #appShell.shorts-mode .short-card-bottom {padding:62px 78px calc(88px + env(safe-area-inset-bottom)) 14px!important;}
+      .short-comments-overlay {padding:0!important;align-items:flex-end!important;}
+      .short-comments-sheet {width:100%!important;max-height:min(73dvh,690px)!important;min-height:280px!important;padding:16px 15px calc(10px + env(safe-area-inset-bottom))!important;border-radius:18px 18px 0 0!important;}
+    }
+
   </style>
 </head>
 <body>
@@ -1364,6 +1439,21 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
             <div class="short-upload-footer"><small>30 seconds max · up to 18 MB<br>Only post clips you have permission to share.</small><button id="shortSubmitBtn" class="button primary" type="submit">Post to ALTROOM ↗</button></div>
             <p id="shortUploadMessage" class="form-message" role="status"></p>
           </form>
+        </div>
+        <div id="shortCommentsOverlay" class="short-comments-overlay hidden" role="presentation" aria-hidden="true">
+          <section class="short-comments-sheet" role="dialog" aria-modal="true" aria-labelledby="shortCommentsTitle">
+            <header class="short-comments-header">
+              <div><h3 id="shortCommentsTitle">Comments</h3><p id="shortCommentsSub">Say something kind, curious, or useful.</p></div>
+              <button id="shortCommentsClose" class="short-comments-close" type="button" aria-label="Close comments">×</button>
+            </header>
+            <div id="shortCommentsList" class="short-comments-list" aria-live="polite"><div class="short-comments-empty">Loading conversation…</div></div>
+            <form id="shortCommentForm" class="short-comment-form">
+              <label class="sr-only" for="shortCommentInput">Write a comment</label>
+              <textarea id="shortCommentInput" maxlength="500" rows="1" placeholder="Add a comment…" required></textarea>
+              <button id="shortCommentSubmit" type="submit" aria-label="Post comment" title="Post comment"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3-6-8-2Z"/><path d="m12 14 8-10"/></svg></button>
+            </form>
+            <p id="shortCommentStatus" class="short-comment-status" role="status"></p>
+          </section>
         </div>
         <div class="shorts-feed" id="shortsFeed" aria-live="polite">
           <div class="shorts-empty-state"><h3>Your side of the internet.</h3><p>First clips set the tone. Post a 30-second fragment of your world and let the weird little community find it.</p><button type="button" class="button primary" id="shortsEmptyPostBtn">＋ Post the first clip</button></div>
@@ -1878,7 +1968,41 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         byId('appShell').classList.toggle('shorts-mode', mode === 'shorts');
         document.body.classList.toggle('shorts-active', mode === 'shorts');
         byId('shortsView').classList.toggle('hidden', mode !== 'shorts');
+        if(mode==='shorts')startShortLikesRealtime();else stopShortLikesRealtime();
       };
+
+      let shortLikesSubscription=null;
+      const shortLikeRefreshTimers=new Map();
+      function stopShortLikesRealtime(){
+        if(shortLikesSubscription&&client){client.removeChannel(shortLikesSubscription);shortLikesSubscription=null;}
+        for(const timer of shortLikeRefreshTimers.values())clearTimeout(timer);
+        shortLikeRefreshTimers.clear();
+      }
+      async function refreshShortLikeState(videoId){
+        const card=byId('shortsFeed').querySelector(`[data-short-id="${CSS.escape(String(videoId))}"]`);
+        if(!card||!client||!currentUser)return;
+        try{
+          const {data,error}=await client.from('short_video_likes').select('user_id').eq('video_id',videoId);
+          if(error)throw error;
+          const rows=data||[],button=card.querySelector('[data-short-like]');if(!button)return;
+          const count=rows.length,mine=rows.some(row=>row.user_id===currentUser.id),countNode=button.querySelector('[data-like-count]');
+          button.dataset.liked=mine?'1':'0';button.classList.toggle('is-liked',mine);
+          button.setAttribute('aria-label',mine?'Unlike':'Like');
+          if(countNode)countNode.textContent=count>999?'999+':String(count);
+        }catch(error){console.warn('ALTROOM Shorts live like count failed:',error);}
+      }
+      function startShortLikesRealtime(){
+        if(!client||!currentUser||demoMode)return;
+        stopShortLikesRealtime();
+        shortLikesSubscription=client.channel('altroom-shorts-likes-live-'+currentUser.id)
+          .on('postgres_changes',{event:'*',schema:'public',table:'short_video_likes'},payload=>{
+            const videoId=payload.new?.video_id||payload.old?.video_id;
+            if(!videoId||!byId('shortsView')||byId('shortsView').classList.contains('hidden'))return;
+            const key=String(videoId),oldTimer=shortLikeRefreshTimers.get(key);if(oldTimer)clearTimeout(oldTimer);
+            shortLikeRefreshTimers.set(key,setTimeout(()=>{shortLikeRefreshTimers.delete(key);refreshShortLikeState(key);},160));
+          })
+          .subscribe(status=>{if(status==='CHANNEL_ERROR'||status==='TIMED_OUT')console.warn('ALTROOM Shorts live likes unavailable:',status);});
+      }
 
       function showShorts(){
         if(!byId('privateChatsModal').classList.contains('hidden'))closePrivateChats();
@@ -1950,15 +2074,26 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           if(!likesResult.error)likes=likesResult.data||[];
           const likeMap=new Map();
           for(const like of likes){const row=likeMap.get(like.video_id)||{count:0,mine:false};row.count++;if(like.user_id===currentUser.id)row.mine=true;likeMap.set(like.video_id,row);}
-          const rows=await Promise.all(videos.map(async v=>({...v,profiles:profilesById.get(v.user_id)||null,_url:await signedUrl(v.media_path),_likes:likeMap.get(v.id)||{count:0,mine:false}})));
+          const commentCountMap=new Map();
+          try{
+            const commentsResult=ids.length?await client.from('short_video_comments').select('video_id').in('video_id',ids):{data:[],error:null};
+            if(!commentsResult.error){for(const comment of (commentsResult.data||[]))commentCountMap.set(comment.video_id,(commentCountMap.get(comment.video_id)||0)+1);}
+            else console.warn('ALTROOM Shorts comment counts are unavailable; run the comments migration.',commentsResult.error.message);
+          }catch(commentCountError){console.warn('ALTROOM Shorts comment counts are unavailable.',commentCountError);}
+          const rows=await Promise.all(videos.map(async v=>({...v,profiles:profilesById.get(v.user_id)||null,_url:await signedUrl(v.media_path),_likes:likeMap.get(v.id)||{count:0,mine:false},_commentCount:commentCountMap.get(v.id)||0})));
           feed.innerHTML=rows.map(v=>{
             const p=v.profiles||{},name=p.display_name||'ALTROOM member',username=p.username||'member',likesState=v._likes;
             return `<article class="short-card" data-short-id="${esc(v.id)}">
               ${v._url?`<video class="short-video" src="${esc(v._url)}" playsinline webkit-playsinline muted loop preload="metadata" aria-label="Short video by ${esc(name)}"></video>`:'<div class="short-video" style="display:grid;place-items:center;color:#fff;padding:24px;text-align:center">Video unavailable. Refresh and try again.</div>'}
               <div class="short-video-shade" aria-hidden="true"></div>
               <div class="short-card-top"><span class="short-card-label">ALTROOM / SHORTS</span><span class="short-duration">30 SEC OR LESS</span></div>
-              <div class="short-card-bottom"><div class="short-copy"><div class="short-author"><span class="short-author-mark">${esc(initials(name))}</span><span>${esc(name)}<br><small>@${esc(username)} · ${esc(formatShortDate(v.created_at))}</small></span></div><p class="short-caption">${esc(v.caption||'')}</p></div>
-                <div class="short-card-actions"><button class="short-action short-sound" data-short-sound="${esc(v.id)}" type="button" aria-label="Turn sound on for this video" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span><small>Sound off</small></button><button class="short-action ${likesState.mine?'is-liked':''}" data-short-like="${esc(v.id)}" data-liked="${likesState.mine?'1':'0'}" type="button" aria-label="${likesState.mine?'Unlike':'Like'} this video"><span aria-hidden="true">♥</span><small data-like-count>${likesState.count>999?'999+':likesState.count}</small></button><button class="short-action" data-short-share="${esc(v.id)}" type="button" aria-label="Share video"><span aria-hidden="true">↗</span><small>Share</small></button>${v.user_id===currentUser.id?`<button class="short-action short-delete" data-short-delete="${esc(v.id)}" data-short-path="${esc(v.media_path)}" type="button" aria-label="Delete your video"><span aria-hidden="true">×</span><small>Remove</small></button>`:''}</div>
+              <div class="short-card-bottom"><div class="short-copy"><div class="short-author"><span class="short-author-mark">${esc(initials(name))}</span><span>${esc(name)}<br><small>@${esc(username)} · ${esc(formatShortDate(v.created_at))}</small></span></div><p class="short-caption">${esc(v.caption||'')}</p></div></div>
+              <div class="short-card-actions" aria-label="Video actions">
+                <button class="short-action ${likesState.mine?'is-liked':''}" data-short-like="${esc(v.id)}" data-liked="${likesState.mine?'1':'0'}" type="button" aria-label="${likesState.mine?'Unlike':'Like'} this video" title="Like"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.8a5.5 5.5 0 0 0-7.8 0L12 5.9l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.3 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg><span class="short-action-count" data-like-count>${likesState.count>999?'999+':likesState.count}</span></button>
+                <button class="short-action short-comment-action" data-short-comment="${esc(v.id)}" type="button" aria-label="View comments" title="Comments"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6.5A7.5 7.5 0 0 1 10.5 7H12a8 8 0 0 1 8 4.5Z"/><path d="M8 3.5h4a8 8 0 0 1 8 8"/></svg><span class="short-action-count" data-comment-count>${v._commentCount>999?'999+':v._commentCount}</span></button>
+                <button class="short-action" data-short-share="${esc(v.id)}" type="button" aria-label="Share video" title="Share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></button>
+                <button class="short-action short-sound" data-short-sound="${esc(v.id)}" type="button" aria-label="Turn sound on for this video" aria-pressed="false" title="Sound off"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span></button>
+                ${v.user_id===currentUser.id?`<button class="short-action short-delete" data-short-delete="${esc(v.id)}" data-short-path="${esc(v.media_path)}" type="button" aria-label="Delete your video" title="Delete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg></button>`:''}
               </div></article>`;
           }).join('');
           // Always start a refreshed feed at the first clip.
@@ -2012,12 +2147,12 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         document.querySelectorAll('[data-short-sound]').forEach(button=>{
           const video=button.closest('.short-card')?.querySelector('video.short-video');
           const audible=!!(video&&!video.muted&&shortsSoundOn);
-          const icon=button.querySelector('span[aria-hidden="true"]');
-          const label=button.querySelector('small');
+          const icon=button.querySelector('.sound-icon');
           if(icon)icon.innerHTML=audible?'<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15 9a5 5 0 0 1 0 6"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>':'<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg>';
-          if(label)label.textContent=audible?'Sound on':'Sound off';
           button.setAttribute('aria-pressed',audible?'true':'false');
           button.setAttribute('aria-label',audible?'Mute this video':'Turn sound on for this video');
+          button.title=audible?'Sound on':'Sound off';
+          button.classList.toggle('is-sound-on',audible);
         });
       }
 
@@ -2032,7 +2167,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           document.querySelectorAll('video.short-video').forEach(other=>{if(other!==video){other.muted=true;}});
           video.muted=false;
           try{await video.play();}
-          catch(err){video.muted=true;shortsSoundOn=false;toast('Audio could not start. Tap the video once, then tap the sound button again.');}
+          catch(err){video.muted=true;shortsSoundOn=false;refreshShortSoundButtons();toast('Audio was blocked. Tap the video, then tap the speaker again; also check that the clip has an audio track.');}
         }else{
           shortsSoundOn=false;
           document.querySelectorAll('video.short-video').forEach(other=>{other.muted=true;});
@@ -2054,6 +2189,90 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         finally{button.disabled=false;}
       }
 
+      let currentShortCommentVideoId=null;
+      let shortCommentsSubscription=null;
+      function stopShortCommentUpdates(){
+        if(shortCommentsSubscription&&client){client.removeChannel(shortCommentsSubscription);shortCommentsSubscription=null;}
+      }
+      function subscribeShortCommentUpdates(videoId){
+        stopShortCommentUpdates();
+        if(!client||!videoId)return;
+        const watchedVideoId=String(videoId);
+        shortCommentsSubscription=client.channel('altroom-short-comments-'+watchedVideoId)
+          .on('postgres_changes',{event:'INSERT',schema:'public',table:'short_video_comments',filter:`video_id=eq.${watchedVideoId}`},async payload=>{
+            if(String(currentShortCommentVideoId)!==watchedVideoId||String(payload.new?.video_id)!==watchedVideoId)return;
+            // Comments are stored centrally in Supabase. Reload the shared thread when any
+            // approved member posts, so everyone viewing the same clip sees it without closing.
+            await loadShortComments(watchedVideoId);
+          })
+          .subscribe(status=>{if(status==='CHANNEL_ERROR'||status==='TIMED_OUT')console.warn('ALTROOM Shorts comment live updates unavailable:',status);});
+      }
+      function closeShortComments(){
+        stopShortCommentUpdates();
+        byId('shortCommentsOverlay').classList.add('hidden');
+        byId('shortCommentsOverlay').setAttribute('aria-hidden','true');
+        currentShortCommentVideoId=null;
+      }
+      async function openShortComments(button){
+        if(!client||!currentUser||demoMode){toast('Sign in to view and post comments.');return;}
+        currentShortCommentVideoId=button.dataset.shortComment;
+        byId('shortCommentsOverlay').classList.remove('hidden');
+        byId('shortCommentsOverlay').setAttribute('aria-hidden','false');
+        byId('shortCommentsSub').textContent='Shared with the ALTROOM community';
+        byId('shortCommentsList').innerHTML='<div class="short-comments-empty">Loading comments…</div>';
+        byId('shortCommentStatus').textContent='';
+        byId('shortCommentInput').value='';
+        subscribeShortCommentUpdates(currentShortCommentVideoId);
+        await loadShortComments(currentShortCommentVideoId);
+        setTimeout(()=>byId('shortCommentInput').focus({preventScroll:true}),40);
+      }
+      async function loadShortComments(videoId){
+        const list=byId('shortCommentsList');
+        try{
+          const {data,error}=await client.from('short_video_comments').select('id,video_id,user_id,body,created_at').eq('video_id',videoId).order('created_at',{ascending:false}).limit(100);
+          if(error)throw error;
+          const comments=data||[];
+          const authorIds=[...new Set(comments.map(c=>c.user_id).filter(Boolean))];
+          let authorMap=new Map();
+          if(authorIds.length){
+            const {data:authors,error:authorError}=await client.from('profiles').select('id,display_name,username').in('id',authorIds);
+            if(!authorError)authorMap=new Map((authors||[]).map(a=>[a.id,a]));
+          }
+          if(!comments.length){list.innerHTML='<div class="short-comments-empty"><span aria-hidden="true">♡</span><b>Be the first to say something.</b><small>Keep it curious. Keep it kind.</small></div>';}
+          else list.innerHTML=comments.map(c=>{const author=authorMap.get(c.user_id)||{};const name=author.display_name||author.username||'ALTROOM member';return `<article class="short-comment-row"><span class="short-comment-avatar">${esc(initials(name))}</span><div class="short-comment-body"><b>${esc(name)}</b><p>${esc(c.body)}</p><time>${esc(formatShortDate(c.created_at))}</time></div></article>`;}).join('');
+          const actionButton=document.querySelector(`[data-short-comment="${videoId}"]`);
+          const count=actionButton?.querySelector('[data-comment-count]');
+          if(count)count.textContent=comments.length>999?'999+':String(comments.length);
+          byId('shortCommentsSub').textContent=`${comments.length} ${comments.length===1?'comment':'comments'}`;
+          return comments.length;
+        }catch(err){
+          console.warn('ALTROOM Shorts comments could not load:',err);
+          list.innerHTML='<div class="short-comments-empty"><b>Comments need one database update.</b><small>Run ALTROOM-Shorts-Comments-Migration.sql in Supabase, then try again.</small></div>';
+          byId('shortCommentsSub').textContent='Comments are not connected yet';
+          byId('shortCommentStatus').textContent='The video feed and likes can still work. Comments need the small migration included with this update.';
+          return null;
+        }
+      }
+      async function postShortComment(event){
+        event.preventDefault();
+        if(!currentShortCommentVideoId||!client||!currentUser||demoMode)return;
+        const body=byId('shortCommentInput').value.trim();
+        if(!body)return;
+        if(body.length>500){byId('shortCommentStatus').textContent='Keep comments under 500 characters.';return;}
+        const submit=byId('shortCommentSubmit');submit.disabled=true;byId('shortCommentStatus').textContent='Posting…';
+        try{
+          const {error}=await client.from('short_video_comments').insert({video_id:currentShortCommentVideoId,user_id:currentUser.id,body});
+          if(error)throw error;
+          byId('shortCommentInput').value='';byId('shortCommentStatus').textContent='';
+          await loadShortComments(currentShortCommentVideoId);
+          const list=byId('shortCommentsList');list.scrollTop=0;
+        }catch(err){
+          console.warn('ALTROOM Shorts comment post failed:',err);
+          byId('shortCommentStatus').textContent='Could not post. Check that the Shorts comments migration has been run.';
+          toast('Comment could not be posted. '+friendlyError(err));
+        }finally{submit.disabled=false;}
+      }
+
       async function removeShort(button){
         const id=button.dataset.shortDelete,path=button.dataset.shortPath;
         if(!confirm('Remove this clip from ALTROOM? This cannot be undone.'))return;
@@ -2066,12 +2285,15 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         }catch(err){toast('Could not remove the clip. '+friendlyError(err));button.disabled=false;}
       }
 
+      byId('shortCommentsClose').addEventListener('click',closeShortComments);
+      byId('shortCommentsOverlay').addEventListener('click',e=>{if(e.target===byId('shortCommentsOverlay'))closeShortComments();});
+      byId('shortCommentForm').addEventListener('submit',postShortComment);
       byId('shortsBtn').addEventListener('click',showShorts);
-      byId('shortsBackBtn').addEventListener('click',()=>{setChatMode('community');byId('shortsUploadOverlay').classList.add('hidden');if(shortsIntersectionObserver)shortsIntersectionObserver.disconnect();document.querySelectorAll('video.short-video').forEach(video=>video.pause());});
+      byId('shortsBackBtn').addEventListener('click',()=>{closeShortComments();setChatMode('community');byId('shortsUploadOverlay').classList.add('hidden');if(shortsIntersectionObserver)shortsIntersectionObserver.disconnect();document.querySelectorAll('video.short-video').forEach(video=>video.pause());});
       byId('shortUploadBtn').addEventListener('click',openShortUpload);
       byId('shortChooseFileBtn').addEventListener('click',()=>byId('shortVideoInput').click());
       byId('shortsUploadOverlay').addEventListener('click',e=>{if(e.target===byId('shortsUploadOverlay')){byId('shortsUploadOverlay').classList.add('hidden');}});
-      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!byId('shortsUploadOverlay').classList.contains('hidden'))byId('shortsUploadOverlay').classList.add('hidden');});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!byId('shortsUploadOverlay').classList.contains('hidden'))byId('shortsUploadOverlay').classList.add('hidden');if(!byId('shortCommentsOverlay').classList.contains('hidden'))closeShortComments();}});
       byId('shortsEmptyPostBtn')?.addEventListener('click',openShortUpload);
       byId('shortsRefreshBtn').addEventListener('click',loadShortsFeed);
       byId('shortsRetryBtn')?.addEventListener('click',loadShortsFeed);
@@ -2118,6 +2340,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         const sound=e.target.closest('[data-short-sound]');if(sound){await toggleShortSound(sound);return;}
         if(e.target.matches('video.short-video')){const video=e.target;if(video.paused){const play=video.play();if(play&&play.catch)play.catch(()=>{});}else video.pause();return;}
         const like=e.target.closest('[data-short-like]');if(like){await toggleShortLike(like);return;}
+        const comment=e.target.closest('[data-short-comment]');if(comment){await openShortComments(comment);return;}
         const share=e.target.closest('[data-short-share]');if(share){
           const id=share.dataset.shortShare,url=location.origin+location.pathname+'#shorts-'+id;
           const caption=share.closest('.short-card')?.querySelector('.short-caption')?.textContent||'A short from ALTROOM';
@@ -2191,7 +2414,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       openPrivateConversation=async function(conversationId,otherUserId){markPrivateRead(conversationId);await originalOpenPrivateConversationForUnread(conversationId,otherUserId);updateUnreadBadges();};
       const originalPrivateHubForUnread=loadPrivateHub;
       loadPrivateHub=async function(){await originalPrivateHubForUnread();updateUnreadBadges()};
-      if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+      if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(err=>console.warn('ALTROOM service worker update check failed:',err));
       const originalEnterWithSessionForUnread=enterWithSession;
       enterWithSession=async function(session){await originalEnterWithSessionForUnread(session);if(client&&currentUser&&!demoMode)setupUnreadRealtime();updateUnreadBadges();if(/^#shorts-[a-f0-9-]+$/i.test(location.hash)&&client&&currentUser&&!demoMode)showShorts()};
       const originalInitForUnread=init;

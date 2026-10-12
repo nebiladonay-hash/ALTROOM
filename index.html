@@ -1010,6 +1010,166 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       #appShell.shorts-mode .shorts-head-copy {position:static!important;left:auto!important;top:auto!important;transform:none!important;width:auto!important;max-width:calc(100% - 60px)!important}
     }
 
+
+
+    /* AFTERHOURS FYP v2 — strip broken side UI and keep the clip as the main event. */
+    html:has(body.shorts-active), body.shorts-active {
+      width:100%!important;height:100%!important;min-height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;
+      overscroll-behavior:none!important;background:#050506!important;
+    }
+    body.shorts-active #appShell.shorts-mode {
+      position:fixed!important;inset:0!important;z-index:99990!important;display:block!important;
+      width:100vw!important;height:100dvh!important;min-height:100dvh!important;max-width:none!important;
+      margin:0!important;padding:0!important;overflow:hidden!important;gap:0!important;background:#050506!important;
+    }
+    body.shorts-active #appShell.shorts-mode > .sidebar,
+    body.shorts-active #appShell.shorts-mode > .members-panel,
+    body.shorts-active #appShell.shorts-mode > .chat-panel > *:not(#shortsView) {display:none!important;}
+    body.shorts-active #appShell.shorts-mode > .chat-panel {
+      position:absolute!important;inset:0!important;display:block!important;width:100vw!important;height:100dvh!important;
+      min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#050506!important;
+      border:0!important;border-radius:0!important;box-shadow:none!important;
+    }
+    body.shorts-active #appShell.shorts-mode #shortsView:not(.hidden) {
+      position:absolute!important;inset:0!important;display:block!important;width:100vw!important;height:100dvh!important;
+      min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#050506!important;
+      border:0!important;border-radius:0!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-heading {
+      position:absolute!important;z-index:30!important;inset:0 0 auto 0!important;display:flex!important;
+      flex-direction:row!important;align-items:flex-start!important;justify-content:space-between!important;gap:12px!important;
+      width:100%!important;box-sizing:border-box!important;padding:calc(12px + env(safe-area-inset-top)) 14px 34px!important;
+      margin:0!important;border:0!important;border-radius:0!important;
+      background:linear-gradient(180deg,rgba(5,5,6,.96) 0%,rgba(5,5,6,.74) 67%,transparent 100%)!important;
+      pointer-events:none!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-heading > * {pointer-events:auto!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-head-copy {
+      position:static!important;left:auto!important;top:auto!important;transform:none!important;
+      display:block!important;width:auto!important;max-width:calc(100% - 58px)!important;min-width:0!important;
+      margin:0!important;padding:0!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-topline {
+      display:flex!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:nowrap!important;
+      gap:9px!important;margin:0 0 9px!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-back {
+      display:inline-flex!important;flex:0 0 auto!important;align-items:center!important;justify-content:center!important;
+      gap:5px!important;min-height:34px!important;padding:6px 10px!important;border:1px solid #ffffff55!important;
+      border-radius:999px!important;background:#151517e8!important;color:#fff!important;font-size:10px!important;
+      line-height:1!important;font-weight:900!important;letter-spacing:.08em!important;white-space:nowrap!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-stamp {
+      display:inline-flex!important;align-items:center!important;gap:6px!important;padding:0!important;border:0!important;
+      background:transparent!important;color:#e4e2e7!important;font-size:9px!important;line-height:1.2!important;
+      letter-spacing:.13em!important;font-weight:950!important;white-space:nowrap!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-heading h2 {
+      display:block!important;margin:0 0 5px!important;padding:0!important;color:#fff!important;
+      font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif!important;
+      font-size:clamp(25px,6vw,34px)!important;line-height:1!important;letter-spacing:-.055em!important;
+      font-weight:950!important;text-transform:none!important;white-space:normal!important;overflow-wrap:normal!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-heading h2 span {color:#bcbac2!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-heading p {
+      display:block!important;margin:0!important;padding:0!important;max-width:48ch!important;color:#e0dee3!important;
+      font-size:11px!important;line-height:1.4!important;font-weight:450!important;text-shadow:0 1px 5px #000!important;
+    }
+    /* These were decorative, nonfunctional labels and looked like stray letters. */
+    body.shorts-active #appShell.shorts-mode .shorts-feed-tabs {display:none!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-heading-actions {
+      display:flex!important;flex:0 0 auto!important;align-items:flex-start!important;justify-content:flex-end!important;
+      gap:0!important;padding:0!important;margin:0!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-refresh {display:none!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-upload-fab {
+      display:grid!important;place-items:center!important;flex:0 0 46px!important;width:46px!important;height:46px!important;
+      min-width:46px!important;min-height:46px!important;padding:0!important;border:0!important;border-radius:50%!important;
+      background:#f4f2ed!important;color:#0b0b0c!important;font-size:31px!important;font-weight:500!important;
+      line-height:1!important;box-shadow:0 4px 18px #000a!important;
+    }
+    body.shorts-active #appShell.shorts-mode #shortsFeed {
+      position:absolute!important;z-index:1!important;inset:0!important;display:flex!important;flex-direction:column!important;
+      align-items:center!important;justify-content:flex-start!important;gap:0!important;width:100%!important;height:100%!important;
+      min-height:0!important;margin:0!important;padding:0!important;overflow-x:hidden!important;overflow-y:auto!important;
+      overscroll-behavior-y:contain!important;touch-action:pan-y pinch-zoom!important;scrollbar-width:none!important;
+      scroll-snap-type:y mandatory!important;background:#050506!important;
+    }
+    body.shorts-active #appShell.shorts-mode #shortsFeed::-webkit-scrollbar {display:none!important;}
+    body.shorts-active #appShell.shorts-mode .short-card {
+      position:relative!important;isolation:isolate!important;flex:0 0 auto!important;align-self:stretch!important;
+      width:100vw!important;max-width:100vw!important;height:100dvh!important;min-height:100dvh!important;max-height:none!important;
+      aspect-ratio:auto!important;margin:0!important;padding:0!important;overflow:hidden!important;
+      border:0!important;border-radius:0!important;box-shadow:none!important;background:#050506!important;
+      scroll-snap-align:start!important;scroll-snap-stop:always!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-video {
+      position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;
+      max-width:none!important;max-height:none!important;object-fit:cover!important;background:#050506!important;border:0!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-video-shade {
+      position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;
+      background:linear-gradient(180deg,#0008 0%,transparent 22%,transparent 56%,#000c 100%)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-card-top {display:none!important;}
+    body.shorts-active #appShell.shorts-mode .short-card-bottom {
+      position:absolute!important;z-index:3!important;left:0!important;right:0!important;bottom:0!important;display:block!important;
+      width:100%!important;box-sizing:border-box!important;margin:0!important;padding:68px 72px calc(26px + env(safe-area-inset-bottom)) 16px!important;
+      overflow:hidden!important;background:linear-gradient(0deg,#000e 0%,#0009 55%,transparent 100%)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-copy {width:100%!important;max-width:100%!important;min-width:0!important;color:#fff!important;}
+    body.shorts-active #appShell.shorts-mode .short-author {display:flex!important;align-items:center!important;gap:8px!important;margin:0 0 8px!important;color:#fff!important;font-size:12px!important;line-height:1.25!important;}
+    body.shorts-active #appShell.shorts-mode .short-caption {
+      display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:4!important;overflow:hidden!important;
+      margin:0!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;color:#fff!important;font-size:13px!important;
+      line-height:1.45!important;text-shadow:0 1px 5px #000!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-card-actions {
+      position:absolute!important;z-index:6!important;right:12px!important;bottom:calc(112px + env(safe-area-inset-bottom))!important;
+      display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action {
+      display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+      gap:4px!important;width:43px!important;min-height:43px!important;padding:4px 2px!important;
+      border:1px solid #ffffffa6!important;border-radius:50%!important;background:#151517d9!important;color:#fff!important;
+      font-size:19px!important;line-height:1!important;backdrop-filter:blur(6px)!important;
+    }
+    body.shorts-active #appShell.shorts-mode .short-action small {font-size:8px!important;line-height:1!important;color:#fff!important;font-weight:850!important;}
+    body.shorts-active #appShell.shorts-mode .shorts-empty-state {
+      position:relative!important;z-index:3!important;flex:0 0 auto!important;align-self:center!important;
+      width:min(520px,calc(100% - 34px))!important;min-height:260px!important;margin:auto!important;padding:24px!important;
+      border:1px solid #ffffff2b!important;border-radius:16px!important;background:#131315!important;box-shadow:none!important;
+    }
+    body.shorts-active #appShell.shorts-mode .shorts-footnote {display:none!important;}
+    #shortsPullIndicator {
+      position:absolute!important;z-index:45!important;top:calc(10px + env(safe-area-inset-top))!important;left:50%!important;
+      transform:translate(-50%,calc(-145% + var(--pull-distance,0px)))!important;opacity:0!important;
+      display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;
+      max-width:calc(100% - 36px)!important;padding:10px 14px!important;border:1px solid #ffffff3d!important;
+      border-radius:999px!important;background:#171719f2!important;color:#f5f3f0!important;
+      font-size:11px!important;line-height:1!important;font-weight:850!important;white-space:nowrap!important;
+      pointer-events:none!important;transition:opacity .12s ease,transform .12s ease!important;
+    }
+    #shortsPullIndicator.is-pulling,#shortsPullIndicator.is-refreshing {opacity:1!important;}
+    #shortsPullIndicator.is-ready {border-color:#fff!important;background:#f4f2ed!important;color:#111!important;}
+    #shortsPullIndicator.is-refreshing .shorts-pull-arrow {display:inline-block!important;animation:altroom-pull-spin .7s linear infinite!important;}
+    @keyframes altroom-pull-spin {to{transform:rotate(360deg)}}
+    @media(max-width:600px) {
+      body.shorts-active #appShell.shorts-mode .shorts-heading {padding:calc(10px + env(safe-area-inset-top)) 12px 32px!important;gap:8px!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-head-copy {max-width:calc(100% - 54px)!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-topline {gap:8px!important;margin-bottom:8px!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-back {min-height:32px!important;padding:6px 9px!important;font-size:9px!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-stamp {font-size:8px!important;letter-spacing:.1em!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-heading h2 {font-size:clamp(24px,7vw,31px)!important;margin-bottom:5px!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-heading p {max-width:100%!important;font-size:10px!important;line-height:1.35!important;}
+      body.shorts-active #appShell.shorts-mode .shorts-upload-fab {width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;flex-basis:42px!important;font-size:29px!important;}
+      body.shorts-active #appShell.shorts-mode .short-card-bottom {padding:62px 64px calc(22px + env(safe-area-inset-bottom)) 14px!important;}
+      body.shorts-active #appShell.shorts-mode .short-caption {font-size:12px!important;-webkit-line-clamp:4!important;}
+      body.shorts-active #appShell.shorts-mode .short-card-actions {right:9px!important;bottom:calc(106px + env(safe-area-inset-bottom))!important;gap:13px!important;}
+      body.shorts-active #appShell.shorts-mode .short-action {width:40px!important;min-height:40px!important;font-size:17px!important;}
+    }
+    @media(prefers-reduced-motion:reduce){#shortsPullIndicator{transition:none!important;}}
+
   </style>
 </head>
 <body>
@@ -1069,12 +1229,11 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         <header class="shorts-heading">
           <div class="shorts-head-copy">
             <div class="shorts-topline">
-              <button id="shortsBackBtn" class="shorts-back" type="button" aria-label="Back to rooms">← <span>ROOMS</span></button>
+              <button id="shortsBackBtn" class="shorts-back" type="button" aria-label="Go back to ALTROOM home">⌂ <span>HOME</span></button>
               <span class="shorts-stamp"><span class="stamp-dot"></span> ALTROOM / FYP</span>
             </div>
             <h2>Afterhours <span>feed</span></h2>
             <p>Little moments from people who never quite fit the usual feed. Art, riffs, rituals, strange hobbies. <b>30 seconds max.</b></p>
-            <div class="shorts-feed-tabs" aria-label="Video feed type"><span class="active">FOR YOU</span><span>FRESH CUTS</span><span>MADE BY US</span></div>
           </div>
           <div class="shorts-heading-actions">
             <button id="shortsRefreshBtn" class="shorts-refresh" type="button" aria-label="Refresh videos" title="Refresh">↻</button>
@@ -1082,6 +1241,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
             <input id="shortVideoInput" class="hidden" type="file" accept="video/mp4,video/webm,video/quicktime" aria-label="Choose a clip to upload">
           </div>
         </header>
+        <div id="shortsPullIndicator" class="shorts-pull-indicator" aria-live="polite" aria-hidden="true"><span class="shorts-pull-arrow">↓</span><span id="shortsPullText">Pull down to refresh</span></div>
         <div id="shortsUploadOverlay" class="short-upload-overlay hidden" role="presentation">
           <form id="shortUploadForm" class="short-upload-form" role="dialog" aria-modal="true" aria-labelledby="shortUploadTitle">
             <div class="short-upload-form-title"><div><span class="upload-kicker">YOUR 30-SECOND WINDOW</span><b id="shortUploadTitle">Drop a little world here.</b><span>Show us what you're making, hearing, collecting, or thinking about.</span></div><button id="shortUploadCancel" type="button" class="short-cancel" aria-label="Cancel clip upload">×</button></div>
@@ -1603,6 +1763,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         byId('privateChatsBtn').classList.toggle('active', mode === 'private');
         byId('shortsBtn').classList.toggle('active', mode === 'shorts');
         byId('appShell').classList.toggle('shorts-mode', mode === 'shorts');
+        document.body.classList.toggle('shorts-active', mode === 'shorts');
         byId('shortsView').classList.toggle('hidden', mode !== 'shorts');
       };
 
@@ -1643,11 +1804,13 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
         else byId('shortCaption').focus();
       }
 
-      async function loadShortsFeed(){
+      async function loadShortsFeed({quiet=false} = {}){
         if(shortsLoading || !client || !currentUser || demoMode)return;
         shortsLoading=true;
         const feed=byId('shortsFeed');
-        feed.innerHTML='<div class="shorts-empty-state"><div class="empty-tape">LOADING THE NOISE</div><h3>Finding the latest clips…</h3><p>One moment while the community feed loads.</p></div>';
+        const alreadyHasVideos=!!feed.querySelector('.short-card');
+        // On pull-to-refresh, do not wipe out the video being watched while the request runs.
+        if(!quiet || !alreadyHasVideos)feed.innerHTML='<div class="shorts-empty-state"><div class="empty-tape">LOADING THE NOISE</div><h3>Finding the latest clips…</h3><p>One moment while the community feed loads.</p></div>';
         try{
           const {data,error}=await client.from('short_videos').select('id,user_id,caption,media_path,created_at').order('created_at',{ascending:false}).limit(50);
           if(error)throw error;
@@ -1682,6 +1845,8 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
                 <div class="short-card-actions"><button class="short-action short-sound" data-short-sound="${esc(v.id)}" type="button" aria-label="Turn sound on for this video" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6m0-6-5 6"/></svg></span><small>Sound off</small></button><button class="short-action ${likesState.mine?'is-liked':''}" data-short-like="${esc(v.id)}" data-liked="${likesState.mine?'1':'0'}" type="button" aria-label="${likesState.mine?'Unlike':'Like'} this video"><span aria-hidden="true">♥</span><small data-like-count>${likesState.count>999?'999+':likesState.count}</small></button><button class="short-action" data-short-share="${esc(v.id)}" type="button" aria-label="Share video"><span aria-hidden="true">↗</span><small>Share</small></button>${v.user_id===currentUser.id?`<button class="short-action short-delete" data-short-delete="${esc(v.id)}" data-short-path="${esc(v.media_path)}" type="button" aria-label="Delete your video"><span aria-hidden="true">×</span><small>Remove</small></button>`:''}</div>
               </div></article>`;
           }).join('');
+          // Always start a refreshed feed at the first clip.
+          feed.scrollTop=0;
           if(shortsIntersectionObserver)shortsIntersectionObserver.disconnect();
           if('IntersectionObserver' in window){
             shortsIntersectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const video=entry.target.querySelector('video.short-video');if(!video)return;if(entry.isIntersecting&&entry.intersectionRatio>=.65){video.muted=!shortsSoundOn;const play=video.play();if(play&&play.catch)play.catch(()=>{if(!video.muted){video.muted=true;shortsSoundOn=false;refreshShortSoundButtons();toast('Your browser blocked autoplay audio. Tap the sound button to enable it.');}});}else{video.pause();}}),{root:feed,threshold:[0,.25,.65,1]});
@@ -1690,7 +1855,10 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
           const match=location.hash.match(/^#shorts-([a-f0-9-]+)$/i);
           if(match){const target=feed.querySelector('[data-short-id="'+match[1]+'"]');if(target)setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),80);}
         }catch(err){
-          feed.innerHTML=`<div class="shorts-empty-state"><div class="empty-tape">ONE SETUP STEP</div><h3>The video club needs its table.</h3><p>Run <b>ALTROOM-Shorts-Migration.sql</b> in your existing Supabase project, then refresh this section. Your existing chats are not changed.</p><p style="font-size:10px;color:#888;overflow-wrap:anywhere">${esc(friendlyError(err))}</p><button type="button" class="button primary" id="shortsRetryBtn">↻ Try again</button></div>`;
+          if(quiet && feed.querySelector('.short-card')){
+            console.warn('ALTROOM Shorts refresh failed:',err);
+            toast('Could not refresh clips. Your current video is still here.');
+          }else feed.innerHTML=`<div class="shorts-empty-state"><div class="empty-tape">ONE SETUP STEP</div><h3>The video club needs its table.</h3><p>Run <b>ALTROOM-Shorts-Migration.sql</b> in your existing Supabase project, then refresh this section. Your existing chats are not changed.</p><p style="font-size:10px;color:#888;overflow-wrap:anywhere">${esc(friendlyError(err))}</p><button type="button" class="button primary" id="shortsRetryBtn">↻ Try again</button></div>`;
         }finally{shortsLoading=false;}
       }
 
@@ -1791,6 +1959,44 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       byId('shortsEmptyPostBtn')?.addEventListener('click',openShortUpload);
       byId('shortsRefreshBtn').addEventListener('click',loadShortsFeed);
       byId('shortsRetryBtn')?.addEventListener('click',loadShortsFeed);
+
+      // Mobile pull-to-refresh. The feed stays visible until the refresh completes.
+      const shortsPullFeed=byId('shortsFeed');
+      const shortsPullIndicator=byId('shortsPullIndicator');
+      const shortsPullText=byId('shortsPullText');
+      let shortsPullStart=null,shortsPullAmount=0,shortsPullBusy=false;
+      function resetShortsPull(){
+        shortsPullStart=null;shortsPullAmount=0;
+        if(shortsPullIndicator){shortsPullIndicator.classList.remove('is-pulling','is-ready','is-refreshing');shortsPullIndicator.style.setProperty('--pull-distance','0px');shortsPullIndicator.setAttribute('aria-hidden','true');}
+      }
+      shortsPullFeed.addEventListener('touchstart',e=>{
+        if(e.touches.length!==1 || shortsPullBusy || shortsPullFeed.scrollTop>1)return;
+        const t=e.touches[0];shortsPullStart={x:t.clientX,y:t.clientY};shortsPullAmount=0;
+      },{passive:true});
+      shortsPullFeed.addEventListener('touchmove',e=>{
+        if(!shortsPullStart || e.touches.length!==1 || shortsPullFeed.scrollTop>1)return;
+        const t=e.touches[0],dy=t.clientY-shortsPullStart.y,dx=t.clientX-shortsPullStart.x;
+        if(dy<=0 || Math.abs(dx)>Math.abs(dy)*.8){resetShortsPull();return;}
+        shortsPullAmount=Math.min(110,dy*.72);
+        if(shortsPullIndicator){
+          shortsPullIndicator.classList.add('is-pulling');
+          shortsPullIndicator.classList.toggle('is-ready',shortsPullAmount>=65);
+          shortsPullIndicator.style.setProperty('--pull-distance',`${shortsPullAmount}px`);
+          shortsPullIndicator.setAttribute('aria-hidden','false');
+          if(shortsPullText)shortsPullText.textContent=shortsPullAmount>=65?'Release to refresh':'Pull down to refresh';
+        }
+      },{passive:true});
+      const finishShortsPull=async()=>{
+        if(!shortsPullStart)return;
+        const shouldRefresh=shortsPullAmount>=65;shortsPullStart=null;shortsPullAmount=0;
+        if(!shouldRefresh){resetShortsPull();return;}
+        shortsPullBusy=true;
+        if(shortsPullIndicator){shortsPullIndicator.classList.remove('is-pulling','is-ready');shortsPullIndicator.classList.add('is-refreshing');shortsPullIndicator.style.setProperty('--pull-distance','68px');shortsPullIndicator.setAttribute('aria-hidden','false');if(shortsPullText)shortsPullText.textContent='Refreshing clips…';}
+        try{await loadShortsFeed({quiet:true});}
+        finally{setTimeout(()=>{resetShortsPull();shortsPullBusy=false;},350);}
+      };
+      shortsPullFeed.addEventListener('touchend',finishShortsPull,{passive:true});
+      shortsPullFeed.addEventListener('touchcancel',resetShortsPull,{passive:true});
       byId('shortsEmptyPostBtn')?.addEventListener('click',openShortUpload);
       byId('shortsFeed').addEventListener('click',async e=>{
         const sound=e.target.closest('[data-short-sound]');if(sound){await toggleShortSound(sound);return;}

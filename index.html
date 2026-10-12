@@ -697,6 +697,153 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
     }
     @media(prefers-reduced-motion:reduce){.short-card,.shorts-feed{scroll-behavior:auto!important;scroll-snap-type:none!important}}
 
+
+    /* ALTROOM LAYOUT REPAIR — keep labels, helper text, and icons in separate space. */
+    .mode-tab,
+    .channel-btn,
+    .room-card-top,
+    .room-card-heading,
+    .header-actions,
+    .composer-tools,
+    .shorts-heading,
+    .shorts-head-copy,
+    .shorts-heading-actions,
+    .short-card-bottom,
+    .short-copy,
+    .short-card-actions,
+    .short-author {
+      min-width: 0;
+    }
+    .mode-tab {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 7px !important;
+      line-height: 1.2 !important;
+      max-width: 100%;
+    }
+    .mode-tab > span[aria-hidden="true"] {
+      flex: 0 0 auto !important;
+      display: inline-grid !important;
+      place-items: center !important;
+      line-height: 1 !important;
+    }
+    .mode-tab > span:not([aria-hidden="true"]) {
+      min-width: 0 !important;
+      overflow-wrap: anywhere !important;
+    }
+    .channel-btn { gap: 9px !important; }
+    .channel-btn > span:not(.channel-dot) { min-width: 0; overflow-wrap: anywhere; line-height: 1.25; }
+    .channel-dot { flex: 0 0 27px !important; }
+    .room-card-top { align-items: flex-start !important; }
+    .room-card-icon { flex: 0 0 36px !important; }
+    .room-card-heading { flex: 1 1 auto !important; overflow-wrap: anywhere; }
+    .room-card-heading h3 { line-height: 1.2 !important; overflow-wrap: anywhere; }
+
+    .shorts-heading {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) auto !important;
+      align-items: start !important;
+      gap: 16px !important;
+    }
+    .shorts-head-copy { min-width: 0 !important; width: 100%; }
+    .shorts-heading h2 { overflow-wrap: anywhere !important; }
+    .shorts-heading p { max-width: 58ch !important; overflow-wrap: anywhere !important; }
+    .shorts-heading-actions { min-width: 0 !important; max-width: none !important; }
+    .shorts-heading-actions > button { max-width: 100%; min-width: 0; }
+
+    /* The right rail gets its own width; captions are clamped before they can run into it. */
+    .short-card-bottom {
+      display: flex !important;
+      align-items: flex-end !important;
+      gap: 12px !important;
+      overflow: hidden !important;
+    }
+    .short-copy {
+      flex: 1 1 0% !important;
+      width: 0 !important;
+      max-width: calc(100% - 56px) !important;
+      overflow: hidden !important;
+    }
+    .short-author { max-width: 100%; line-height: 1.25 !important; }
+    .short-author > span:not(.short-author-mark) { min-width: 0; overflow-wrap: anywhere; }
+    .short-author small { overflow-wrap: anywhere; }
+    .short-caption {
+      display: -webkit-box !important;
+      -webkit-box-orient: vertical !important;
+      -webkit-line-clamp: 4 !important;
+      overflow: hidden !important;
+      max-width: 100% !important;
+      line-height: 1.4 !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
+    .short-card-actions {
+      position: relative !important;
+      z-index: 4 !important;
+      flex: 0 0 42px !important;
+      width: 42px !important;
+      min-width: 42px !important;
+      align-items: stretch !important;
+      justify-content: flex-end !important;
+      gap: 8px !important;
+    }
+    .short-action {
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex: 0 0 auto !important;
+      width: 42px !important;
+      min-width: 42px !important;
+      min-height: 44px !important;
+      height: auto !important;
+      padding: 5px 2px !important;
+      gap: 5px !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+      overflow: hidden !important;
+    }
+    .short-action > span { display: block !important; flex: 0 0 auto !important; line-height: 1 !important; }
+    .short-action small {
+      display: block !important;
+      position: static !important;
+      flex: 0 0 auto !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.1 !important;
+      text-align: center !important;
+      font-size: 8px !important;
+    }
+
+    @media (max-width: 720px) {
+      .shorts-heading { grid-template-columns: minmax(0, 1fr) minmax(78px, 105px) !important; gap: 9px !important; }
+      .shorts-head-copy { max-width: 100% !important; }
+      .shorts-heading p { max-width: 100% !important; }
+      .shorts-heading-actions { width: 100% !important; flex-direction: column-reverse !important; align-items: stretch !important; gap: 6px !important; }
+      .shorts-heading-actions .button { width: 100% !important; white-space: normal !important; overflow-wrap: anywhere !important; line-height: 1.2 !important; }
+      .shorts-refresh { display: flex !important; align-items: center !important; justify-content: center !important; gap: 5px !important; }
+      .shorts-refresh span { display: none !important; }
+      .short-card-bottom { gap: 8px !important; padding: 36px 9px 10px !important; }
+      .short-copy { max-width: calc(100% - 44px) !important; }
+      .short-card-actions { flex-basis: 36px !important; width: 36px !important; min-width: 36px !important; gap: 7px !important; }
+      .short-action { width: 36px !important; min-width: 36px !important; min-height: 39px !important; padding: 4px 1px !important; gap: 4px !important; }
+      .short-action small { font-size: 7px !important; }
+    }
+    @media (max-width: 390px) {
+      .shorts-heading { grid-template-columns: minmax(0, 1fr) 82px !important; gap: 7px !important; padding-inline: 8px !important; }
+      .shorts-heading h2 { font-size: clamp(20px, 6.2vw, 23px) !important; letter-spacing: -.04em !important; }
+      .shorts-heading p { font-size: 9px !important; line-height: 1.4 !important; }
+      .shorts-stamp { max-width: 100% !important; font-size: 6px !important; letter-spacing: .05em !important; overflow-wrap: anywhere; }
+      .shorts-heading-actions { max-width: 82px !important; }
+      .shorts-heading-actions .button { padding-inline: 5px !important; font-size: 9px !important; }
+      .short-card-bottom { padding-inline: 7px !important; gap: 7px !important; }
+      .short-copy { max-width: calc(100% - 41px) !important; }
+      .short-author { gap: 5px !important; }
+      .short-caption { -webkit-line-clamp: 3 !important; font-size: 10px !important; }
+      .short-card-actions { flex-basis: 34px !important; width: 34px !important; min-width: 34px !important; }
+      .short-action { width: 34px !important; min-width: 34px !important; min-height: 37px !important; font-size: 15px !important; }
+      .short-action small { font-size: 6px !important; }
+    }
+
   </style>
 </head>
 <body>

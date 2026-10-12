@@ -844,6 +844,38 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       .short-action small { font-size: 6px !important; }
     }
 
+
+    /* FINAL HEADER OVERLAP FIX: the room tagline must never run underneath the action icons. */
+    .chat-header{min-width:0;overflow:hidden}
+    .chat-title{flex:1 1 0%;min-width:0;overflow:hidden}
+    .chat-title>div:last-child{flex:1 1 0%;min-width:0;max-width:100%;overflow:hidden}
+    .chat-title h1,.chat-title p{display:block;max-width:100%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .header-actions{position:relative;z-index:2;display:flex;flex:0 0 auto;min-width:max-content;flex-wrap:nowrap;gap:5px}
+    .header-actions>.button{position:relative;flex:0 0 auto}
+    @media(max-width:1000px){
+      .chat-header{gap:8px}
+      .chat-title p{display:none!important}
+      .header-actions{gap:4px}
+      .header-actions .action-label{display:none!important}
+      .header-actions>.button{display:inline-flex;align-items:center;justify-content:center;width:32px;min-width:32px;height:32px;min-height:32px;padding:5px}
+      .header-actions .action-symbol{display:inline;font-size:13px}
+      .chat-title h1{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    }
+    @media(max-width:720px){
+      .chat-header{padding:8px 9px;gap:6px;min-height:55px;flex-wrap:nowrap}
+      .chat-title{gap:6px;flex:1 1 0%;min-width:0}
+      .channel-emblem{flex:0 0 31px;width:31px;height:31px}
+      .chat-title>div:last-child{flex:1 1 0%;min-width:0;overflow:hidden}
+      .chat-title h1{font-size:14px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+      .chat-title p{display:none!important}
+      .header-actions{flex:0 0 auto;gap:3px;min-width:max-content}
+      .header-actions>.button{width:30px;min-width:30px;height:30px;min-height:30px;padding:4px}
+    }
+    @media(max-width:350px){
+      .header-actions #roomCallBtn{display:none!important}
+      .chat-title h1{font-size:13px}
+    }
+
   </style>
 </head>
 <body>

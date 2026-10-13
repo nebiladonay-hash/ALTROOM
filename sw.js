@@ -1,4 +1,4 @@
-const CACHE = 'altroom-shell-v20-anime-art-wall-20261013';
+const CACHE = 'altroom-shell-v20-matte-manga-mobile-v8-20261013';
 const CORE = ['./index.html'];
 const OPTIONAL = ['./manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => {

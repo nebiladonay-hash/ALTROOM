@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090909">
-  <meta name="altroom-build" content="anime-art-wall-v7-social-feed-20261013">
+  <meta name="altroom-build" content="matte-manga-mobile-v8-20261013">
   <meta name="description" content="A small, gothic corner of the internet for alternative minds and uncommon interests. Create an account and join the conversation.">
   <title>ALTROOM — your corner of the strange</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -1500,6 +1500,208 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
     @media(prefers-reduced-motion:reduce){button,.button,.mode-tab,.channel-btn,.room-card{transition:none!important}}
 
   </style>
+  <style id="altroom-matte-manga-mobile-v8">
+/* ALTROOM V8 — matte manga / DIY-zine finish + mobile navigation repair */
+:root{
+  --bg:#111113!important;
+  --panel:#19191b!important;
+  --panel2:#242225!important;
+  --line:#403b3b!important;
+  --text:#eee9e0!important;
+  --muted:#aaa39b!important;
+  --violet:#b7a7a0!important;
+  --lime:#784348!important;
+  --pink:#986e6b!important;
+  --danger:#bc6d70!important;
+  --shadow:none!important;
+  --radius:16px!important;
+}
+html,body{
+  background-color:#111113!important;
+  color:#eee9e0!important;
+  background-image:radial-gradient(circle at 1px 1px,rgba(237,230,219,.026) .8px,transparent 1px)!important;
+  background-size:8px 8px!important;
+  background-attachment:fixed!important;
+  text-shadow:none!important;
+  -webkit-tap-highlight-color:transparent;
+}
+#appShell,.sidebar,.chat-panel,.members-panel,.setup-card,.auth-layout,.private-window,.modal-card,.profile-modal,.gallery-modal,.call-stage,
+.chat-header,.altroom-modebar,.composer,.private-window-head,.private-composer,.call-stage-head,
+.artwall-topbar,.artwall-composer-shell,.artwork-card,.room-card,.highlight-card,.short-card,.shorts-empty-state{
+  background-color:#19191b!important;
+  background-image:none!important;
+  border-color:#403b3b!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+.sidebar,.chat-panel,.members-panel,.setup-card,.auth-layout,.private-window,.modal-card,.profile-modal,.gallery-modal,.call-stage{color:#eee9e0!important}
+.brand-mark,.channel-emblem,.channel-dot,.welcome-box .symbol,.room-card-icon,.artwall-heading-mark,.artwall-composer-spark,.private-empty-icon{
+  background:#d9d1c5!important;color:#191719!important;border:1px solid #f0e9df!important;box-shadow:2px 2px 0 #080808!important;
+}
+.brand em,.eyebrow,.side-label,.private-subhead,.artwall-heading-copy .eyebrow,.artwall-feed-head .eyebrow{color:#b58a85!important;text-shadow:none!important}
+.brand em{color:#d0c2b5!important}
+h1,h2,h3,h4,.brand,.chat-title h1,.room-card h3,.artwall-heading-copy h2,.artwall-feed-head h3,.artwork-title{color:#f0ece4!important;text-shadow:none!important}
+.button,.mode-tab,.channel-btn,.composer-tool,.room-enter,.close-btn,.private-person-row,.private-composer button,.short-action,.short-cancel,
+.artwork-post-actions button,.artwall-comment-form button,.highlight-image-pick,.profile-action,.sticker-option{
+  background-color:#242225!important;
+  background-image:none!important;
+  border:1px solid #514849!important;
+  color:#eee9e0!important;
+  border-radius:999px!important;
+  box-shadow:2px 2px 0 #080808!important;
+  text-shadow:none!important;
+  transition:background-color .15s ease,border-color .15s ease,transform .15s ease!important;
+}
+.button:hover,.mode-tab:hover,.channel-btn:hover,.composer-tool:hover,.room-enter:hover,.close-btn:hover,.private-person-row:hover,.private-composer button:hover,
+.artwork-post-actions button:hover,.highlight-image-pick:hover,.profile-action:hover,.sticker-option:hover{
+  background-color:#302b2d!important;border-color:#8a6a69!important;box-shadow:2px 2px 0 #080808!important;transform:translateY(-1px)!important;
+}
+.button.primary,.room-enter,.send-btn,.artwall-submit-row .button.primary,.artwork-comment-submit{
+  background-color:#754347!important;background-image:none!important;border-color:#8b5a5b!important;color:#fff7ef!important;font-weight:850!important;
+}
+.button.primary:hover,.room-enter:hover,.send-btn:hover,.artwall-submit-row .button.primary:hover,.artwork-comment-submit:hover{
+  background-color:#8a5152!important;border-color:#b07a76!important;color:#fffaf4!important;
+}
+.button.ghost{background-color:#201e20!important}
+.mode-tab{min-width:0;color:#c9c2ba!important}
+.mode-tab.active{background:#ddd5c8!important;color:#181719!important;border-color:#ddd5c8!important;box-shadow:2px 2px 0 #080808!important}
+.mode-tab.active span,.mode-tab.active b{color:#181719!important}
+.channel-btn{background:#1e1c1e!important;border-color:transparent!important;color:#d2ccc4!important}
+.channel-btn.active{background:#302628!important;border-color:#88605f!important;color:#fff6ed!important;box-shadow:inset 3px 0 0 #966a68,2px 2px 0 #080808!important}
+.channel-btn.active .channel-dot{background:#d5c9bc!important;color:#201b1c!important}
+.field,input,textarea,select,.composer-input,.private-composer textarea,.artwall-comment-form textarea{
+  background:#111113!important;color:#eee9e0!important;border:1px solid #484142!important;box-shadow:none!important;border-radius:16px!important;
+}
+.field:focus,input:focus,textarea:focus,select:focus,.composer-input:focus{border-color:#98716d!important;outline:none!important;box-shadow:0 0 0 1px #98716d!important}
+::placeholder{color:#827b76!important;opacity:1}
+.chat-header,.private-thread-head,.private-window-head,.private-composer,.composer,.artwork-comments{background:#1b191b!important;border-color:#403b3b!important}
+.messages,.private-messages,.private-thread-pane,.private-list-pane,.artwall-scroll{background:#141416!important}
+.message-body,.private-message .message-body,.empty-state,.private-empty,.private-first-message,.welcome-box{
+  background:#201e20!important;border:1px solid #413b3b!important;color:#eee9e0!important;box-shadow:none!important;
+}
+.message.own .message-body,.message-row.own .message-body,.private-message-row.own .message-body{background:#343033!important;border-color:#625052!important}
+.room-directory{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))!important;gap:12px!important;min-width:0!important}
+.room-card{background:#1a191b!important;border:1px solid #403b3b!important;border-radius:17px!important;box-shadow:3px 4px 0 #080808!important;padding:17px!important;min-width:0!important;overflow:hidden!important}
+.room-card:hover{transform:translateY(-1px)!important;border-color:#725455!important;box-shadow:3px 5px 0 #080808!important}
+.room-card-icon{background:#302c2d!important;color:#e6ddd1!important;border:1px solid #595050!important;border-radius:12px!important;box-shadow:none!important}
+.room-card p{color:#bcb5ad!important;line-height:1.55!important;overflow-wrap:anywhere!important}
+.room-seat-count,.room-seat-mini{color:#a9a098!important}
+.room-enter{width:100%!important;min-height:44px!important;letter-spacing:.035em!important;border-radius:999px!important}
+.channel-bar,.channel-list,.sidebar .channel-list{scrollbar-width:none}
+.channel-bar::-webkit-scrollbar,.channel-list::-webkit-scrollbar,.sidebar .channel-list::-webkit-scrollbar{display:none}
+.header-actions .button{box-shadow:1px 2px 0 #080808!important}
+.close-btn{background:#292527!important;color:#eee9e0!important}
+.overlay{background:rgba(8,8,9,.86)!important;backdrop-filter:none!important}
+.toast{background:#ddd5c8!important;color:#171617!important;border:1px solid #a69a8c!important;box-shadow:3px 3px 0 #080808!important}
+.gallery-modal{border:1px solid #484042!important;border-radius:18px!important;background:#171719!important}
+.artwall-topbar{background:#1b191b!important;border-bottom:1px solid #403b3b!important}
+.artwall-heading-mark,.artwall-composer-spark{background:#d9d1c5!important;color:#191719!important;box-shadow:2px 2px 0 #080808!important}
+.artwall-heading-copy p,.artwall-composer-intro small,.artwork-caption,.artwork-post-date,.artwall-comment-content p{color:#bab3aa!important}
+.artwall-composer-shell{border:1px solid #484042!important;background:#1e1c1e!important;border-radius:18px!important;padding:14px!important}
+.artwall-image-pick,.artwall-submit-row .button,.artwall-comment-form button{border-radius:999px!important}
+.artwall-feed-head{border-bottom:1px solid #403b3b!important}
+.artwork-card{background:#1a191b!important;border:1px solid #403b3b!important;border-radius:16px!important;overflow:hidden!important;box-shadow:3px 4px 0 #080808!important}
+.artwork-image{background:#101011!important;border-color:#3a3535!important;object-fit:contain!important;max-width:100%!important}
+.artwork-post-actions button{background:#242225!important;color:#ddd6cd!important;border-color:#514849!important}
+.artwork-post-actions button.is-liked{background:#3d292b!important;color:#e5b6ad!important;border-color:#8a5b5a!important}
+.artwork-comments{background:#171719!important;border-color:#403b3b!important}
+.artwall-comment-avatar,.artwall-empty .emoji{background:#302b2c!important;color:#e5d8cf!important;border-color:#5a4a49!important}
+.artwall-empty{background:#1d1b1d!important;border:1px dashed #5b4b4a!important;color:#eee9e0!important}
+.private-person-row{background:#211f21!important;border-color:#383234!important;box-shadow:none!important}
+.private-person-row.has-unread{background:#322628!important;border-color:#785557!important}
+.audio-message,.sticker-card,.media-preview,.highlight-card{border-color:#484042!important;box-shadow:none!important}
+.audio-play,.audio-wave i.is-played{background:#9c7975!important;color:#141214!important}
+.artwork-image,video,img{accent-color:#875152}
+
+/* Keep section tabs from squeezing into one another on desktop/tablet. */
+.altroom-modebar{
+  display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-start!important;
+  gap:5px!important;min-width:0!important;max-width:100%!important;overflow-x:auto!important;overflow-y:hidden!important;
+  white-space:nowrap!important;padding:8px 10px!important;margin:7px 10px!important;
+  border:1px solid #403b3b!important;border-radius:17px!important;background:#171719!important;box-shadow:none!important;
+  scrollbar-width:none!important;
+}
+.altroom-modebar::-webkit-scrollbar{display:none!important}
+.altroom-modebar .mode-tab{
+  flex:0 0 auto!important;width:auto!important;max-width:none!important;min-width:max-content!important;
+  white-space:nowrap!important;overflow:visible!important;gap:7px!important;padding:9px 12px!important;
+  font-size:12px!important;line-height:1.15!important;border-radius:999px!important;box-shadow:none!important;
+}
+.mode-tab > span:not([aria-hidden="true"]){white-space:nowrap!important;overflow:visible!important;overflow-wrap:normal!important;word-break:normal!important;flex:0 0 auto!important}
+.mode-tab .shorts-nav-mark{background:#784348!important;color:#fff7ef!important;border:1px solid #8b5a5b!important;box-shadow:none!important}
+
+@media(max-width:720px){
+  html,body{width:100%!important;min-width:0!important;overflow-x:hidden!important}
+  #appShell{width:100%!important;max-width:100%!important;padding:0!important;gap:0!important;overflow:hidden!important;background:#111113!important}
+  .sidebar{background:#111113!important;border-bottom:1px solid #393536!important;padding:9px 10px 7px!important}
+  .sidebar .brand{padding-bottom:8px!important}
+  .chat-panel{width:100%!important;max-width:100%!important;min-width:0!important;border:0!important;border-radius:0!important;overflow:hidden!important}
+  .chat-header{width:100%!important;max-width:100%!important;min-width:0!important;padding:8px 9px!important;gap:6px!important;border-radius:0!important;background:#171719!important}
+  .chat-title{min-width:0!important;flex:1 1 auto!important;gap:7px!important}
+  .chat-title h1{font-size:14px!important;max-width:28vw!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  .header-actions{min-width:0!important;gap:4px!important;flex:0 0 auto!important}
+  .header-actions .button{width:34px!important;min-width:34px!important;height:34px!important;min-height:34px!important;padding:0!important;font-size:13px!important}
+  .messages{min-width:0!important;width:100%!important;padding:12px 10px 22px!important;overflow-x:hidden!important}
+  .room-directory{grid-template-columns:minmax(0,1fr)!important;gap:10px!important;width:100%!important}
+  .room-card{padding:15px!important;border-radius:16px!important}
+  .room-card h3{font-size:16px!important;line-height:1.25!important}
+  .room-card p{font-size:12px!important;line-height:1.55!important;margin:10px 0 13px!important}
+  .room-enter{min-height:43px!important;font-size:12px!important}
+  .composer{width:100%!important;max-width:100%!important;min-width:0!important;padding:8px 9px calc(8px + env(safe-area-inset-bottom))!important;background:#171719!important;border-top:1px solid #403b3b!important}
+  .composer-tools{gap:5px!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;padding:1px 1px 5px!important;scrollbar-width:none!important}
+  .composer-tools::-webkit-scrollbar{display:none!important}
+  .composer-tool{flex:0 0 auto!important;padding:7px 10px!important;font-size:10px!important;white-space:nowrap!important}
+  .composer-row{gap:7px!important;min-width:0!important}
+  .composer textarea{min-width:0!important;min-height:43px!important;border-radius:999px!important;padding:11px 13px!important}
+  .send-btn{flex:0 0 auto!important;min-width:54px!important;height:43px!important;border-radius:999px!important}
+  .artwall-topbar{padding:13px 13px 12px!important;gap:10px!important}
+  .artwall-heading-mark{width:39px!important;height:39px!important;flex-basis:39px!important;border-radius:12px!important}
+  .artwall-heading-copy h2{font-size:23px!important}
+  .artwall-heading-copy p{font-size:11px!important;line-height:1.4!important}
+  .artwall-scroll{padding:11px 10px calc(18px + env(safe-area-inset-bottom))!important}
+  .artwall-composer-shell{padding:11px!important;border-radius:15px!important}
+  .gallery-modal{position:fixed!important;inset:0!important;width:100vw!important;max-width:100vw!important;height:100dvh!important;max-height:100dvh!important;margin:0!important;border:0!important;border-radius:0!important}
+  .artwork-card{border-radius:14px!important}
+}
+
+/* Compact section switch: all five destinations stay readable on common phone widths. */
+@media(max-width:600px){
+  #appShell:not(.shorts-mode) .altroom-modebar{
+    display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    width:calc(100% - 18px)!important;max-width:calc(100% - 18px)!important;
+    margin:7px 9px 8px!important;padding:5px!important;gap:3px!important;
+    overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;
+    border-radius:15px!important;min-height:45px!important;box-sizing:border-box!important;
+  }
+  #appShell:not(.shorts-mode) .altroom-modebar .mode-tab{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    width:100%!important;min-width:0!important;max-width:100%!important;flex:initial!important;
+    padding:8px 2px!important;gap:4px!important;font-size:9px!important;line-height:1!important;
+    white-space:nowrap!important;overflow:hidden!important;border-radius:11px!important;
+  }
+  #appShell:not(.shorts-mode) .altroom-modebar .mode-tab>span[aria-hidden="true"]{font-size:13px!important;flex:0 0 auto!important}
+  #appShell:not(.shorts-mode) #shortsBtn>span:nth-of-type(2),
+  #appShell:not(.shorts-mode) #privateChatsBtn>span:nth-of-type(2),
+  #appShell:not(.shorts-mode) #artwallNavBtn>span:nth-of-type(2),
+  #appShell:not(.shorts-mode) #notificationPermissionBtn>span:nth-of-type(2){font-size:0!important;overflow:visible!important}
+  #appShell:not(.shorts-mode) #shortsBtn>span:nth-of-type(2)::after{content:"Clips";font-size:9px!important}
+  #appShell:not(.shorts-mode) #privateChatsBtn>span:nth-of-type(2)::after{content:"DMs";font-size:9px!important}
+  #appShell:not(.shorts-mode) #artwallNavBtn>span:nth-of-type(2)::after{content:"Art";font-size:9px!important}
+  #appShell:not(.shorts-mode) #notificationPermissionBtn>span:nth-of-type(2)::after{content:"Alerts";font-size:9px!important}
+  #appShell:not(.shorts-mode) .shorts-nav-mark{display:none!important}
+}
+@media(max-width:370px){
+  #appShell:not(.shorts-mode) .altroom-modebar{gap:2px!important;padding:4px!important}
+  #appShell:not(.shorts-mode) .altroom-modebar .mode-tab{font-size:8px!important;padding:8px 1px!important}
+  #appShell:not(.shorts-mode) .altroom-modebar .mode-tab>span[aria-hidden="true"]{font-size:12px!important}
+  #appShell:not(.shorts-mode) #shortsBtn>span:nth-of-type(2)::after,
+  #appShell:not(.shorts-mode) #privateChatsBtn>span:nth-of-type(2)::after,
+  #appShell:not(.shorts-mode) #artwallNavBtn>span:nth-of-type(2)::after,
+  #appShell:not(.shorts-mode) #notificationPermissionBtn>span:nth-of-type(2)::after{font-size:8px!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+  </style>
 </head>
 <body>
   <main id="setupView" class="auth-wrap hidden">
@@ -1552,7 +1754,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       <div class="side-bottom"><div class="user-card"><div class="avatar" id="sideAvatar">A</div><div style="min-width:0;flex:1"><div id="sideName" class="user-name">Member</div><div id="sideHandle" class="user-handle">@member</div></div><button class="button small ghost" id="sideProfileBtn" title="Edit profile">↗</button></div><button class="button ghost small" id="sideSignOut" style="width:100%">Sign out</button></div>
     </aside>
     <section class="chat-panel">
-      <nav class="altroom-modebar" aria-label="ALTROOM sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">▤</span> <span>Rooms</span></button><button class="mode-tab" id="shortsBtn" type="button"><span aria-hidden="true">▶</span> <span>30-sec video club</span><b class="shorts-nav-mark">NEW</b></button><button class="mode-tab" id="privateChatsBtn" type="button"><span aria-hidden="true">✉</span> <span>Private</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab" id="artwallNavBtn" type="button" aria-label="Open community Art Wall"><span aria-hidden="true">✿</span> <span>Art Wall</span></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications"><span aria-hidden="true">♧</span> <span>Notify</span></button></nav>
+      <nav class="altroom-modebar" aria-label="ALTROOM sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">▤</span> <span>Rooms</span></button><button class="mode-tab" id="shortsBtn" type="button" aria-label="Open the 30-second video club" title="30-second video club"><span aria-hidden="true">▶</span> <span>30-sec video club</span><b class="shorts-nav-mark">NEW</b></button><button class="mode-tab" id="privateChatsBtn" type="button" aria-label="Open private chats" title="Private chats"><span aria-hidden="true">✉</span> <span>Private</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab" id="artwallNavBtn" type="button" aria-label="Open community Art Wall" title="Community Art Wall"><span aria-hidden="true">✿</span> <span>Art Wall</span></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications" aria-label="Turn on browser notifications"><span aria-hidden="true">♧</span> <span>Notify</span></button></nav>
 
       <section id="shortsView" class="shorts-view hidden" aria-label="ALTROOM short video feed">
         <header class="shorts-heading" aria-label="Video controls">

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090909">
-  <meta name="altroom-build" content="shorts-v6-live-like-counts-20261012">
+  <meta name="altroom-build" content="anime-art-wall-v7-social-feed-20261013">
   <meta name="description" content="A small, gothic corner of the internet for alternative minds and uncommon interests. Create an account and join the conversation.">
   <title>ALTROOM — your corner of the strange</title>
   <link rel="manifest" href="manifest.webmanifest">
@@ -1363,6 +1363,142 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       .short-comments-sheet {width:100%!important;max-height:min(73dvh,690px)!important;min-height:280px!important;padding:16px 15px calc(10px + env(safe-area-inset-bottom))!important;border-radius:18px 18px 0 0!important;}
     }
 
+  
+
+    /* ALTROOM V7 · anime-night creative community, tuned for small phones */
+    :root{--bg:#0b0b15!important;--panel:#141424!important;--panel2:#1d1b32!important;--line:#332b4b!important;--text:#f8f4ff!important;--muted:#b7b2cc!important;--violet:#d9a7ff!important;--lime:#9ce8ff!important;--pink:#ff8ec8!important;--danger:#ff709d!important;--shadow:0 16px 42px #03030c80!important;--radius:22px!important}
+    html,body{max-width:100%;overflow-x:hidden;background:radial-gradient(ellipse at 10% 0%,#31205066,transparent 34%),radial-gradient(ellipse at 95% 12%,#19365344,transparent 32%),#0b0b15!important;color:#f8f4ff!important}
+    body{background-image:radial-gradient(circle at 6% 10%,#ff9fd70b 0 1px,transparent 2px),radial-gradient(circle at 90% 26%,#a9ddff0c 0 1px,transparent 2px),radial-gradient(ellipse at 10% 0%,#31205055,transparent 34%),radial-gradient(ellipse at 95% 12%,#19365333,transparent 32%)!important}
+    button,.button,.mode-tab,.channel-btn,.room-enter,.composer-tool,.close-btn,.tool-btn,.highlight-image-pick,.private-person-row,.short-action,.short-cancel{border-radius:999px!important;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,border-color .16s ease!important;touch-action:manipulation}
+    button:active,.button:active,.mode-tab:active,.channel-btn:active,.room-enter:active,.composer-tool:active{transform:scale(.96)!important}
+    button:focus-visible,.button:focus-visible,.field:focus-visible{outline:2px solid #d9a7ff!important;outline-offset:3px!important}
+    .button,.mode-tab,.channel-btn,.composer-tool,.room-enter,.close-btn{box-shadow:0 5px 16px #05040c35!important}
+    .button.primary{background:linear-gradient(135deg,#e6b5ff,#a4ddff)!important;color:#171124!important;border:1px solid #ead0ff!important;font-weight:900!important;box-shadow:0 8px 23px #b388ff26!important}
+    .button.primary:hover{background:linear-gradient(135deg,#f3d6ff,#c0ecff)!important;transform:translateY(-1px)!important;box-shadow:0 10px 28px #b388ff38!important}
+    .button.ghost,.close-btn,.composer-tool{background:#171629!important;border:1px solid #3d3658!important;color:#ebe5ff!important}
+    .button.ghost:hover,.close-btn:hover,.composer-tool:hover{border-color:#bd9cff!important;background:#24203a!important;color:#fff!important}
+    .field{background:#100f1d!important;color:#f8f4ff!important;border:1px solid #3b3456!important;border-radius:16px!important;max-width:100%!important}
+    .field:focus{border-color:#c6a4ff!important;box-shadow:0 0 0 3px #b486ff20!important}
+    .sidebar,.chat-panel,.members-panel,.setup-card,.auth-layout,.modal,.private-window,.gallery-modal{background:linear-gradient(150deg,#171526f7,#100f1df7)!important;border:1px solid #3b3157!important;border-radius:24px!important;box-shadow:0 18px 54px #03020b5e!important}
+    .brand-mark,.channel-emblem,.room-card-icon,.avatar{box-shadow:0 0 0 1px #d9a7ff18,0 7px 21px #07051055!important}
+    .channel-btn{border:1px solid #393250!important;background:#151426!important;color:#d9d4ee!important}
+    .channel-btn.active{background:linear-gradient(135deg,#6e477c,#284660)!important;color:#fff!important;border-color:#c2a2ff!important;box-shadow:0 6px 18px #a88dff20!important}
+    .channel-dot{border-radius:50%!important;background:#332546!important;color:#ffd7f0!important}
+    .room-card{border-radius:22px!important;border:1px solid #3d3459!important;background:linear-gradient(145deg,#1d1a31,#11111f)!important;box-shadow:0 12px 28px #03020b35!important;padding:18px!important}
+    .room-card:hover{border-color:#a58bdb!important;transform:translateY(-2px)!important;box-shadow:0 16px 34px #06030f70!important}
+    .room-card-icon{border-radius:15px!important;background:linear-gradient(135deg,#5f376e,#254965)!important;color:#fff!important}
+    .room-enter{background:linear-gradient(135deg,#c6a0ff,#98e2fa)!important;color:#171124!important;border-color:transparent!important;letter-spacing:.02em!important;font-weight:900!important}
+    .welcome-box{border-radius:22px!important;border:1px solid #40345f!important;border-left:3px solid #d9a7ff!important;background:linear-gradient(125deg,#9c76ff13,#83e3ff09)!important}
+    .chat-header{background:#131322f5!important;border-color:#352d50!important}
+    .chat-title h1{font-family:ui-rounded,system-ui,sans-serif!important;letter-spacing:-.03em!important}
+    .message-body{border-radius:5px 19px 19px 19px!important;background:#1a192b!important;border-color:#3b3453!important}
+    .message .avatar,.member-item .avatar{border-radius:50%!important}
+    .composer{background:linear-gradient(0deg,#0e0d18,#151424)!important;border-color:#373050!important}
+    .composer textarea{border-radius:20px!important}
+    .altroom-modebar{background:#111020d9!important;border:1px solid #373050!important;border-radius:999px!important;box-shadow:0 8px 26px #02020a50!important;padding:8px!important;gap:5px!important;margin:7px 10px 8px!important;backdrop-filter:blur(18px)!important}
+    .mode-tab{border-radius:999px!important;border:1px solid transparent!important;background:transparent!important;color:#c2bbdc!important;padding:9px 12px!important;min-height:39px!important;box-shadow:none!important}
+    .mode-tab.active{background:linear-gradient(135deg,#5b426e,#28485b)!important;border-color:#9279b5!important;color:#fff!important;box-shadow:0 5px 16px #0a071a80!important}
+    .mode-tab > span[aria-hidden="true"]{font-size:15px!important}
+    .header-actions .button{width:38px!important;min-width:38px!important;height:38px!important;min-height:38px!important;padding:0!important;border-radius:50%!important;display:inline-grid!important;place-items:center!important}
+    .header-actions .action-symbol{font-size:16px!important}
+    .chat-header{border-radius:18px 18px 0 0!important}
+    .modal{border-radius:24px!important}
+    .overlay{background:#05050dcc!important;backdrop-filter:blur(12px)!important}
+    .close-btn{width:40px!important;height:40px!important;min-width:40px!important;display:grid!important;place-items:center!important;border-radius:50%!important;background:#211a33!important}
+    .toast{border-radius:999px!important;background:linear-gradient(135deg,#e8caff,#bdeeff)!important;color:#1a1427!important;border:1px solid #f4dcff!important}
+    .auth-layout{overflow:hidden!important}
+    .auth-art{background:radial-gradient(circle at 80% 18%,#d9a7ff28,transparent 29%),radial-gradient(circle at 15% 88%,#83e4ff15,transparent 28%),linear-gradient(150deg,#171326,#0d0d18)!important}
+    .pills .pill{border-radius:999px!important;border-color:#453959!important}
+    .chat-header,.altroom-modebar,.composer,.modal-head,.gallery-heading{min-width:0!important}
+    .header-actions{flex:0 0 auto!important}
+    .gallery-modal{width:min(820px,100%)!important;max-height:min(94dvh,900px)!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;padding:0!important;border-radius:26px!important;background:linear-gradient(160deg,#171526,#0f101b)!important}
+    .artwall-topbar{display:flex;align-items:center;gap:14px;padding:20px 22px 15px;border-bottom:1px solid #302a48;background:linear-gradient(115deg,#281b3b,#152231);flex:0 0 auto}
+    .artwall-heading-mark{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border-radius:17px;background:linear-gradient(135deg,#edb8ff,#91e7ff);color:#24142f;font-size:23px;box-shadow:0 8px 24px #a58bff30}
+    .artwall-heading-copy{min-width:0;flex:1}.artwall-heading-copy .eyebrow{margin-bottom:4px;color:#cfb4f3!important}.artwall-heading-copy h2{margin:0!important;font-size:clamp(24px,4vw,32px)!important;letter-spacing:-.045em!important;font-family:ui-rounded,system-ui,sans-serif!important;font-weight:900!important}.artwall-heading-copy p{margin:4px 0 0!important;font-size:12px!important;color:#bcb7d0!important}.artwall-close{flex:0 0 auto}
+    .artwall-scroll{padding:15px 20px 20px;overflow:auto;min-height:0;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#56466f transparent}
+    .artwall-composer-shell{border:1px solid #42365e;background:linear-gradient(135deg,#211a34,#151d2a);border-radius:23px;padding:15px;box-shadow:0 12px 32px #02020a45}
+    .artwall-composer-intro{display:flex;align-items:center;gap:11px;margin-bottom:12px}.artwall-composer-spark{width:38px;height:38px;flex:0 0 38px;border-radius:13px;display:grid;place-items:center;color:#23162e;background:linear-gradient(135deg,#f1c0ff,#9ee9ff);font-size:20px}.artwall-composer-intro strong{display:block;color:#fff;font-size:13px}.artwall-composer-intro small{display:block;color:#b4adc9;font-size:11px;line-height:1.5;margin-top:3px}
+    .artwall-composer{margin:0!important;padding:0!important;border:0!important;background:transparent!important;display:grid;gap:10px}.artwall-composer .form-row{margin:0!important}.artwall-composer label:not(.highlight-image-pick){display:block;font-size:10px;color:#bdb4d5;margin:0 0 5px}.artwall-composer .field{padding:11px 13px!important;min-height:42px!important}.artwall-composer textarea{min-height:66px!important;resize:vertical!important}.artwall-image-pick{width:100%;justify-content:center!important;border:1px dashed #78669c!important;background:#17152a!important;border-radius:16px!important;padding:11px!important;color:#e6d8ff!important;margin:0!important}.artwall-submit-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.artwall-submit-row .button{min-height:43px;padding:10px 18px!important}.artwall-no-download-note{color:#aaa4c2;font-size:10px}.artwall-composer #artworkMessage{margin:0!important;min-height:0;overflow-wrap:anywhere}
+    .artwall-feed-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin:18px 0 12px!important;padding:0 2px 11px!important;border-top:0!important;border-bottom:1px solid #302a48!important}.artwall-feed-head h3{margin:4px 0 0!important;font-size:22px!important;font-weight:900!important;letter-spacing:-.035em!important;font-family:ui-rounded,system-ui,sans-serif!important}.artwall-feed-head .eyebrow{font-size:9px!important;color:#bfa0e8!important}.artwall-feed-head #refreshGalleryBtn{display:inline-flex!important;align-items:center!important;gap:6px!important}
+    .gallery-grid{display:flex!important;flex-direction:column!important;gap:14px!important;max-height:none!important;height:auto!important;overflow:visible!important;min-width:0!important}
+    .artwork-card{width:100%!important;min-width:0!important;border:1px solid #342d4c!important;border-radius:24px!important;overflow:hidden!important;background:linear-gradient(150deg,#171627,#11121d)!important;box-shadow:0 12px 28px #02020835!important}
+    .artwork-post-head{display:flex;align-items:center;gap:10px;padding:14px 15px 8px;min-width:0}.artwall-author-open{appearance:none;display:flex;align-items:center;gap:9px;min-width:0;flex:1;text-align:left;background:transparent!important;border:0!important;padding:0!important;color:#fff!important;box-shadow:none!important}.artwall-author-open:hover{background:transparent!important;transform:none!important}.artwall-avatar{width:39px!important;height:39px!important;flex:0 0 39px;border-radius:50%!important;border:1px solid #6d578c!important;background:linear-gradient(135deg,#49345c,#1e5366)!important;color:#fff!important;font-size:12px!important;overflow:hidden}.artwall-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;pointer-events:none}.artwall-author-meta{display:flex;flex-direction:column;min-width:0;gap:2px}.artwall-author-meta strong{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.artwall-author-meta small{font-size:10px;color:#aaa4c2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.artwork-post-date{font-size:10px;color:#9992b3;flex:0 0 auto;white-space:nowrap}
+    .artwork-info{padding:0 15px 13px!important}.artwork-title{font-family:ui-rounded,system-ui,sans-serif!important;font-size:18px!important;font-weight:850!important;letter-spacing:-.025em!important;color:#f9f5ff!important;margin:4px 0 5px!important}.artwork-byline{display:none!important}.artwork-caption{font-size:13px!important;line-height:1.62!important;color:#cbc5dc!important;white-space:pre-wrap!important;margin-top:5px!important}
+    .artwork-image{display:block!important;width:100%!important;max-width:100%!important;max-height:68dvh!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important;background:#080811!important;border-top:1px solid #2a2640!important;border-bottom:1px solid #2a2640!important;user-select:none!important;-webkit-user-select:none!important;-webkit-touch-callout:none!important;pointer-events:auto!important}
+    .artwork-post-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:11px 13px 13px}.artwork-post-actions button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:39px;padding:8px 13px!important;border:1px solid #3b3454!important;background:#1a182c!important;color:#cfc5e6!important;font-size:11px!important;font-weight:800!important;border-radius:999px!important;box-shadow:none!important}.artwork-post-actions button:hover{border-color:#a891d5!important;background:#28203e!important}.artwork-post-actions button.is-liked{color:#ff8ec8!important;background:#371c39!important;border-color:#d06cbd!important}.artwork-post-actions .artwork-delete{margin-left:auto!important;color:#ff9bb4!important;border-color:#63394e!important}
+    .artwork-comments{border-top:1px solid #302a48;padding:12px 14px 14px;background:#10101b}.artwork-comments[hidden]{display:none!important}.artwall-comments-list{display:grid;gap:11px;margin-bottom:12px}.artwall-comment{display:flex;align-items:flex-start;gap:9px;min-width:0}.artwall-comment-avatar{width:27px;height:27px;flex:0 0 27px;border-radius:50%;background:#302641;color:#f1d8ff;display:grid;place-items:center;font-size:9px;font-weight:900;overflow:hidden}.artwall-comment-avatar img{width:100%;height:100%;object-fit:cover}.artwall-comment-content{min-width:0;flex:1}.artwall-comment-meta{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}.artwall-comment-meta strong{font-size:10px;color:#f7edff}.artwall-comment-meta time{font-size:9px;color:#8d87a6}.artwall-comment-content p{font-size:12px!important;line-height:1.5!important;margin:3px 0 0!important;color:#cfc9de!important;white-space:pre-wrap;overflow-wrap:anywhere}.artwall-comment-form{display:flex;gap:8px;align-items:flex-end}.artwall-comment-form textarea{resize:vertical;min-height:40px!important;max-height:120px;padding:10px 12px!important;font-size:12px!important;flex:1;min-width:0;border-radius:16px!important}.artwall-comment-form button{width:42px;height:42px;min-width:42px;padding:0!important;display:grid;place-items:center;border-radius:50%!important}.artwall-footer-note{text-align:center;color:#8b85a4;font-size:10px;padding:20px 0 8px;line-height:1.6}.artwall-empty{border:1px dashed #4e4268;border-radius:22px;padding:28px 18px;text-align:center;background:#171426}.artwall-empty .emoji{font-size:30px;color:#ddb7ff}.artwall-empty h3{margin:8px 0;font-size:17px}.artwall-empty p{font-size:12px;color:#aca5c5;line-height:1.6}
+    @media(max-width:720px){
+      body{overscroll-behavior-x:none!important}
+      #appShell{height:var(--altroom-vh,100dvh)!important;min-height:var(--altroom-vh,100dvh)!important;max-width:100vw!important;overflow:hidden!important;padding:0!important;gap:0!important}
+      #appShell:not(.shorts-mode) .sidebar{max-height:19dvh!important;min-height:0!important;overflow:hidden!important;border-radius:0!important;border-left:0!important;border-right:0!important;border-top:0!important;padding:8px 9px 7px!important;background:#0d0d18f2!important}
+      #appShell .sidebar .brand{font-size:14px!important;padding:0 3px 6px!important;min-height:24px!important}
+      #appShell .sidebar .channel-list{width:100%!important;max-width:100%!important;display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;gap:6px!important;padding:1px 1px 5px!important;scrollbar-width:none!important}
+      #appShell .sidebar .channel-list::-webkit-scrollbar{display:none!important}
+      #appShell .sidebar .channel-btn{flex:0 0 auto!important;max-width:78vw!important;min-height:32px!important;padding:5px 10px!important;font-size:10px!important;gap:6px!important}
+      #appShell .sidebar .channel-dot{width:22px!important;height:22px!important;flex:0 0 22px!important}
+      #appShell .create-room-side{font-size:9px!important;padding:5px 10px!important;min-height:27px!important;margin:2px 0 0 1px!important}
+      #appShell:not(.shorts-mode)>.chat-panel{flex:1 1 auto!important;min-height:0!important;height:0!important;overflow:hidden!important;border-radius:0!important;border:0!important}
+      #appShell:not(.shorts-mode) .altroom-modebar{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;margin:5px 7px 7px!important;padding:5px!important;gap:3px!important;min-height:45px!important;border-radius:999px!important;justify-content:space-between!important}
+      #appShell .altroom-modebar::-webkit-scrollbar{display:none!important}
+      #appShell .altroom-modebar .mode-tab{flex:1 1 0!important;min-width:0!important;white-space:nowrap!important;gap:4px!important;padding:7px 4px!important;font-size:9px!important;min-height:34px!important;justify-content:center!important}
+      #appShell .altroom-modebar .mode-tab>span[aria-hidden="true"]{font-size:13px!important}
+      #appShell .altroom-modebar .shorts-nav-mark{display:none!important}
+      #appShell:not(.shorts-mode) .chat-header{flex:0 0 auto!important;min-height:54px!important;padding:7px 9px!important;gap:5px!important;background:#11101df5!important;border-radius:17px 17px 0 0!important}
+      #appShell:not(.shorts-mode) .chat-title{min-width:0!important;flex:1 1 auto!important;gap:7px!important}
+      #appShell:not(.shorts-mode) .chat-title h1{font-size:13px!important;max-width:33vw!important}
+      #appShell:not(.shorts-mode) .chat-title p{font-size:9px!important;max-width:34vw!important}
+      #appShell:not(.shorts-mode) .channel-emblem{width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:12px!important}
+      #appShell:not(.shorts-mode) .header-actions{gap:3px!important;max-width:none!important}
+      #appShell:not(.shorts-mode) .header-actions .button{width:33px!important;min-width:33px!important;height:33px!important;min-height:33px!important;padding:0!important}
+      #appShell:not(.shorts-mode) .header-actions #roomCallBtn{display:none!important}
+      #appShell:not(.shorts-mode) .messages{min-height:0!important;padding:11px 9px!important;gap:12px!important}
+      #appShell:not(.shorts-mode) .composer{padding:7px 8px calc(8px + env(safe-area-inset-bottom))!important}
+      #appShell:not(.shorts-mode) .composer-tool{padding:6px 8px!important;font-size:9px!important}
+      #appShell:not(.shorts-mode) .composer textarea{min-height:42px!important;font-size:13px!important}
+      #appShell:not(.shorts-mode) .send-btn{min-height:42px!important;height:42px!important;min-width:48px!important}
+      .overlay#galleryModal{padding:0!important;align-items:stretch!important;justify-content:stretch!important}
+      #galleryModal .gallery-modal{width:100vw!important;max-width:100vw!important;height:var(--altroom-vh,100dvh)!important;max-height:var(--altroom-vh,100dvh)!important;min-height:0!important;border-radius:0!important;border:0!important;overflow:hidden!important;padding:0!important;display:flex!important}
+      #galleryModal .artwall-topbar{padding:calc(12px + env(safe-area-inset-top)) 12px 12px!important;gap:9px!important}
+      #galleryModal .artwall-heading-mark{width:39px!important;height:39px!important;flex-basis:39px!important;border-radius:14px!important;font-size:19px!important}
+      #galleryModal .artwall-heading-copy .eyebrow{font-size:8px!important;letter-spacing:.14em!important}
+      #galleryModal .artwall-heading-copy h2{font-size:22px!important}
+      #galleryModal .artwall-heading-copy p{font-size:10px!important;line-height:1.35!important}
+      #galleryModal .artwall-close{width:35px!important;height:35px!important;min-width:35px!important}
+      #galleryModal .artwall-scroll{padding:10px 10px calc(18px + env(safe-area-inset-bottom))!important;overflow:auto!important;flex:1 1 auto!important}
+      #galleryModal .artwall-composer-shell{padding:11px!important;border-radius:19px!important}
+      #galleryModal .artwall-composer-intro{gap:8px!important;margin-bottom:9px!important}
+      #galleryModal .artwall-composer-intro strong{font-size:12px!important}
+      #galleryModal .artwall-composer-intro small{font-size:10px!important}
+      #galleryModal .artwall-composer .field{padding:10px 12px!important;min-height:40px!important;font-size:13px!important}
+      #galleryModal .artwall-composer textarea{min-height:56px!important}
+      #galleryModal .artwall-submit-row{gap:8px!important}
+      #galleryModal .artwall-submit-row .button{min-height:40px!important;padding:9px 13px!important;font-size:11px!important}
+      #galleryModal .artwall-no-download-note{font-size:9px!important;max-width:140px!important}
+      #galleryModal .artwall-feed-head{margin:14px 0 10px!important;padding-bottom:8px!important}
+      #galleryModal .artwall-feed-head h3{font-size:19px!important}
+      #galleryModal .artwork-card{border-radius:19px!important}
+      #galleryModal .artwork-post-head{padding:11px 11px 7px!important;gap:8px!important}
+      #galleryModal .artwall-avatar{width:34px!important;height:34px!important;flex-basis:34px!important}
+      #galleryModal .artwork-post-date{font-size:9px!important}
+      #galleryModal .artwork-info{padding:0 11px 10px!important}
+      #galleryModal .artwork-title{font-size:16px!important}
+      #galleryModal .artwork-caption{font-size:12px!important}
+      #galleryModal .artwork-image{max-height:54dvh!important;object-fit:contain!important}
+      #galleryModal .artwork-post-actions{gap:6px!important;padding:9px!important}
+      #galleryModal .artwork-post-actions button{min-height:36px!important;padding:7px 10px!important;font-size:10px!important}
+      #galleryModal .artwork-comments{padding:10px!important}
+      #galleryModal .artwall-comment-form textarea{min-height:38px!important}
+      .modal:not(.gallery-modal){width:100%!important;max-width:100%!important;max-height:calc(var(--altroom-vh,100dvh) - 12px - env(safe-area-inset-top))!important;border-radius:23px 23px 15px 15px!important}
+    }
+    @media(max-width:370px){
+      #appShell .altroom-modebar .mode-tab{font-size:8px!important;padding:7px 2px!important;gap:3px!important}
+      #appShell .altroom-modebar .mode-tab>span[aria-hidden="true"]{font-size:12px!important}
+      #appShell:not(.shorts-mode) .chat-title h1{max-width:30vw!important}
+      #galleryModal .artwall-no-download-note{display:none!important}
+      #galleryModal .artwall-submit-row{justify-content:flex-end!important}
+    }
+    @media(prefers-reduced-motion:reduce){button,.button,.mode-tab,.channel-btn,.room-card{transition:none!important}}
+
   </style>
 </head>
 <body>
@@ -1416,7 +1552,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       <div class="side-bottom"><div class="user-card"><div class="avatar" id="sideAvatar">A</div><div style="min-width:0;flex:1"><div id="sideName" class="user-name">Member</div><div id="sideHandle" class="user-handle">@member</div></div><button class="button small ghost" id="sideProfileBtn" title="Edit profile">↗</button></div><button class="button ghost small" id="sideSignOut" style="width:100%">Sign out</button></div>
     </aside>
     <section class="chat-panel">
-      <nav class="altroom-modebar" aria-label="ALTROOM sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">▤</span> <span>Rooms</span></button><button class="mode-tab" id="shortsBtn" type="button"><span aria-hidden="true">▶</span> <span>30-sec video club</span><b class="shorts-nav-mark">NEW</b></button><button class="mode-tab" id="privateChatsBtn" type="button"><span aria-hidden="true">✉</span> <span>Private</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications"><span aria-hidden="true">♧</span> <span>Notify</span></button></nav>
+      <nav class="altroom-modebar" aria-label="ALTROOM sections"><button class="mode-tab active" id="communityChatsBtn" type="button"><span aria-hidden="true">▤</span> <span>Rooms</span></button><button class="mode-tab" id="shortsBtn" type="button"><span aria-hidden="true">▶</span> <span>30-sec video club</span><b class="shorts-nav-mark">NEW</b></button><button class="mode-tab" id="privateChatsBtn" type="button"><span aria-hidden="true">✉</span> <span>Private</span><b id="privateChatCount" class="mode-count hidden">0</b></button><button class="mode-tab" id="artwallNavBtn" type="button" aria-label="Open community Art Wall"><span aria-hidden="true">✿</span> <span>Art Wall</span></button><button class="mode-tab notification-optin" id="notificationPermissionBtn" type="button" title="Turn on browser notifications" aria-label="Turn on browser notifications"><span aria-hidden="true">♧</span> <span>Notify</span></button></nav>
 
       <section id="shortsView" class="shorts-view hidden" aria-label="ALTROOM short video feed">
         <header class="shorts-heading" aria-label="Video controls">
@@ -1475,7 +1611,29 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
 
   <div class="overlay hidden" id="createRoomModal"><section class="modal"><div class="modal-head"><div><div class="eyebrow">Make a little corner</div><h2>Create a room</h2></div><button class="close-btn" data-close="createRoomModal" aria-label="Close create room">✕</button></div><p>Name your room and tell people what belongs there. Room names should be welcoming and specific.</p><form id="createRoomForm"><div class="form-row"><label for="newRoomName">Room name</label><input id="newRoomName" class="field" maxlength="32" minlength="2" required placeholder="e.g. Analog Photography"></div><div class="form-row"><label for="newRoomDescription">Short description</label><textarea id="newRoomDescription" class="field" maxlength="140" rows="3" placeholder="What would people talk about here?"></textarea></div><button class="button primary" id="createRoomSubmit" type="submit" style="width:100%">Create room</button><p id="createRoomMessage" class="form-message"></p><p class="tiny muted">To keep the room list healthy, each member can create up to 3 rooms. Each room holds up to 25 active members.</p></form></section></div>
 
-  <div class="overlay hidden" id="galleryModal"><section class="modal gallery-modal"><div class="modal-head"><div><div class="eyebrow">Made by the people here</div><h2>ALTROOM Art Gallery</h2></div><button class="close-btn" data-close="galleryModal" aria-label="Close art gallery">✕</button></div><p>Share drawings, paintings, photography, digital art, crafts, edits, and unfinished things. Please only upload work you have permission to share.</p><form id="artworkForm" class="artwork-form"><div class="form-row"><label for="artworkTitle">Title</label><input id="artworkTitle" class="field" maxlength="60" required placeholder="Give the work a name"></div><div class="form-row"><label for="artworkCaption">Caption (optional)</label><textarea id="artworkCaption" class="field" maxlength="300" rows="2" placeholder="A little about this piece…"></textarea></div><label class="highlight-image-pick" for="artworkImageInput">＋ Choose artwork image</label><input id="artworkImageInput" class="hidden" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif"><div id="artworkFileName" class="tiny muted"></div><button class="button primary" id="artworkSubmit" type="submit" style="width:100%">Share artwork</button><p id="artworkMessage" class="form-message"></p></form><div class="gallery-heading"><h3>Community gallery</h3><button class="button ghost small" id="refreshGalleryBtn" type="button">↻ Refresh</button></div><div id="galleryGrid" class="gallery-grid"><p class="tiny muted">Loading the gallery…</p></div></section></div>
+  <div class="overlay hidden" id="galleryModal" aria-label="Community Art Wall">
+    <section class="modal gallery-modal" role="dialog" aria-modal="true" aria-labelledby="artWallTitle">
+      <header class="artwall-topbar">
+        <div class="artwall-heading-mark" aria-hidden="true">✿</div>
+        <div class="artwall-heading-copy"><div class="eyebrow">ALTROOM CREATIVE CLUB</div><h2 id="artWallTitle">The Art Wall</h2><p>Art by people, not algorithms. Scroll, heart, and leave something kind.</p></div>
+        <button class="close-btn artwall-close" data-close="galleryModal" aria-label="Close Art Wall">✕</button>
+      </header>
+      <div class="artwall-scroll">
+        <section class="artwall-composer-shell" aria-label="Share artwork">
+          <div class="artwall-composer-intro"><span class="artwall-composer-spark" aria-hidden="true">✦</span><div><strong>Put something you made out there.</strong><small>Illustration, fan art, collage, photography, craft, WIP — all welcome.</small></div></div>
+          <form id="artworkForm" class="artwork-form artwall-composer">
+            <div class="form-row"><label for="artworkTitle">Post title</label><input id="artworkTitle" class="field" maxlength="60" required placeholder="Name this little world"></div>
+            <div class="form-row"><label for="artworkCaption">Caption (optional)</label><textarea id="artworkCaption" class="field" maxlength="300" rows="2" placeholder="The story, process, inspiration, or just a few words…"></textarea></div>
+            <label class="highlight-image-pick artwall-image-pick" for="artworkImageInput"><span aria-hidden="true">＋</span> Add artwork image</label><input id="artworkImageInput" class="hidden" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif"><div id="artworkFileName" class="tiny muted"></div>
+            <div class="artwall-submit-row"><span class="artwall-no-download-note">Art stays in the feed · no download button</span><button class="button primary" id="artworkSubmit" type="submit">Post artwork <span aria-hidden="true">↗</span></button></div><p id="artworkMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </section>
+        <div class="gallery-heading artwall-feed-head"><div><div class="eyebrow">FRESH FROM THE COMMUNITY</div><h3>Latest creations</h3></div><button class="button ghost small" id="refreshGalleryBtn" type="button" aria-label="Refresh Art Wall">↻ <span>Refresh</span></button></div>
+        <div id="galleryGrid" class="gallery-grid" aria-live="polite"><p class="tiny muted">Loading artwork…</p></div>
+        <div class="artwall-footer-note">Be curious. Credit artists. Ask before reposting. Keep this corner kind. ✦</div>
+      </div>
+    </section>
+  </div>
 
   <div class="overlay hidden" id="callOptionsModal"><section class="modal"><div class="modal-head"><div><div class="eyebrow">Take the conversation live</div><h2>Start a room call</h2></div><button class="close-btn" data-close="callOptionsModal" aria-label="Close call options">✕</button></div><p>Your call will open inside ALTROOM, so you can keep the conversation here. Calls use the free hosted Jitsi service in an embedded panel. Room calls are open to people who can see the room's call invitation, so please only share it with the intended people.</p><div class="action-buttons"><button class="button primary" id="startVideoCallBtn" type="button">▣ Start video call</button><button class="button ghost" id="startAudioCallBtn" type="button">◖ Start audio call</button></div><p class="tiny muted">Allow microphone/camera access when prompted. Call quality and availability depend on the hosted call service and your internet connection.</p></section></div>
 
@@ -1527,6 +1685,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       let client = null, currentUser = null, myProfile = null, channels = [], activeChannelId = null, members = [], messageSubscription = null, activeTab = 'login', selectedStickerColor = '#c52b4b', demoMode = false, toastTimer = null, mediaRecorder = null, recordingStream = null, recordedChunks = [], isRecordingVoice = false, selectedAvatarFile = null, clearAvatarRequested = false, avatarPreviewObjectUrl = null;
       let contextMessage = null, highlightUploadFile = null, artworkUploadFile = null, roomHeartbeatTimer = null, roomCountRefreshTimer = null, roomCountsById = {}, messageLoadGeneration = 0;
       const channelDecor = {lobby:['✳','Enter quietly. Stay strange. Be yourself.'], introductions:['♡','A small introduction goes a long way.'], music:['♫','No gatekeeping your weirdest soundtrack.'], art:['✂','Things made by hand, heart, or accident.'], oddities:['☾','For the interests that need a little explaining.']};
+      Object.assign(channelDecor,{ 'goth-punk':['✦','For goths, punks, and people who never fit the dress code.'],'anime':['✿','Find fellow anime fans, manga readers, and character obsessives.'],'underground-music':['♫','Trade underground sounds, DIY gigs, obscure bands, and loud feelings.'],'alternative-fashion':['☾','Share outfits, makeup, DIY clothes, and alternative style.'],'artists-creators':['✎','A studio for independent artists, makers, fan artists, and works in progress.']});
       const byId = id => document.getElementById(id);
       function showView(id){ views.forEach(v => byId(v).classList.toggle('hidden', v!==id)); }
       function esc(s){return String(s ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
@@ -1606,7 +1765,7 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       function hydrateAvatars(root){(root||document).querySelectorAll('.avatar[data-avatar-path]').forEach(el=>hydrateAvatar(el));}
       function setProfilePreview(name,path){setAvatarElement(byId('profileAvatarPreview'),name,path);}
       function fillMyCard(){const name=myProfile?.display_name||'Member',handle=myProfile?.username||'member';byId('sideName').innerHTML=esc(name)+roleBadgeMarkup(myProfile?.role,true);byId('sideHandle').textContent='@'+handle;byId('ownerPanelBtn')?.classList.toggle('hidden',!isOwner());setAvatarElement(byId('sideAvatar'),name,myProfile?.avatar_path||'');byId('profileDisplayName').value=name;byId('profileUsername').value=handle;byId('profileBio').value=myProfile?.bio||'';byId('profileInterests').value=(myProfile?.interests||[]).join(', ');setProfilePreview(name,myProfile?.avatar_path||'');}
-      async function loadChannels(){if(demoMode){channels=[{id:1,slug:'lobby',name:'The Lobby',description:'Enter quietly. Stay strange. Be yourself.'},{id:2,slug:'introductions',name:'Introductions',description:'A small introduction goes a long way.'},{id:3,slug:'music',name:'Music & Noise',description:'No gatekeeping your weirdest soundtrack.'},{id:4,slug:'art',name:'Art / DIY',description:'Things made by hand, heart, or accident.'},{id:5,slug:'oddities',name:'Unusual Interests',description:'For interests that need a little explaining.'}];activeChannelId=(channels.find(c=>c.slug==='lobby')||channels[0])?.id||null;await loadRoomCounts();renderChannels();return;}
+      async function loadChannels(){if(demoMode){channels=[{id:1,slug:'lobby',name:'The Lobby',description:'Enter quietly. Stay strange. Be yourself.'},{id:2,slug:'introductions',name:'Introductions',description:'A small introduction goes a long way.'},{id:3,slug:'music',name:'Music & Noise',description:'No gatekeeping your weirdest soundtrack.'},{id:4,slug:'art',name:'Art / DIY',description:'Things made by hand, heart, or accident.'},{id:5,slug:'oddities',name:'Unusual Interests',description:'For the interests that need a little explaining.'},{id:6,slug:'goth-punk',name:'Goth & Punk',description:'For goths, punks, and people who never fit the dress code.'},{id:7,slug:'anime',name:'Anime',description:'Find fellow anime fans, manga readers, and character obsessives.'},{id:8,slug:'underground-music',name:'Underground Music',description:'Trade underground sounds, DIY gigs, obscure bands, and loud feelings.'},{id:9,slug:'alternative-fashion',name:'Alternative Fashion',description:'Share outfits, makeup, DIY clothes, and alternative style.'},{id:10,slug:'artists-creators',name:'Artists & Creators',description:'A studio for independent artists, makers, fan artists, and works in progress.'}];activeChannelId=(channels.find(c=>c.slug==='lobby')||channels[0])?.id||null;await loadRoomCounts();renderChannels();return;}
         const {data,error}=await client.from('channels').select('*').order('id');if(error){toast('Could not load rooms: '+friendlyError(error));return;}channels=data||[];if(!activeChannelId||!channels.some(c=>String(c.id)===String(activeChannelId)))activeChannelId=(channels.find(c=>c.slug==='lobby')||channels[0])?.id||null;await loadRoomCounts();renderChannels();}
       async function loadRoomCounts(){roomCountsById={};if(demoMode){channels.forEach(c=>{if(c.slug!=='lobby')roomCountsById[String(c.id)]=Object.keys(demoRoomMembers[String(c.id)]||{}).length;});updateRoomCards();return;}try{const since=new Date(Date.now()-300000).toISOString();const {data,error}=await client.from('room_members').select('channel_id,last_seen_at').gte('last_seen_at',since);if(error)throw error;(data||[]).forEach(r=>{const k=String(r.channel_id);roomCountsById[k]=(roomCountsById[k]||0)+1;});}catch(e){console.warn('Room count check:',e.message);}updateRoomCards();}
       function updateRoomCards(){document.querySelectorAll('[data-room-card]').forEach(card=>{const count=roomCountsById[String(card.dataset.roomCard)]||0,full=count>=25;const label=card.querySelector('.room-seat-count'),btn=card.querySelector('.room-enter');if(label)label.textContent=`${Math.min(count,25)} / 25 seats · ${full?'full':'open'}`;if(btn){btn.disabled=full;btn.textContent=full?'ROOM FULL':'ENTER ROOM →';}});}
@@ -2414,7 +2573,127 @@ body{background-image:radial-gradient(ellipse at 0% 0%,#4b374122,transparent 38%
       openPrivateConversation=async function(conversationId,otherUserId){markPrivateRead(conversationId);await originalOpenPrivateConversationForUnread(conversationId,otherUserId);updateUnreadBadges();};
       const originalPrivateHubForUnread=loadPrivateHub;
       loadPrivateHub=async function(){await originalPrivateHubForUnread();updateUnreadBadges()};
-      if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(err=>console.warn('ALTROOM service worker update check failed:',err));
+      // ALTROOM V7: community Art Wall — a vertically scrolling creator timeline.
+      let artworkFeedBusy=false, artWallRealtimeChannel=null, artWallRefreshTimer=null;
+      function artWallDate(value){try{const d=new Date(value);return d.toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · '+d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});}catch{return '';}}
+      function artWallCommentMarkup(comment,profiles){
+        const p=profiles.get(comment.user_id)||{},name=p.display_name||'ALTROOM member';
+        return `<div class="artwall-comment"><span class="artwall-comment-avatar" data-avatar-name="${esc(name)}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(name))}</span><div class="artwall-comment-content"><div class="artwall-comment-meta"><strong>${esc(name)}</strong><time>${esc(artWallDate(comment.created_at))}</time></div><p>${esc(comment.body)}</p></div></div>`;
+      }
+      loadGallery = async function({preserveScroll=false}={}){
+        const grid=byId('galleryGrid');if(!grid)return;
+        const oldScroll=byId('galleryModal')?.querySelector('.artwall-scroll')?.scrollTop||0;
+        if(!demoMode&&(!client||!currentUser)){grid.innerHTML='<div class="artwall-empty"><div class="emoji">✿</div><h3>Sign in to visit the Art Wall</h3><p>Artwork and comments are shared with approved ALTROOM members.</p></div>';return;}
+        if(demoMode){grid.innerHTML='<div class="artwall-empty"><div class="emoji">✿</div><h3>The studio is ready</h3><p>Connect your ALTROOM account and run the Art Wall migration to publish real artwork, likes, and comments.</p></div>';return;}
+        if(artworkFeedBusy)return;artworkFeedBusy=true;
+        grid.innerHTML='<div class="artwall-empty"><div class="emoji">✦</div><h3>Opening the studio…</h3><p>Loading work from your community.</p></div>';
+        try{
+          const {data:artworks,error}=await client.from('artworks').select('id,user_id,title,caption,media_path,created_at').order('created_at',{ascending:false}).limit(60);
+          if(error)throw error;
+          if(!artworks?.length){grid.innerHTML='<div class="artwall-empty"><div class="emoji">✿</div><h3>The first page is blank.</h3><p>Post your art above and give the community something to discover.</p></div>';return;}
+          const ids=artworks.map(a=>a.id),userIds=[...new Set(artworks.map(a=>a.user_id).filter(Boolean))];
+          const [profileResult,likesResult,commentsResult]=await Promise.all([
+            userIds.length?client.from('profiles').select('id,display_name,username,avatar_path,approved').in('id',userIds):Promise.resolve({data:[],error:null}),
+            client.from('artwork_likes').select('artwork_id,user_id').in('artwork_id',ids),
+            client.from('artwork_comments').select('id,artwork_id,user_id,body,created_at').in('artwork_id',ids).order('created_at',{ascending:true}).limit(600)
+          ]);
+          if(profileResult.error)console.warn('Art Wall profile lookup:',profileResult.error.message);
+          if(likesResult.error)throw new Error('Art Wall likes need the supplied social migration. '+likesResult.error.message);
+          if(commentsResult.error)throw new Error('Art Wall comments need the supplied social migration. '+commentsResult.error.message);
+          const profiles=new Map((profileResult.data||[]).map(p=>[p.id,p]));
+          const likesByArtwork=new Map(),commentsByArtwork=new Map();
+          for(const like of likesResult.data||[]){const item=likesByArtwork.get(like.artwork_id)||{count:0,mine:false};item.count++;if(like.user_id===currentUser.id)item.mine=true;likesByArtwork.set(like.artwork_id,item);}
+          const commentRows=commentsResult.data||[],commentUserIds=[...new Set(commentRows.map(c=>c.user_id).filter(id=>id&&!profiles.has(id)))];
+          if(commentUserIds.length){const more=await client.from('profiles').select('id,display_name,username,avatar_path').in('id',commentUserIds);if(!more.error)for(const p of more.data||[])profiles.set(p.id,p);}
+          for(const c of commentRows){const arr=commentsByArtwork.get(c.artwork_id)||[];arr.push(c);commentsByArtwork.set(c.artwork_id,arr);}
+          const records=await Promise.all(artworks.map(async a=>({...a,_author:profiles.get(a.user_id)||{},_url:await signedUrl(a.media_path),_like:likesByArtwork.get(a.id)||{count:0,mine:false},_comments:commentsByArtwork.get(a.id)||[]})));
+          grid.innerHTML=records.map(a=>{
+            const p=a._author||{},name=p.display_name||'ALTROOM member',handle=p.username||'member',own=a.user_id===currentUser.id;
+            const commentMarkup=a._comments.length?a._comments.map(c=>artWallCommentMarkup(c,profiles)).join(''):'<p class="tiny muted" style="margin:0 0 12px">No comments yet. Be the first to leave a kind note.</p>';
+            return `<article class="artwork-card" data-artwork-id="${esc(a.id)}">
+              <header class="artwork-post-head"><button type="button" class="artwall-author-open" data-artwall-profile="${esc(a.user_id)}" aria-label="Open ${esc(name)} profile"><span class="avatar artwall-avatar" data-avatar-name="${esc(name)}" data-avatar-path="${esc(p.avatar_path||'')}">${esc(initials(name))}</span><span class="artwall-author-meta"><strong>${esc(name)}</strong><small>@${esc(handle)} · ALTROOM artist</small></span></button><time class="artwork-post-date">${esc(artWallDate(a.created_at))}</time></header>
+              <div class="artwork-info"><h3 class="artwork-title">${esc(a.title)}</h3>${a.caption?`<p class="artwork-caption">${esc(a.caption)}</p>`:''}</div>
+              ${a._url?`<img class="artwork-image" src="${esc(a._url)}" alt="${esc(a.title)} by ${esc(name)}" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false">`:'<div class="artwall-empty"><p>This artwork image is unavailable. Refresh the Art Wall and try again.</p></div>'}
+              <div class="artwork-post-actions"><button type="button" class="artwork-like-button ${a._like.mine?'is-liked':''}" data-artwork-like="${esc(a.id)}" aria-pressed="${a._like.mine?'true':'false'}"><span aria-hidden="true">${a._like.mine?'♥':'♡'}</span><span data-artwork-like-count>${a._like.count}</span><span>Like</span></button><button type="button" data-artwork-comments="${esc(a.id)}" aria-expanded="false"><span aria-hidden="true">▱</span><span data-artwork-comment-count>${a._comments.length}</span><span>Comment</span></button>${own?`<button type="button" class="artwork-delete" data-delete-artwork="${esc(a.id)}">Remove post</button>`:''}</div>
+              <section class="artwork-comments" id="artworkComments-${esc(a.id)}" hidden><div class="artwall-comments-list">${commentMarkup}</div><form class="artwall-comment-form" data-artwork-comment-form="${esc(a.id)}"><textarea class="field" maxlength="800" rows="1" required placeholder="Leave a kind comment…" aria-label="Comment on ${esc(a.title)}"></textarea><button class="button primary" type="submit" aria-label="Post comment" title="Post comment">↗</button></form></section>
+            </article>`;
+          }).join('');
+          grid.querySelectorAll('.artwall-avatar,.artwall-comment-avatar').forEach(el=>hydrateAvatar(el));
+          grid.querySelectorAll('.artwork-image').forEach(img=>{img.addEventListener('contextmenu',e=>e.preventDefault());img.addEventListener('dragstart',e=>e.preventDefault());});
+          if(preserveScroll){const scroller=byId('galleryModal')?.querySelector('.artwall-scroll');if(scroller)scroller.scrollTop=oldScroll;}
+        }catch(err){
+          grid.innerHTML=`<div class="artwall-empty"><div class="emoji">✿</div><h3>The studio door is stuck.</h3><p>Run <b>ALTROOM-Art-Wall-Social-Migration.sql</b> in the same Supabase project as ALTROOM, then tap refresh. This migration preserves existing art and rooms.</p><p style="font-size:10px;overflow-wrap:anywhere;color:#9e96b9">${esc(friendlyError(err))}</p><button type="button" class="button primary" id="artwallRetryBtn">Try again ↻</button></div>`;
+        }finally{artworkFeedBusy=false;}
+      };
+      shareArtwork = async function(e){
+        e.preventDefault();
+        if(demoMode){toast('Preview mode only — sign in to publish art.');return;}
+        const title=byId('artworkTitle').value.trim(),caption=byId('artworkCaption').value.trim(),file=artworkUploadFile;
+        if(!title){message('artworkMessage','Give the work a title.','error');return;}
+        if(!file){message('artworkMessage','Choose an image of your artwork first.','error');return;}
+        if(file.size>6*1024*1024){message('artworkMessage','Please keep artwork images under 6 MB.','error');return;}
+        if(!/^image\/(jpeg|png|webp|gif|avif)$/.test(file.type)){message('artworkMessage','Choose a JPG, PNG, WebP, GIF, or AVIF image.','error');return;}
+        const btn=byId('artworkSubmit');btn.disabled=true;message('artworkMessage','Adding your artwork to the wall…');let path=null;
+        try{
+          const ext=({'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif','image/avif':'avif'})[file.type]||'jpg';
+          path=`${currentUser.id}/artwork-${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+          const {error:upErr}=await client.storage.from('chat-media').upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});if(upErr)throw upErr;
+          const {error}=await client.from('artworks').insert({user_id:currentUser.id,title,caption,media_path:path});if(error)throw error;
+          byId('artworkForm').reset();artworkUploadFile=null;byId('artworkFileName').textContent='';message('artworkMessage','Posted! Your art is now on the wall.','ok');
+          await loadGallery();const scroller=byId('galleryModal')?.querySelector('.artwall-scroll');if(scroller)scroller.scrollTo({top:0,behavior:'smooth'});
+        }catch(err){if(path){try{await client.storage.from('chat-media').remove([path]);}catch{}}message('artworkMessage',friendlyError(err)+' Make sure the Art Wall migration completed in this Supabase project.','error');}
+        finally{btn.disabled=false;}
+      };
+      const originalCleanupRealtimeForArtWall=cleanupRealtime;
+      cleanupRealtime=function(){
+        originalCleanupRealtimeForArtWall();
+        if(artWallRealtimeChannel&&client){client.removeChannel(artWallRealtimeChannel).catch(()=>{});artWallRealtimeChannel=null;}
+        clearTimeout(artWallRefreshTimer);artWallRefreshTimer=null;
+      };
+      function startArtWallRealtime(){
+        if(demoMode||!client||!currentUser||artWallRealtimeChannel)return;
+        const queueArtWallRefresh=()=>{clearTimeout(artWallRefreshTimer);artWallRefreshTimer=setTimeout(()=>{if(!byId('galleryModal')?.classList.contains('hidden'))loadGallery({preserveScroll:true});},420);};
+        artWallRealtimeChannel=client.channel('altroom-artwall-live-'+currentUser.id)
+          .on('postgres_changes',{event:'*',schema:'public',table:'artwork_likes'},queueArtWallRefresh)
+          .on('postgres_changes',{event:'*',schema:'public',table:'artwork_comments'},queueArtWallRefresh)
+          .on('postgres_changes',{event:'*',schema:'public',table:'artworks'},queueArtWallRefresh)
+          .subscribe(status=>{if(status==='CHANNEL_ERROR'||status==='TIMED_OUT')console.warn('ALTROOM Art Wall live updates unavailable; use Refresh.');});
+      }
+      const originalOpenGalleryForArtwall=openGallery;
+      openGallery=function(){originalOpenGalleryForArtwall();startArtWallRealtime();};
+      byId('galleryBtn')?.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();openGallery();},true);
+      byId('artwallNavBtn')?.addEventListener('click',openGallery);
+      // Capture handlers replace older gallery listeners from prior versions without double-posting.
+      byId('artworkForm')?.addEventListener('submit',e=>{e.preventDefault();e.stopImmediatePropagation();shareArtwork(e);},true);
+      byId('refreshGalleryBtn')?.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();loadGallery();},true);
+      byId('artworkImageInput')?.addEventListener('change',e=>{artworkUploadFile=e.target.files?.[0]||null;byId('artworkFileName').textContent=artworkUploadFile?`${artworkUploadFile.name} · ${(artworkUploadFile.size/1024/1024).toFixed(1)} MB`:'';});
+      byId('galleryGrid')?.addEventListener('click',async e=>{
+        const profile=e.target.closest('[data-artwall-profile]');if(profile){await openPublicProfile(profile.dataset.artwallProfile);return;}
+        const retry=e.target.closest('#artwallRetryBtn');if(retry){await loadGallery();return;}
+        const like=e.target.closest('[data-artwork-like]');if(like){
+          if(demoMode||!client||!currentUser){toast('Sign in to like artwork.');return;}
+          const id=like.dataset.artworkLike,wasLiked=like.getAttribute('aria-pressed')==='true';like.disabled=true;
+          try{const result=wasLiked?await client.from('artwork_likes').delete().eq('artwork_id',id).eq('user_id',currentUser.id):await client.from('artwork_likes').insert({artwork_id:id,user_id:currentUser.id});if(result.error)throw result.error;await loadGallery({preserveScroll:true});}
+          catch(err){toast(friendlyError(err)+' Run the Art Wall social migration first.');}
+          finally{like.disabled=false;}return;
+        }
+        const comments=e.target.closest('[data-artwork-comments]');if(comments){const id=comments.dataset.artworkComments,section=byId('artworkComments-'+id),show=section?.hidden===true;if(section){section.hidden=!show;comments.setAttribute('aria-expanded',show?'true':'false');if(show)setTimeout(()=>section.querySelector('textarea')?.focus({preventScroll:true}),70);}return;}
+        const del=e.target.closest('[data-delete-artwork]');if(del){await deleteArtwork(del.dataset.deleteArtwork);return;}
+      });
+      byId('galleryGrid')?.addEventListener('submit',async e=>{
+        const form=e.target.closest('[data-artwork-comment-form]');if(!form)return;e.preventDefault();
+        if(demoMode||!client||!currentUser){toast('Sign in to comment on artwork.');return;}
+        const artworkId=form.dataset.artworkCommentForm,field=form.querySelector('textarea'),body=(field?.value||'').trim();if(!body)return;
+        const submit=form.querySelector('button[type=submit]');if(submit)submit.disabled=true;
+        try{const {error}=await client.from('artwork_comments').insert({artwork_id:artworkId,user_id:currentUser.id,body});if(error)throw error;await loadGallery({preserveScroll:true});const section=byId('artworkComments-'+artworkId);if(section){section.hidden=false;const button=byId('galleryGrid')?.querySelector(`[data-artwork-comments="${CSS.escape(artworkId)}"]`);button?.setAttribute('aria-expanded','true');const next=section.querySelector('textarea');if(next)next.value='';}}
+        catch(err){toast(friendlyError(err)+' Run the Art Wall social migration first.');}
+        finally{if(submit)submit.disabled=false;}
+      });
+      byId('galleryGrid')?.addEventListener('keydown',e=>{const field=e.target.closest('.artwall-comment-form textarea');if(field&&e.key==='Enter'&&!e.shiftKey){e.preventDefault();field.closest('form')?.requestSubmit();}});
+      // When the Art Wall closes, leave no hidden interaction overlay hanging around.
+      byId('galleryModal')?.addEventListener('click',e=>{if(e.target.closest('[data-close="galleryModal"]')){setTimeout(()=>{byId('galleryModal').classList.add('hidden');},0);}});
+
+            if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(err=>console.warn('ALTROOM service worker update check failed:',err));
       const originalEnterWithSessionForUnread=enterWithSession;
       enterWithSession=async function(session){await originalEnterWithSessionForUnread(session);if(client&&currentUser&&!demoMode)setupUnreadRealtime();updateUnreadBadges();if(/^#shorts-[a-f0-9-]+$/i.test(location.hash)&&client&&currentUser&&!demoMode)showShorts()};
       const originalInitForUnread=init;

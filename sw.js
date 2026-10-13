@@ -1,4 +1,4 @@
-const CACHE = 'altroom-shell-v19-shorts-live-likes-20261012';
+const CACHE = 'altroom-shell-v20-anime-art-wall-20261013';
 const CORE = ['./index.html'];
 const OPTIONAL = ['./manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => {

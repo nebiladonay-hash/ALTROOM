@@ -1,6 +1,6 @@
-const CACHE = 'altroom-shell-v20-matte-manga-mobile-v8-20261013';
+const CACHE = 'altroom-pwa-v21-installable-20261014';
 const CORE = ['./index.html'];
-const OPTIONAL = ['./manifest.webmanifest', './icon.svg'];
+const OPTIONAL = ['./manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);

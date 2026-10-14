@@ -1,18 +1,41 @@
 {
-  "name": "ALTROOM — your corner of the strange",
+  "id": "./",
+  "name": "ALTROOM \u2014 Alternative Culture",
   "short_name": "ALTROOM",
-  "description": "A quiet, dark corner of the internet for alternative minds.",
+  "description": "A small corner of the internet for goths, punks, anime fans, underground music lovers, alternative fashion, and independent artists.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#080808",
-  "theme_color": "#080808",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#09070b",
+  "theme_color": "#111014",
+  "categories": [
+    "social",
+    "entertainment",
+    "lifestyle"
+  ],
   "icons": [
     {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
